@@ -7,7 +7,7 @@
 
 | JavaScript | TypeScript |    C#    |  Unity   |
 | :--------: | :--------: | :------: | :-----: |
-|   ![js]    |   ![ts]    | ![C#] | ![unity] |
+|   ![js]    |   ![ts]    |  ![C#]   | ![unity] |
 
 
 [C#]: /imagesForReadme/stack/C#.svg
