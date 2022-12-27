@@ -7,11 +7,6 @@
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=SWARVY&theme=tokyonight)](https://github.com/SWARVY/github-readme-stats) 
   
   <br/>
-  <div><b>BLOG</b></div>
-  <br/>
-  <div>
-    <a href="https://swarvy.tistory.com/"><img src="https://img.shields.io/badge/Tistory-000000?style=flat-square&logo=tistory&logoColor=white"/></a>
-  </div>
   <br/><br/>
   <div><b>TOOLS</b></div>
   <br/>
