@@ -10,5 +10,5 @@
 |   ![js]    |   ![ts]    |  ![C#]   | ![unity] |
 
 
-[C#]: /imagesForReadme/stack/C#.svg
+[C#]: /imagesForReadme/stack/C--4.svg
 [unity]: /imagesForReadme/stack/Unity.svg
