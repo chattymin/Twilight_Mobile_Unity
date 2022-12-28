@@ -30,7 +30,7 @@
  
 //해당링크는 깃허브 이미지로 변경
 
- 👨‍💻 **박동민** [<img src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/C--4.svg" height="15px" />](https://github.com/chattymin) / [<img src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/Unity.svg" height="15px" />](https://naemamdaelo.tistory.com/)
+👑 👨‍💻 **박동민** [<img src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/C--4.svg" height="15px" />](https://github.com/chattymin) / [<img src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/Unity.svg" height="15px" />](https://naemamdaelo.tistory.com/)
 
 👩‍💻 **정진서** [Git](https://github.com/JinNitt) / [blog](https://pharam.tistory.com/)
 
