@@ -27,18 +27,18 @@
    
 ## 멤버 구성 
 <br>
- 
+
 👑 💻 **박동민** [Git](https://github.com/chattymin) / [blog](https://naemamdaelo.tistory.com/)
 
-💻 **정진서** [Git](https://github.com/JinNitt) / [blog](https://pharam.tistory.com/)
+　　💻 **정진서** [Git](https://github.com/JinNitt) / [blog](https://pharam.tistory.com/)
 
-💻 **김혜빈** [Git](https://github.com/sunkong12)
+　　💻 **김혜빈** [Git](https://github.com/sunkong12)　　　
 
-💻 **김희연** [Git](https://github.com/HeeYeon-Kim) / [blog](https://google.com)
+　　💻 **김희연** [Git](https://github.com/HeeYeon-Kim)　　　
 
-🎨 **조수현** [Instagram](https://www.instagram.com/goyoung_villain/) 
+　　🎨 **조수현** [Instagram](https://www.instagram.com/goyoung_villain/) 
 
-🎹 **김은지** [SoundCloud](https://soundcloud.com/4yagv0thkmafref=clipboard&p=i&c=1&si=DEFD317329394696B07B36C68136C9AD&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing)
+　　　🎹 **김은지** [SoundCloud](https://soundcloud.com/4yagv0thkmafref=clipboard&p=i&c=1&si=DEFD317329394696B07B36C68136C9AD&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing)
 <br><br>
    
 ## 개발기간
