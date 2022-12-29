@@ -52,7 +52,7 @@
 ## 사용 언어 & 개발 도구
 <br>  
    
-| **Language**  | <img width="100px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/C--4.svg"/>      | **Tool** |  <img width="150px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/Unity-New-Logo-removebg-preview.png?raw=true"/>       |   [<img width="100px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/Notion.svg"/>](https://rightful-yarn-52a.notion.site/Unity-98c4af0304004532908acdb4b9b4b456)           |
+| **Language**  | <img width="100px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/C--4.svg"/>      | **Tool** |  <img width="170px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/Unity-New-Logo-removebg-preview.png?raw=true"/>       |   [<img width="100px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/Notion.svg"/>](https://rightful-yarn-52a.notion.site/Unity-98c4af0304004532908acdb4b9b4b456)           |
 | -------- | ---- | ---- | ---- | ---- |   
 
 <br>
