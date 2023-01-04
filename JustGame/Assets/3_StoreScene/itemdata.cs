@@ -8,7 +8,7 @@ using TMPro;
 [System.Serializable]
 public class Item
 {
-    public Item(string type, string itemName, string itemexp, string itemdesc, string itemPrice,string itemImagestr)
+    public Item (string type, string itemName, string itemexp, string itemdesc, string itemPrice,string itemImagestr)
     {
         this.type = type;
         this.itemName = itemName;
@@ -25,7 +25,7 @@ public class Item
     public string itemPrice;
     public Sprite itemImage; 
 }
-public class itemdata : MonoBehaviour
+public class ItemData : MonoBehaviour
 {
     public TextAsset ItemDatabase;
     public List<Item> AllItemList;
@@ -67,9 +67,6 @@ public class itemdata : MonoBehaviour
         {
 
         }
-
-        
-     
     }
 
     /* public void changeMaterial()
