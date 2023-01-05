@@ -5,6 +5,6 @@ public class RestartButtonController : MonoBehaviour
 {
     public void OnClick()
     {
-        SceneManager.LoadScene("MainPage");
+        SceneManager.LoadScene("MainScene");
     }
 }

@@ -18,6 +18,6 @@ public class SceneController : MonoBehaviour
     }
     public void SceneChange()
     {
-        SceneManager.LoadScene("NextPage");
+        SceneManager.LoadScene("BattleScene");
     }
 }
