@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySetting : MonoBehaviour {
-    static int HP;
-    static int attackLV; //attackMin, attackMax; (min: LV / max: LV * 2)
-    static int defenseLV; //deffenceMin, deffenceMax;
-    static int recoveryLV; //recoveryMin, recoveryMax;
+    public static int HP = 50;
+    public static int attackLV = 1; //attackMin, attackMax; (min: LV / max: LV * 2)
+    public static int defenseLV = 1; //deffenceMin, deffenceMax;
+    public static int recoveryLV = 1; //recoveryMin, recoveryMax;
 }

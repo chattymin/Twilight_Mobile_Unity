@@ -5,28 +5,32 @@ using UnityEngine.UI;
 
 public class ActionSelectController : MonoBehaviour {
     public GameObject attackEffect;
-    public GameObject defenceEffect;
-    public GameObject healEffect;
+    public GameObject defenseEffect;
+    public GameObject recoveryEffect;
+    public string Action;
 
     public void Start() {
         attackEffect.SetActive(false);
-        defenceEffect.SetActive(false);
-        healEffect.SetActive(false);
+        defenseEffect.SetActive(false);
+        recoveryEffect.SetActive(false);
     }
 
     public void SelectAttack() {
         attackEffect.SetActive(true);
-        defenceEffect.SetActive(false);
-        healEffect.SetActive(false);
+        defenseEffect.SetActive(false);
+        recoveryEffect.SetActive(false);
+        Action = "Attack";
     }
-    public void SelectDefence() {
+    public void SelectDefense() {
         attackEffect.SetActive(false);
-        defenceEffect.SetActive(true);
-        healEffect.SetActive(false);
+        defenseEffect.SetActive(true);
+        recoveryEffect.SetActive(false);
+        Action = "Defense";
     }
-    public void SelectHeal() {
+    public void SelectRecovery() {
         attackEffect.SetActive(false);
-        defenceEffect.SetActive(false);
-        healEffect.SetActive(true);
+        defenseEffect.SetActive(false);
+        recoveryEffect.SetActive(true);
+        Action = "Recovery";
     }
 }
