@@ -14,6 +14,7 @@ public class EnemyBattleController : MonoBehaviour {
     public TextMeshProUGUI enemyRecoveryValueText; //�ൿ�� �ൿ����.
 
     public int enemyMaxValue; //�ൿ���� �ִ밪.
+    public int enemyActionValue; //�ൿ��
     public bool flag;
 
     public void Start() { //�⺻ ���� (��� ��Ȱ��ȭ)
@@ -27,7 +28,7 @@ public class EnemyBattleController : MonoBehaviour {
         flag = true;
     }
 
-    // 이거
+    public int enemyRandomAction; //���� �ൿ: 1, 2, 3 �� ������� ����
     public void EnemyActionSelectRun() { //Ȯ�� ��ư�� ������ �� �޴��� �������� 
         if (StateSetting.CompareStates("BattleST") && flag)
         {
@@ -58,11 +59,12 @@ public class EnemyBattleController : MonoBehaviour {
         enemyDefense.SetActive(false);
         enemyRecovery.SetActive(false);
     }
-    public void SelectAttackVal() { //���� ���� �� ���ϱ�
-        int attack = EnemySetting.attackLV; //���� �ɷ�ġ �ҷ�����
-        enemyMaxValue = attack * 2; //�ִ밪�� ���� ������ 2��
-        int attackValue = Random.Range(attack, enemyMaxValue + 1); //����
-        enemyAttackValueText.text = attackValue.ToString(); //���ݰ��� ���ڿ��� ��ȯ
+
+    public void SelectAttackVal() { //��� ���� �� ���ϱ�
+        int attack = EnemySetting.attackLV; //��� �ɷ�ġ �ҷ����
+        enemyMaxValue = attack * 2; //�ִ밪� ��� ������ 2��
+        enemyActionValue = Random.Range(attack, enemyMaxValue + 1); //����
+        enemyAttackValueText.text = enemyActionValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
     }
     public void ShowAttackValue() { //���� �ൿ�� ǥ��
         SelectAttackVal();
@@ -76,10 +78,10 @@ public class EnemyBattleController : MonoBehaviour {
         enemyRecovery.SetActive(false);
     }
     public void SelectDefenseVal() { //��� ���� �� ���ϱ�
-        int defense = EnemySetting.defenseLV; //��� �ɷ�ġ �ҷ�����
-        enemyMaxValue = defense * 2; //�ִ밪�� ��� ������ 2��
-        int defenseValue = Random.Range(defense, enemyMaxValue + 1); //����
-        enemyDefenseValueText.text = defenseValue.ToString(); //���� ���ڿ��� ��ȯ
+        int defense = EnemySetting.defenseLV; //��� �ɷ�ġ �ҷ����
+        enemyMaxValue = defense * 2; //�ִ밪� ��� ������ 2��
+        enemyActionValue = Random.Range(defense, enemyMaxValue + 1); //����
+        enemyDefenseValueText.text = enemyActionValue.ToString(); //��� ���ڿ��� ��ȯ
     }
     public void ShowDefenseValue() { //��� �ൿ�� ǥ��
         enemyAttackValueText.text = "";
@@ -93,10 +95,10 @@ public class EnemyBattleController : MonoBehaviour {
         enemyRecovery.SetActive(true); //�̹��� ǥ��
     }
     public void SelectRecoveryVal() { //ȸ�� ���� �� ���ϱ�
-        int recovery = EnemySetting.recoveryLV; //ȸ�� �ɷ�ġ �ҷ�����
-        enemyMaxValue = recovery * 2; //�ִ밪�� ȸ�� ������ 2��
-        int recoveryValue = Random.Range(recovery, enemyMaxValue + 1); //����
-        enemyRecoveryValueText.text = recoveryValue.ToString(); //���ݰ��� ���ڿ��� ��ȯ
+        int recovery = EnemySetting.recoveryLV; //ȸ�� �ɷ�ġ �ҷ����
+        enemyMaxValue = recovery * 2; //�ִ밪� ȸ�� ������ 2��
+        enemyActionValue = Random.Range(recovery, enemyMaxValue + 1); //����
+        enemyRecoveryValueText.text = enemyActionValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
     }
     public void ShowRecoveryValue() { //ȸ�� �ൿ�� ǥ��
         enemyAttackValueText.text = "";

@@ -16,6 +16,7 @@ public class PlayerBattleController : MonoBehaviour {
 
     public int maxValue; //�ൿ���� �ִ밪.
     public string playerSelected; //�÷��̾ ������ �ൿ ���� ��ȯ.
+    public int playerActionValue; //행동값
 
     public const string BATTLEST = "BattleST";
 
@@ -59,12 +60,11 @@ public class PlayerBattleController : MonoBehaviour {
         selectDefense.SetActive(false);
         selectRecovery.SetActive(false);
     }
-
     public void SelectAttackVal() { //��� ���� �� ���ϱ�
         int attack = PlayerSetting.attackLV; //��� �ɷ�ġ �ҷ����
         maxValue = attack * 2; //�ִ밪� ��� ������ 2��
-        int attackValue = Random.Range(attack, maxValue + 1); //����
-        attackValueText.text = attackValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
+        playerActionValue = Random.Range(attack, maxValue + 1); //����
+        attackValueText.text = playerActionValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
     }
     public void ShowAttackValue() { //��� �ൿ�� ǥ��
         SelectAttackVal();
@@ -78,12 +78,11 @@ public class PlayerBattleController : MonoBehaviour {
         selectDefense.SetActive(true); //�̹��� ǥ��
         selectRecovery.SetActive(false);
     }
-
     public void SelectDefenseVal() { //��� ���� �� ���ϱ�
         int defense = PlayerSetting.defenseLV; //��� �ɷ�ġ �ҷ����
         maxValue = defense * 2; //�ִ밪� ��� ������ 2��
-        int defenseValue = Random.Range(defense, maxValue + 1); //����
-        defenseValueText.text = defenseValue.ToString(); //��� ���ڿ��� ��ȯ
+        playerActionValue = Random.Range(defense, maxValue + 1); //����
+        defenseValueText.text = playerActionValue.ToString(); //��� ���ڿ��� ��ȯ
     }
     public void ShowDefenseValue() { //��� �ൿ�� ǥ��
         attackValueText.text = "";
@@ -97,12 +96,11 @@ public class PlayerBattleController : MonoBehaviour {
         selectDefense.SetActive(false);
         selectRecovery.SetActive(true); //�̹��� ǥ��
     }
-  
     public void SelectRecoveryVal() { //ȸ�� ���� �� ���ϱ�
         int recovery = PlayerSetting.recoveryLV; //ȸ�� �ɷ�ġ �ҷ����
         maxValue = recovery * 2; //�ִ밪� ȸ�� ������ 2��
-        int recoveryValue = Random.Range(recovery, maxValue + 1); //����
-        recoveryValueText.text = recoveryValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
+        playerActionValue = Random.Range(recovery, maxValue + 1); //����
+        recoveryValueText.text = playerActionValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
     }
     public void ShowRecoveryValue() { //ȸ�� �ൿ�� ǥ��
         attackValueText.text = "";
