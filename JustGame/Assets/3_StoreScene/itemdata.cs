@@ -18,6 +18,9 @@ public class ItemData : MonoBehaviour
     public Item exitItem;
     int indexNumber;
     public bool[] bought = new bool[10];
+    GameObject buy;
+    Image buyBtnImg;
+    public GameObject popup;
 
     /* start 버튼 클릭시 작동되는 메소드 
      * indexNumber : AllItemList에 저장된 Item 요소 활용 위해 indexnumber 활용. 
@@ -29,21 +32,43 @@ public class ItemData : MonoBehaviour
      sprite 컴포넌트에 저장함.
      *itemdesc : exitItem 의 itemdesc를 저장함. 
     */
+
+    private void Start()
+    {
+        changeImage();
+
+        buy = GameObject.Find("buy");
+        buyBtnImg = buy.GetComponent<Image>();
+        popup =  GameObject.Find("popup");
+        popup.SetActive(false);
+    }
+
     public void changeImage() {
         indexNumber = Random.Range(0, 10);
-        while (bought[indexNumber] == true) {
-            indexNumber= Random.Range(0, 10);
+        if (bought[indexNumber] == true){ 
+            buyBtnImg.color = Color.gray;
         }
-        exitItem = AllItemList[indexNumber];
-        showImage.sprite = exitItem.itemImage;
-        itemdesc = GameObject.Find("desc");
-        itemdesc.GetComponent<TextMeshProUGUI>().text = exitItem.itemdesc;
+        else { 
+            exitItem = AllItemList[indexNumber];
+            showImage.sprite = exitItem.itemImage;
+            itemdesc = GameObject.Find("desc");
+            itemdesc.GetComponent<TextMeshProUGUI>().text = exitItem.itemdesc;
+        }
     }
 
     /* 구매 버튼 클릭 시 bought 배열 true로 변경. 
      * indexNumber활용해 해당 인덱스번호 내용 수정. 
     */
     public void boughtUpdate() {
+        buyBtnImg.color = Color.gray;
+
        bought[indexNumber] = true;
+       showImage.sprite = AllItemList[10].itemImage;
+       AllItemList[indexNumber].itemImage = AllItemList[10].itemImage;
+       AllItemList[indexNumber].itemdesc = (indexNumber+1).ToString()+"은 SOLD OUT입니다.";
+       itemdesc = GameObject.Find("desc");
+       itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[indexNumber].itemdesc;
+
+        
     }
 }

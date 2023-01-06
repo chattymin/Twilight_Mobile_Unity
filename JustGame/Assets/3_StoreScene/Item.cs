@@ -9,11 +9,11 @@ public class Item
     public string itemName;
     public string itemexp;
     public string itemdesc;
-    public string itemPrice;
+    public int itemPrice;
     public Sprite itemImage;
 
     // 게임 첫 시작 시 Item 리스트 정의하는 생성자
-    public Item(string type, string itemName, string itemexp, string itemdesc, string itemPrice)
+    public Item(string type, string itemName, string itemexp, string itemdesc, int itemPrice)
     {
         this.type = type;
         this.itemName = itemName;

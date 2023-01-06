@@ -2,39 +2,117 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System.Globalization;
 
 public class buyScript : MonoBehaviour
 {
     Item myItem;
     public Image myItemImg;
-    PlayerSetting p1 = GameObject.Find("").GetComponent<PlayerSetting>();
-
+    TextMeshProUGUI curmoney;
+    TextMeshProUGUI attackexp;
+    TextMeshProUGUI defenseexp;
+    TextMeshProUGUI recoveryexp;
+    bool check = false;
+    ItemData itemD;
+   
     //구매버튼 클릭시 buy 메소드에서 구매한 상품을 인벤토리에 표시
     //player정보 업데이트하는 함수 호출. 
 
-    public void buyItem(){
-        
-        ItemData itemD=GameObject.Find("randomstart").GetComponent<ItemData>();
-        itemD.boughtUpdate();
-        myItem = itemD.exitItem;      
-        myItemImg.sprite = myItem.itemImage;
-        //p1.item = myItem;
-        //p1.money -= myItem.itemPrice;
+    private void Start()
+    {
 
+        itemD = GameObject.Find("GameObject").GetComponent<ItemData>();
+        myItem = itemD.exitItem;
+
+        curmoney = GameObject.Find("curmoney").GetComponent<TextMeshProUGUI>();
+        curmoney.text = PlayerSetting.money.ToString();
+
+        attackexp = GameObject.Find("attackexp").GetComponent<TextMeshProUGUI>();
+        attackexp.text = PlayerSetting.attackLV.ToString();
+
+        defenseexp = GameObject.Find("defenseexp").GetComponent<TextMeshProUGUI>();
+        defenseexp.text = PlayerSetting.defenseLV.ToString();
+
+        recoveryexp = GameObject.Find("recoveryexp").GetComponent<TextMeshProUGUI>();
+        recoveryexp.text = PlayerSetting.recoveryLV.ToString();
+        
+    }
+    public void buyItem(){
+        if (checkMoney(myItem.itemPrice))
+          {
+            itemD.popup.SetActive(true) ;
+          }
+          else { 
+
+             if (check == true) {
+                itemD.popup.SetActive(true);
+            }
+            else {
+         
+
+               check = true;
+               //ItemData itemD = GameObject.Find("GameObject").GetComponent<ItemData>();
+               myItemImg.sprite = myItem.itemImage;
+               itemD.boughtUpdate();
+               PlayerSetting.item = myItem;
+               PlayerSetting.money -= myItem.itemPrice;
+                playerInfo.updateMoney(); 
+               }
+           }
     }
 
     public void buyExpAttack(){
-        // p1.attackLV += 1;
-        // p1.money -= myItem.itemPrice;
+        if (checkMoney(myItem.itemPrice))
+        {
+            itemD.popup.SetActive(true);
+        }
+        else { 
+            PlayerSetting.attackLV += 1;
+            PlayerSetting.money -= 100;
+            attackexp.text = PlayerSetting.attackLV.ToString();
+            curmoney.text = PlayerSetting.money.ToString();
+
+         }
     }
 
     public void buyExpDefense(){
-        //defenseLV += 1;
-        //p1.money -= myItem.itemPrice;
+        if (checkMoney(myItem.itemPrice))
+        {
+            itemD.popup.SetActive(true);
+        }
+        else
+        {
+        PlayerSetting.defenseLV += 1;
+            PlayerSetting.money -= 100;
+            defenseexp.text = PlayerSetting.defenseLV.ToString();
+            curmoney.text = PlayerSetting.money.ToString();
+        } 
     }
 
     public void buyExpRecovery(){
-        //recoveryLV += 1;
-        //p1.money -= myItem.itemPrice;
+        if (checkMoney(myItem.itemPrice))
+        {
+            itemD.popup.SetActive(true);
+        }
+        else
+        {
+            PlayerSetting.recoveryLV += 1;
+            PlayerSetting.money -= 100;
+            recoveryexp.text = PlayerSetting.recoveryLV.ToString();
+            curmoney.text = PlayerSetting.money.ToString();
+        }
+    }
+
+    bool checkMoney(int money){
+        if ((PlayerSetting.money-money) <= 0) {
+            return true;
+        }
+        return false;        
+    }
+
+
+    public void popup() {
+        GameObject.Find("popup").SetActive(false);
     }
 }
