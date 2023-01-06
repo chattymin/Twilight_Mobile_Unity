@@ -1,26 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerBattleController : MonoBehaviour {
     public GameObject selectAttack; //�÷��̾
     public GameObject selectDefense; //������ �ൿ��
     public GameObject selectRecovery; //�̹�����.
 
-    public GameObject attackValue; //�÷��̾
-    public GameObject defenseValue; //������ �ൿ��
-    public GameObject recoveryValue; //�ൿ�� �ؽ�Ʈ.
+
+    public TextMeshProUGUI attackValueText;
+    public TextMeshProUGUI defenseValueText;
+    public TextMeshProUGUI recoveryValueText;
 
     public int maxValue; //�ൿ���� �ִ밪.
     public string playerSelected; //�÷��̾ ������ �ൿ ���� ��ȯ.
 
     public const string BATTLEST = "BattleST";
 
-    public void Start() { //�⺻ ����
+
+    public void Start() { //�⺻ ��� (��� ��Ȱ��ȭ)
         selectAttack.SetActive(false); //�ൿ �̹���
-        selectDefense.SetActive(false); //����!!!
-        selectRecovery.SetActive(false); //����� ����
-        playerSelected = GameObject.Find("ActionManager") //�ൿ ��������
+        selectDefense.SetActive(false); //���!!!
+        selectRecovery.SetActive(false); //���� ����.
+
+        attackValueText.text = "";
+        defenseValueText.text = "";
+        recoveryValueText.text = "";
+
+        playerSelected = GameObject.Find("ActionManager") //�ൿ ������
             .GetComponent<ActionSelectController>().Action;
     }
 
@@ -42,7 +51,6 @@ public class PlayerBattleController : MonoBehaviour {
             SelectRecoveryValue(); //ȸ�� �ൿ�� ǥ��
             StateSetting.SetStates(BATTLEST);
         }
-        //else ~
     }
 
 
@@ -51,16 +59,17 @@ public class PlayerBattleController : MonoBehaviour {
         selectDefense.SetActive(false);
         selectRecovery.SetActive(false);
     }
-    public int SelectAttackVal() { //���� ���� �� ���ϱ�
-        int attack = PlayerSetting.attackLV; //���� �ɷ�ġ �ҷ�����
-        maxValue = attack * 2; //�ִ밪�� ���� ������ 2��
+
+    public void SelectAttackVal() { //��� ���� �� ���ϱ�
+        int attack = PlayerSetting.attackLV; //��� �ɷ�ġ �ҷ����
+        maxValue = attack * 2; //�ִ밪� ��� ������ 2��
         int attackValue = Random.Range(attack, maxValue + 1); //����
-        return attackValue; //���ݰ� ��ȯ
+        attackValueText.text = attackValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
     }
-    public void SelectAttackValue() { //���� �ൿ�� ǥ��
-        attackValue.SetActive(true); //�ؽ�Ʈ ǥ��
-        defenseValue.SetActive(false);
-        recoveryValue.SetActive(false);
+    public void ShowAttackValue() { //��� �ൿ�� ǥ��
+        SelectAttackVal();
+        defenseValueText.text = "";
+        recoveryValueText.text = "";
     }
 
 
@@ -69,16 +78,17 @@ public class PlayerBattleController : MonoBehaviour {
         selectDefense.SetActive(true); //�̹��� ǥ��
         selectRecovery.SetActive(false);
     }
-    public int SelectADefenseVal() { //��� ���� �� ���ϱ�
-        int defense = PlayerSetting.defenseLV; //��� �ɷ�ġ �ҷ�����
-        maxValue = defense * 2; //�ִ밪�� ��� ������ 2��
+
+    public void SelectDefenseVal() { //��� ���� �� ���ϱ�
+        int defense = PlayerSetting.defenseLV; //��� �ɷ�ġ �ҷ����
+        maxValue = defense * 2; //�ִ밪� ��� ������ 2��
         int defenseValue = Random.Range(defense, maxValue + 1); //����
-        return defenseValue; //�� ��ȯ
+        defenseValueText.text = defenseValue.ToString(); //��� ���ڿ��� ��ȯ
     }
-    public void SelectDefenseValue() { //��� �ൿ�� ǥ��
-        attackValue.SetActive(false);
-        defenseValue.SetActive(true); //�ؽ�Ʈ ǥ��
-        recoveryValue.SetActive(false);
+    public void ShowDefenseValue() { //��� �ൿ�� ǥ��
+        attackValueText.text = "";
+        SelectDefenseVal();
+        recoveryValueText.text = "";
     }
 
 
@@ -87,15 +97,16 @@ public class PlayerBattleController : MonoBehaviour {
         selectDefense.SetActive(false);
         selectRecovery.SetActive(true); //�̹��� ǥ��
     }
-    public int SelectRecoveryVal() { //ȸ�� ���� �� ���ϱ�
-        int recovery = PlayerSetting.recoveryLV; //ȸ�� �ɷ�ġ �ҷ�����
-        maxValue = recovery * 2; //�ִ밪�� ȸ�� ������ 2��
+  
+    public void SelectRecoveryVal() { //ȸ�� ���� �� ���ϱ�
+        int recovery = PlayerSetting.recoveryLV; //ȸ�� �ɷ�ġ �ҷ����
+        maxValue = recovery * 2; //�ִ밪� ȸ�� ������ 2��
         int recoveryValue = Random.Range(recovery, maxValue + 1); //����
-        return recoveryValue; //ȸ���� ��ȯ
+        recoveryValueText.text = recoveryValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
     }
-    public void SelectRecoveryValue() { //ȸ�� �ൿ�� ǥ��
-        attackValue.SetActive(false);
-        defenseValue.SetActive(false);
-        recoveryValue.SetActive(true); //�ؽ�Ʈ ǥ��
+    public void ShowRecoveryValue() { //ȸ�� �ൿ�� ǥ��
+        attackValueText.text = "";
+        defenseValueText.text = "";
+        SelectRecoveryVal();
     }
 }
