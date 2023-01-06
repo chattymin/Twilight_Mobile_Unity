@@ -3,95 +3,99 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBattleController : MonoBehaviour {
-    public GameObject selectAttack; //ÇÃ·¹ÀÌ¾î°¡
-    public GameObject selectDefense; //¼±ÅÃÇÑ Çàµ¿ÀÇ
-    public GameObject selectRecovery; //ÀÌ¹ÌÁöµé.
+    public GameObject selectAttack; //ï¿½Ã·ï¿½ï¿½Ì¾î°¡
+    public GameObject selectDefense; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½
+    public GameObject selectRecovery; //ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½.
 
-    public GameObject attackValue; //ÇÃ·¹ÀÌ¾î°¡
-    public GameObject defenseValue; //¼±ÅÃÇÑ Çàµ¿ÀÇ
-    public GameObject recoveryValue; //Çàµ¿°ª ÅØ½ºÆ®.
+    public GameObject attackValue; //ï¿½Ã·ï¿½ï¿½Ì¾î°¡
+    public GameObject defenseValue; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½
+    public GameObject recoveryValue; //ï¿½àµ¿ï¿½ï¿½ ï¿½Ø½ï¿½Æ®.
 
-    public int maxValue; //Çàµ¿°ªÀÇ ÃÖ´ë°ª.
-    public string playerSelected; //ÇÃ·¹ÀÌ¾î°¡ ¼±ÅÃÇÑ Çàµ¿ Á¾·ù ¹ÝÈ¯.
+    public int maxValue; //ï¿½àµ¿ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ë°ª.
+    public string playerSelected; //ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯.
 
+    public const string BATTLEST = "BattleST";
 
-    public void Start() { //±âº» ¼³Á¤
-        selectAttack.SetActive(false); //Çàµ¿ ÀÌ¹ÌÁö
-        selectDefense.SetActive(false); //ÀüºÎ!!!
-        selectRecovery.SetActive(false); //¼û±â°í ½ÃÀÛ
-        playerSelected = GameObject.Find("ActionManager") //Çàµ¿ °¡Á®¿À±â
+    public void Start() { //ï¿½âº» ï¿½ï¿½ï¿½ï¿½
+        selectAttack.SetActive(false); //ï¿½àµ¿ ï¿½Ì¹ï¿½ï¿½ï¿½
+        selectDefense.SetActive(false); //ï¿½ï¿½ï¿½ï¿½!!!
+        selectRecovery.SetActive(false); //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        playerSelected = GameObject.Find("ActionManager") //ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             .GetComponent<ActionSelectController>().Action;
     }
 
     
-    public void ActionSelectRun() { //È®ÀÎ ¹öÆ°À» ´­·¶À» ¶§ ¸Þ´º°¡ ³»·Á°¡°í 
-        Start();                    //Çàµ¿ Á¾·ù¿¡ µû¶ó ¸Þ¼Òµå ½ÇÇà
-        if (playerSelected == "Attack") { //°ø°ÝÀ» ´­·¶À» °æ¿ì
-            SelectAttackImg(); //°ø°Ý ÀÌ¹ÌÁö Ç¥½Ã
-            SelectAttackValue(); //°ø°Ý Çàµ¿°ª Ç¥½Ã
+    public void ActionSelectRun() { //È®ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+        Start();                    //ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (playerSelected == "Attack") { //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+            SelectAttackImg(); //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+            SelectAttackValue(); //ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
+            StateSetting.SetStates(BATTLEST);
         }
-        else if (playerSelected == "Defense") { //¹æ¾î¸¦ ´­·¶À» °æ¿ì
-            SelectDefenseImg(); //¹æ¾î ÀÌ¹ÌÁö Ç¥½Ã
-            SelectDefenseValue(); //¹æ¾î Çàµ¿°ª Ç¥½Ã
+        else if (playerSelected == "Defense") { //ï¿½ï¿½î¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+            SelectDefenseImg(); //ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+            SelectDefenseValue(); //ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
+            StateSetting.SetStates(BATTLEST);
         }
-        else if (playerSelected == "Recovery") { //È¸º¹À» ´­·¶À» °æ¿ì
-            SelectRecoveryImg(); //È¸º¹ ÀÌ¹ÌÁö Ç¥½Ã
-            SelectRecoveryValue(); //È¸º¹ Çàµ¿°ª Ç¥½Ã
+        else if (playerSelected == "Recovery") { //È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+            SelectRecoveryImg(); //È¸ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+            SelectRecoveryValue(); //È¸ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
+            StateSetting.SetStates(BATTLEST);
         }
         //else ~
     }
 
 
-    public void SelectAttackImg() { //°ø°Ý ÀÌ¹ÌÁö Ç¥½Ã
-        selectAttack.SetActive(true); //ÀÌ¹ÌÁö Ç¥½Ã
+    public void SelectAttackImg() { //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+        selectAttack.SetActive(true); //ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         selectDefense.SetActive(false);
         selectRecovery.SetActive(false);
     }
-    public int SelectAttackVal() { //°ø°Ý ·£´ý °ª ±¸ÇÏ±â
-        int attack = PlayerSetting.attackLV; //°ø°Ý ´É·ÂÄ¡ ºÒ·¯¿À±â
-        maxValue = attack * 2; //ÃÖ´ë°ªÀº °ø°Ý ·¹º§ÀÇ 2¹è
-        int attackValue = Random.Range(attack, maxValue + 1); //·£´ý
-        return attackValue; //°ø°Ý°ª ¹ÝÈ¯
+    public int SelectAttackVal() { //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+        int attack = PlayerSetting.attackLV; //ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½Ä¡ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+        maxValue = attack * 2; //ï¿½Ö´ë°ªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½
+        int attackValue = Random.Range(attack, maxValue + 1); //ï¿½ï¿½ï¿½ï¿½
+        return attackValue; //ï¿½ï¿½ï¿½Ý°ï¿½ ï¿½ï¿½È¯
     }
-    public void SelectAttackValue() { //°ø°Ý Çàµ¿°ª Ç¥½Ã
-        attackValue.SetActive(true); //ÅØ½ºÆ® Ç¥½Ã
+    public void SelectAttackValue() { //ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
+        attackValue.SetActive(true); //ï¿½Ø½ï¿½Æ® Ç¥ï¿½ï¿½
         defenseValue.SetActive(false);
         recoveryValue.SetActive(false);
     }
 
 
-    public void SelectDefenseImg() { //¹æ¾î ÀÌ¹ÌÁö Ç¥½Ã
+    public void SelectDefenseImg() { //ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         selectAttack.SetActive(false);
-        selectDefense.SetActive(true); //ÀÌ¹ÌÁö Ç¥½Ã
+        selectDefense.SetActive(true); //ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         selectRecovery.SetActive(false);
     }
-    public int SelectADefenseVal() { //¹æ¾î ·£´ý °ª ±¸ÇÏ±â
-        int defense = PlayerSetting.defenseLV; //¹æ¾î ´É·ÂÄ¡ ºÒ·¯¿À±â
-        maxValue = defense * 2; //ÃÖ´ë°ªÀº ¹æ¾î ·¹º§ÀÇ 2¹è
-        int defenseValue = Random.Range(defense, maxValue + 1); //·£´ý
-        return defenseValue; //¹æ¾î°ª ¹ÝÈ¯
+    public int SelectADefenseVal() { //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+        int defense = PlayerSetting.defenseLV; //ï¿½ï¿½ï¿½ ï¿½É·ï¿½Ä¡ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+        maxValue = defense * 2; //ï¿½Ö´ë°ªï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½
+        int defenseValue = Random.Range(defense, maxValue + 1); //ï¿½ï¿½ï¿½ï¿½
+        return defenseValue; //ï¿½ï¿½î°ª ï¿½ï¿½È¯
     }
-    public void SelectDefenseValue() { //¹æ¾î Çàµ¿°ª Ç¥½Ã
+    public void SelectDefenseValue() { //ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
         attackValue.SetActive(false);
-        defenseValue.SetActive(true); //ÅØ½ºÆ® Ç¥½Ã
+        defenseValue.SetActive(true); //ï¿½Ø½ï¿½Æ® Ç¥ï¿½ï¿½
         recoveryValue.SetActive(false);
     }
 
 
-    public void SelectRecoveryImg() { //È¸º¹ ÀÌ¹ÌÁö Ç¥½Ã
+    public void SelectRecoveryImg() { //È¸ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         selectAttack.SetActive(false); 
         selectDefense.SetActive(false);
-        selectRecovery.SetActive(true); //ÀÌ¹ÌÁö Ç¥½Ã
+        selectRecovery.SetActive(true); //ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
     }
-    public int SelectRecoveryVal() { //È¸º¹ ·£´ý °ª ±¸ÇÏ±â
-        int recovery = PlayerSetting.recoveryLV; //È¸º¹ ´É·ÂÄ¡ ºÒ·¯¿À±â
-        maxValue = recovery * 2; //ÃÖ´ë°ªÀº È¸º¹ ·¹º§ÀÇ 2¹è
-        int recoveryValue = Random.Range(recovery, maxValue + 1); //·£´ý
-        return recoveryValue; //È¸º¹°ª ¹ÝÈ¯
+    public int SelectRecoveryVal() { //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+        int recovery = PlayerSetting.recoveryLV; //È¸ï¿½ï¿½ ï¿½É·ï¿½Ä¡ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
+        maxValue = recovery * 2; //ï¿½Ö´ë°ªï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½
+        int recoveryValue = Random.Range(recovery, maxValue + 1); //ï¿½ï¿½ï¿½ï¿½
+        return recoveryValue; //È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
     }
-    public void SelectRecoveryValue() { //È¸º¹ Çàµ¿°ª Ç¥½Ã
+    public void SelectRecoveryValue() { //È¸ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
         attackValue.SetActive(false);
         defenseValue.SetActive(false);
-        recoveryValue.SetActive(true); //ÅØ½ºÆ® Ç¥½Ã
+        recoveryValue.SetActive(true); //ï¿½Ø½ï¿½Æ® Ç¥ï¿½ï¿½
     }
 }

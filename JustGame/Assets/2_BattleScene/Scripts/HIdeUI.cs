@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class HIdeUI : MonoBehaviour
 {
-    static bool state;
     public const int speed = 20;
    
     // Start is called before the first frame update
     void Start()
     {
-        state = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!state) {
+        if (StateSetting.CompareStates("BattleST")) {
             if (this.transform.position.y > -255)
                 this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - speed, this.transform.position.z);
         }
@@ -25,15 +23,4 @@ public class HIdeUI : MonoBehaviour
                 this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + speed, this.transform.position.z);
         }
     }
-
-    public void Hide()
-    {
-        state = false;
-    }
-
-    public void Appear()
-    {
-        state = true;
-    }
-
 }
