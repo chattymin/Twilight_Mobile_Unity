@@ -1456,6 +1456,7 @@ GameObject:
   - component: {fileID: 710471707}
   - component: {fileID: 710471709}
   - component: {fileID: 710471708}
+  - component: {fileID: 710471710}
   m_Layer: 5
   m_Name: Action_Back
   m_TagString: Untagged
@@ -1525,6 +1526,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710471706}
   m_CullTransparentMesh: 1
+--- !u!114 &710471710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710471706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0a1fbd7e26f4c34b3fc66a3101807f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &724711508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,6 +2572,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 710471710}
+        m_TargetAssemblyTypeName: HIdeUI, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1315566764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,7 +3370,7 @@ MonoBehaviour:
   m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
-  m_sharedMaterial: {fileID: -8603808979718404457, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
+  m_sharedMaterial: {fileID: 9183169565860488290, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4142,7 +4167,7 @@ MonoBehaviour:
   m_text: 100/100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
-  m_sharedMaterial: {fileID: -8603808979718404457, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
+  m_sharedMaterial: {fileID: 9183169565860488290, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4415,7 +4440,7 @@ MonoBehaviour:
   m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
-  m_sharedMaterial: {fileID: -8603808979718404457, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
+  m_sharedMaterial: {fileID: 9183169565860488290, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
