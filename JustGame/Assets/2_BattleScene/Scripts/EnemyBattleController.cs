@@ -5,95 +5,102 @@ using UnityEngine.UI;
 using TMPro;
 
 public class EnemyBattleController : MonoBehaviour {
-    public GameObject enemyAttack; //ÀûÀÇ
-    public GameObject enemyDefense; //¼±ÅÃµÈ Çàµ¿ÀÇ
-    public GameObject enemyRecovery; //ÀÌ¹ÌÁöµé.
+    public GameObject enemyAttack; //ï¿½ï¿½ï¿½ï¿½
+    public GameObject enemyDefense; //ï¿½ï¿½ï¿½Ãµï¿½ ï¿½àµ¿ï¿½ï¿½
+    public GameObject enemyRecovery; //ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½.
 
-    public TextMeshProUGUI enemyAttackValueText; //ÀûÀÇ
-    public TextMeshProUGUI enemyDefenseValueText; //¼±ÅÃµÈ 
-    public TextMeshProUGUI enemyRecoveryValueText; //Çàµ¿ÀÇ Çàµ¿°ªµé.
+    public TextMeshProUGUI enemyAttackValueText; //ï¿½ï¿½ï¿½ï¿½
+    public TextMeshProUGUI enemyDefenseValueText; //ï¿½ï¿½ï¿½Ãµï¿½ 
+    public TextMeshProUGUI enemyRecoveryValueText; //ï¿½àµ¿ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ï¿½ï¿½.
 
-    public int enemyMaxValue; //Çàµ¿°ªÀÇ ÃÖ´ë°ª.
-    public int enemyActionValue; //Çàµ¿°ª
+    public int enemyMaxValue; //ï¿½àµ¿ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ë°ª.
+    public int enemyActionValue; //ï¿½àµ¿ï¿½ï¿½
+    public bool flag;
 
-
-    public void Start() { //±âº» ¼³Á¤ (¿ä¼Ò ºñÈ°¼ºÈ­)
-        enemyAttack.SetActive(false); //Çàµ¿ ÀÌ¹ÌÁö
-        enemyDefense.SetActive(false); //ÀüºÎ!!!
-        enemyRecovery.SetActive(false); //¼û±â°í ½ÃÀÛ.
+    public void Start() { //ï¿½âº» ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­)
+        enemyAttack.SetActive(false); //ï¿½àµ¿ ï¿½Ì¹ï¿½ï¿½ï¿½
+        enemyDefense.SetActive(false); //ï¿½ï¿½ï¿½ï¿½!!!
+        enemyRecovery.SetActive(false); //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 
         enemyAttackValueText.text = "";
         enemyDefenseValueText.text = "";
         enemyRecoveryValueText.text = "";
+        flag = true;
     }
 
-    public int enemyRandomAction; //ÀûÀÇ Çàµ¿: 1, 2, 3 Áß ·£´ýÀ¸·Î ¼±ÅÃ
-    public void EnemyActionSelectRun() { //È®ÀÎ ¹öÆ°À» ´­·¶À» ¶§ ¸Þ´º°¡ ³»·Á°¡°í 
-        Start();                         //Çàµ¿ Á¾·ù¿¡ µû¶ó ÇÃ·¹ÀÌ¾î¿Í µ¿½Ã¿¡ ¸Þ¼Òµå ½ÇÇà
-        enemyRandomAction = Random.Range(1, 4);
-        if (enemyRandomAction == 1) { //1ÀÌ ³ª¿À¸é °ø°Ý
-            SelectAttackImg(); //°ø°Ý ÀÌ¹ÌÁö Ç¥½Ã
-            ShowAttackValue(); //°ø°Ý Çàµ¿°ª Ç¥½Ã
-        }
-        else if (enemyRandomAction == 2) { //2°¡ ³ª¿À¸é °ø°Ý
-            SelectDefenseImg(); //¹æ¾î ÀÌ¹ÌÁö Ç¥½Ã
-            ShowDefenseValue(); //¹æ¾î Çàµ¿°ª Ç¥½Ã
-        }
-        else if (enemyRandomAction == 3) { //3ÀÌ ³ª¿À¸é °ø°Ý
-            SelectRecoveryImg(); //È¸º¹ ÀÌ¹ÌÁö Ç¥½Ã
-            ShowRecoveryValue(); //È¸º¹ Çàµ¿°ª Ç¥½Ã
+    public int enemyRandomAction; //ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿: 1, 2, 3 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public void EnemyActionSelectRun() { //È®ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+        if (StateSetting.CompareStates("BattleST") && flag)
+        {
+            Start();                         //ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½Þ¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½
+            int enemyRandomAction = Random.Range(1, 4); //ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿: 1, 2, 3 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            if (enemyRandomAction == 1)
+            { //1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                SelectAttackImg(); //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+                ShowAttackValue(); //ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
+            }
+            else if (enemyRandomAction == 2)
+            { //2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                SelectDefenseImg(); //ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+                ShowDefenseValue(); //ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
+            }
+            else if (enemyRandomAction == 3)
+            { //3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                SelectRecoveryImg(); //È¸ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+                ShowRecoveryValue(); //È¸ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
+            }
+            flag = false;
         }
     }
 
 
-    public void SelectAttackImg() { //°ø°Ý ÀÌ¹ÌÁö Ç¥½Ã
-        enemyAttack.SetActive(true); //ÀÌ¹ÌÁö Ç¥½Ã
+    public void SelectAttackImg() { //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+        enemyAttack.SetActive(true); //ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         enemyDefense.SetActive(false);
         enemyRecovery.SetActive(false);
     }
-    public void SelectAttackVal() { //°ø°Ý ·£´ý °ª ±¸ÇÏ±â
-        int attack = EnemySetting.attackLV; //°ø°Ý ´É·ÂÄ¡ ºÒ·¯¿À±â
-        enemyMaxValue = attack * 2; //ÃÖ´ë°ªÀº °ø°Ý ·¹º§ÀÇ 2¹è
-        enemyActionValue = Random.Range(attack, enemyMaxValue + 1); //·£´ý
-        enemyAttackValueText.text = enemyActionValue.ToString(); //°ø°Ý°ªÀ» ¹®ÀÚ¿­·Î º¯È¯
+
+    public void SelectAttackVal() { //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+        int attack = EnemySetting.attackLV; //ï¿½ï¿½ï¿½ ï¿½É·ï¿½Ä¡ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½
+        enemyMaxValue = attack * 2; //ï¿½Ö´ë°ªï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½
+        enemyActionValue = Random.Range(attack, enemyMaxValue + 1); //ï¿½ï¿½ï¿½ï¿½
+        enemyAttackValueText.text = enemyActionValue.ToString(); //ï¿½ï¿½Ý°ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
     }
-    public void ShowAttackValue() { //°ø°Ý Çàµ¿°ª Ç¥½Ã
+    public void ShowAttackValue() { //ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
         SelectAttackVal();
         enemyDefenseValueText.text = "";
         enemyRecoveryValueText.text = "";
     }
 
-
-    public void SelectDefenseImg() { //¹æ¾î ÀÌ¹ÌÁö Ç¥½Ã
+    public void SelectDefenseImg() { //ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         enemyAttack.SetActive(false);
-        enemyDefense.SetActive(true); //ÀÌ¹ÌÁö Ç¥½Ã
+        enemyDefense.SetActive(true); //ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         enemyRecovery.SetActive(false);
     }
-    public void SelectDefenseVal() { //¹æ¾î ·£´ý °ª ±¸ÇÏ±â
-        int defense = EnemySetting.defenseLV; //¹æ¾î ´É·ÂÄ¡ ºÒ·¯¿À±â
-        enemyMaxValue = defense * 2; //ÃÖ´ë°ªÀº ¹æ¾î ·¹º§ÀÇ 2¹è
-        enemyActionValue = Random.Range(defense, enemyMaxValue + 1); //·£´ý
-        enemyDefenseValueText.text = enemyActionValue.ToString(); //¹æ¾î°ªÀ» ¹®ÀÚ¿­·Î º¯È¯
+    public void SelectDefenseVal() { //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+        int defense = EnemySetting.defenseLV; //ï¿½ï¿½ï¿½ ï¿½É·ï¿½Ä¡ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½
+        enemyMaxValue = defense * 2; //ï¿½Ö´ë°ªï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½
+        enemyActionValue = Random.Range(defense, enemyMaxValue + 1); //ï¿½ï¿½ï¿½ï¿½
+        enemyDefenseValueText.text = enemyActionValue.ToString(); //ï¿½ï¿½î°ªï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
     }
-    public void ShowDefenseValue() { //¹æ¾î Çàµ¿°ª Ç¥½Ã
+    public void ShowDefenseValue() { //ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
         enemyAttackValueText.text = "";
         SelectDefenseVal();
         enemyRecoveryValueText.text = "";
     }
 
-
-    public void SelectRecoveryImg() { //È¸º¹ ÀÌ¹ÌÁö Ç¥½Ã
+    public void SelectRecoveryImg() { //È¸ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         enemyAttack.SetActive(false);
         enemyDefense.SetActive(false);
-        enemyRecovery.SetActive(true); //ÀÌ¹ÌÁö Ç¥½Ã
+        enemyRecovery.SetActive(true); //ï¿½Ì¹ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
     }
-    public void SelectRecoveryVal() { //È¸º¹ ·£´ý °ª ±¸ÇÏ±â
-        int recovery = EnemySetting.recoveryLV; //È¸º¹ ´É·ÂÄ¡ ºÒ·¯¿À±â
-        enemyMaxValue = recovery * 2; //ÃÖ´ë°ªÀº È¸º¹ ·¹º§ÀÇ 2¹è
-        enemyActionValue = Random.Range(recovery, enemyMaxValue + 1); //·£´ý
-        enemyRecoveryValueText.text = enemyActionValue.ToString(); //°ø°Ý°ªÀ» ¹®ÀÚ¿­·Î º¯È¯
+    public void SelectRecoveryVal() { //È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+        int recovery = EnemySetting.recoveryLV; //È¸ï¿½ï¿½ ï¿½É·ï¿½Ä¡ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½
+        enemyMaxValue = recovery * 2; //ï¿½Ö´ë°ªï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½
+        enemyActionValue = Random.Range(recovery, enemyMaxValue + 1); //ï¿½ï¿½ï¿½ï¿½
+        enemyRecoveryValueText.text = enemyActionValue.ToString(); //ï¿½ï¿½Ý°ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
     }
-    public void ShowRecoveryValue() { //È¸º¹ Çàµ¿°ª Ç¥½Ã
+    public void ShowRecoveryValue() { //È¸ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ Ç¥ï¿½ï¿½
         enemyAttackValueText.text = "";
         enemyDefenseValueText.text = "";
         SelectRecoveryVal();
