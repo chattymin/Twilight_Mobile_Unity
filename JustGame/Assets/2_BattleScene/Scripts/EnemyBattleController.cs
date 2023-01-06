@@ -14,6 +14,7 @@ public class EnemyBattleController : MonoBehaviour {
     public TextMeshProUGUI enemyRecoveryValueText; //행동의 행동값들.
 
     public int enemyMaxValue; //행동값의 최대값.
+    public int enemyActionValue; //행동값
 
 
     public void Start() { //기본 설정 (요소 비활성화)
@@ -26,10 +27,10 @@ public class EnemyBattleController : MonoBehaviour {
         enemyRecoveryValueText.text = "";
     }
 
-
+    public int enemyRandomAction; //적의 행동: 1, 2, 3 중 랜덤으로 선택
     public void EnemyActionSelectRun() { //확인 버튼을 눌렀을 때 메뉴가 내려가고 
         Start();                         //행동 종류에 따라 플레이어와 동시에 메소드 실행
-        int enemyRandomAction = Random.Range(1, 4); //적의 행동: 1, 2, 3 중 랜덤으로 선택
+        enemyRandomAction = Random.Range(1, 4);
         if (enemyRandomAction == 1) { //1이 나오면 공격
             SelectAttackImg(); //공격 이미지 표시
             ShowAttackValue(); //공격 행동값 표시
@@ -53,8 +54,8 @@ public class EnemyBattleController : MonoBehaviour {
     public void SelectAttackVal() { //공격 랜덤 값 구하기
         int attack = EnemySetting.attackLV; //공격 능력치 불러오기
         enemyMaxValue = attack * 2; //최대값은 공격 레벨의 2배
-        int attackValue = Random.Range(attack, enemyMaxValue + 1); //랜덤
-        enemyAttackValueText.text = attackValue.ToString(); //공격값을 문자열로 변환
+        enemyActionValue = Random.Range(attack, enemyMaxValue + 1); //랜덤
+        enemyAttackValueText.text = enemyActionValue.ToString(); //공격값을 문자열로 변환
     }
     public void ShowAttackValue() { //공격 행동값 표시
         SelectAttackVal();
@@ -71,8 +72,8 @@ public class EnemyBattleController : MonoBehaviour {
     public void SelectDefenseVal() { //방어 랜덤 값 구하기
         int defense = EnemySetting.defenseLV; //방어 능력치 불러오기
         enemyMaxValue = defense * 2; //최대값은 방어 레벨의 2배
-        int defenseValue = Random.Range(defense, enemyMaxValue + 1); //랜덤
-        enemyDefenseValueText.text = defenseValue.ToString(); //방어값을 문자열로 변환
+        enemyActionValue = Random.Range(defense, enemyMaxValue + 1); //랜덤
+        enemyDefenseValueText.text = enemyActionValue.ToString(); //방어값을 문자열로 변환
     }
     public void ShowDefenseValue() { //방어 행동값 표시
         enemyAttackValueText.text = "";
@@ -89,8 +90,8 @@ public class EnemyBattleController : MonoBehaviour {
     public void SelectRecoveryVal() { //회복 랜덤 값 구하기
         int recovery = EnemySetting.recoveryLV; //회복 능력치 불러오기
         enemyMaxValue = recovery * 2; //최대값은 회복 레벨의 2배
-        int recoveryValue = Random.Range(recovery, enemyMaxValue + 1); //랜덤
-        enemyRecoveryValueText.text = recoveryValue.ToString(); //공격값을 문자열로 변환
+        enemyActionValue = Random.Range(recovery, enemyMaxValue + 1); //랜덤
+        enemyRecoveryValueText.text = enemyActionValue.ToString(); //공격값을 문자열로 변환
     }
     public void ShowRecoveryValue() { //회복 행동값 표시
         enemyAttackValueText.text = "";
