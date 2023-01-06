@@ -263,8 +263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -518.3064, y: 30}
-  m_SizeDelta: {x: 488.3064, y: 270.4079}
+  m_AnchoredPosition: {x: -875.995, y: 30}
+  m_SizeDelta: {x: 800, y: 250}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &164250656
 MonoBehaviour:
@@ -335,14 +335,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 634f0ec9ee8ef4c4680b587fe7bfc6df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f3f8bbbaf584f238f1317e042e0b92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -430,10 +430,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: START
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
-  m_sharedMaterial: {fileID: -8603808979718404457, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
+  m_sharedMaterial: {fileID: 9183169565860488290, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -620,13 +620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff62caa7e4c4b047a2b852146a7abdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item:
-    type: 
-    itemName: 
-    itemexp: 
-    itemdesc: 
-    itemPrice: 
-    itemImage: {fileID: 0}
 --- !u!4 &654772497
 Transform:
   m_ObjectHideFlags: 0
@@ -720,7 +713,7 @@ MonoBehaviour:
     itemName: 
     itemexp: 
     itemdesc: 
-    itemPrice: 
+    itemPrice: 0
     itemImage: {fileID: 0}
 --- !u!4 &1079967468
 Transform:
@@ -795,12 +788,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'EXIT
+  m_text: '
 
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
-  m_sharedMaterial: {fileID: -8603808979718404457, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
+  m_sharedMaterial: {fileID: 9183169565860488290, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1060,12 +1053,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 98634a9b2e67ef84b867d077a7d0c664, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e64c8695793024573a60a65fdcbe4332, type: 3}
+  m_Color: {r: 0.6792453, g: 0.6183696, b: 0.6183696, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.67, y: 6.52}
+  m_Size: {x: 10.23, y: 5.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1079,7 +1072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884837413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.05, y: 0.42, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1192,8 +1185,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -518.3064, y: 302}
-  m_SizeDelta: {x: 488.3064, y: 270.4079}
+  m_AnchoredPosition: {x: -875.99, y: 302}
+  m_SizeDelta: {x: 800, y: 250}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1928933335
 MonoBehaviour:
@@ -1276,14 +1269,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 634f0ec9ee8ef4c4680b587fe7bfc6df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf95b432e854040c78fcc35ebeb2d364, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
