@@ -181,17 +181,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close
+  m_text: "\uB4A4\uB85C \uAC00\uAE30"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4971c7150e121b7409f473d692b1ad97, type: 2}
+  m_sharedMaterial: {fileID: 3584106732117365029, guid: 4971c7150e121b7409f473d692b1ad97, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9fe99f75881ef6340a8956a6448f3873, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 675e4348a0eef134285df8ea553fc23f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1494,8 +1494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 50}
-  m_SizeDelta: {x: 475.845, y: 228.1101}
+  m_AnchoredPosition: {x: 0, y: 8}
+  m_SizeDelta: {x: 1124.4543, y: 210.3747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &723244965
 MonoBehaviour:
@@ -1517,10 +1517,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " No money \nor\nalready buy this item"
+  m_text: "\uC18C\uC9C0\uAE08\uC774 \uBD80\uC871\uD569\uB2C8\uB2E4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4971c7150e121b7409f473d692b1ad97, type: 2}
+  m_sharedMaterial: {fileID: 3584106732117365029, guid: 4971c7150e121b7409f473d692b1ad97, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1544,8 +1544,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1912,8 +1912,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 133, y: -125.12891}
-  m_SizeDelta: {x: -1433.2593, y: -696.2578}
+  m_AnchoredPosition: {x: -191.30457, y: -120.06171}
+  m_SizeDelta: {x: -566.7581, y: -316.2133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1089728195
 MonoBehaviour:
@@ -2245,6 +2245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1444431381}
   - component: {fileID: 1444431382}
+  - component: {fileID: 1444431383}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2279,69 +2280,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4caeb5cef44b06e4ab6b985a364e3524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1444431383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444431379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4117831f8a6aea641b73b63dc1d3a329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   AllItemList:
   - type: Item
     itemName: One
     itemexp: 1
-    itemdesc: "\uCCAB\uBC88\uC9F8\uC774\uBBF8\uC9C0\uBB34\uC2A8\uC0C1\uD488\uC778\uC9C0\uBAA8\uB974\uACA0\uC74C"
-    itemPrice: 0
+    itemdesc: FirstItem
+    itemPrice: 1
     itemImage: {fileID: 21300000, guid: a013ecb8ba06c6848baf52ad88de05d1, type: 3}
   - type: Item
     itemName: Two
     itemexp: 2
-    itemdesc: "\uB450\uBC88\uC9F8\uC774\uBBF8\uC9C0\uBB34\uC2A8\uC0C1\uD488\uC778\uC9C0\uBAA8\uB974\uACA0\uC74C"
-    itemPrice: 0
+    itemdesc: TwoItem
+    itemPrice: 2
     itemImage: {fileID: 21300000, guid: d48b988060d9d7a419545fd985d92272, type: 3}
   - type: Item
     itemName: Three
     itemexp: 3
-    itemdesc: Three
-    itemPrice: 0
+    itemdesc: ThreeItem
+    itemPrice: 3
     itemImage: {fileID: 21300000, guid: d2e10c2008df61f4a97fa217dffef479, type: 3}
   - type: Item
     itemName: Four
     itemexp: 4
-    itemdesc: Four
-    itemPrice: 0
+    itemdesc: FourItem
+    itemPrice: 4
     itemImage: {fileID: 21300000, guid: 8f7c56a5bec24ab4c8867e376aa00789, type: 3}
   - type: Item
     itemName: Five
     itemexp: 5
-    itemdesc: Five
-    itemPrice: 0
+    itemdesc: FiveItem
+    itemPrice: 5
     itemImage: {fileID: 21300000, guid: 1cc775264320aee4ab20a1e604c8a678, type: 3}
   - type: Item
     itemName: Six
     itemexp: 6
-    itemdesc: Six
-    itemPrice: 0
+    itemdesc: SixItem
+    itemPrice: 6
     itemImage: {fileID: 21300000, guid: 9af046f32ad1d4143ab713b865e781c3, type: 3}
   - type: Item
     itemName: Seven
     itemexp: 7
-    itemdesc: Seven
-    itemPrice: 0
+    itemdesc: SevenItem
+    itemPrice: 7
     itemImage: {fileID: 21300000, guid: f3f4d63f0156dc642b75ceab7af3e501, type: 3}
   - type: Item
     itemName: Eight
     itemexp: 8
-    itemdesc: Eight
-    itemPrice: 0
+    itemdesc: EightItem
+    itemPrice: 8
     itemImage: {fileID: 21300000, guid: bb7d3866e54898a4e8ce57957356904d, type: 3}
   - type: Item
     itemName: Nine
     itemexp: 9
-    itemdesc: Nine
-    itemPrice: 0
+    itemdesc: NineItem
+    itemPrice: 9
     itemImage: {fileID: 21300000, guid: 3a323627bffdec44eb89860bd8ba8988, type: 3}
   - type: Item
     itemName: Ten
     itemexp: 10
-    itemdesc: Ten
-    itemPrice: 0
+    itemdesc: TenItem
+    itemPrice: 10
     itemImage: {fileID: 21300000, guid: 73c10348e0544f14797a5c4b07fa72bf, type: 3}
-  - type: soldout
-    itemName: soldout
+  - type: SoldOut
+    itemName: Soldout
     itemexp: 0
     itemdesc: SOLD OUT
     itemPrice: 0
@@ -2356,7 +2369,7 @@ MonoBehaviour:
     itemPrice: 0
     itemImage: {fileID: 0}
   bought: 00000000000000000000
-  popup: {fileID: 0}
+  popup: {fileID: 1089728193}
 --- !u!1 &1549359981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,8 +3286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -122.88385}
-  m_SizeDelta: {x: 131.137, y: 51.6349}
+  m_AnchoredPosition: {x: 0, y: -240}
+  m_SizeDelta: {x: 554.2531, y: 107.3748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992471606
 MonoBehaviour:
@@ -3345,7 +3358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5764706, g: 0.56078434, b: 0.56078434, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

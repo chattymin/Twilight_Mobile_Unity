@@ -14,7 +14,7 @@ public class buyScript : MonoBehaviour
     TextMeshProUGUI defenseexp;
     TextMeshProUGUI recoveryexp;
     bool check = false;
-    ItemData itemD;
+    ItemManager itemD;
    
     //구매버튼 클릭시 buy 메소드에서 구매한 상품을 인벤토리에 표시
     //player정보 업데이트하는 함수 호출. 
@@ -22,7 +22,7 @@ public class buyScript : MonoBehaviour
     private void Start()
     {
 
-        itemD = GameObject.Find("GameObject").GetComponent<ItemData>();
+        itemD = GameObject.Find("GameObject").GetComponent<ItemManager>();
         myItem = itemD.exitItem;
 
         curmoney = GameObject.Find("curmoney").GetComponent<TextMeshProUGUI>();
@@ -44,26 +44,23 @@ public class buyScript : MonoBehaviour
             itemD.popup.SetActive(true) ;
           }
           else { 
-
              if (check == true) {
-                itemD.popup.SetActive(true);
-            }
-            else {
-         
-
+                Debug.Log("이미 구매한 아이템");
+             }
+             else {
                check = true;
-               //ItemData itemD = GameObject.Find("GameObject").GetComponent<ItemData>();
                myItemImg.sprite = myItem.itemImage;
                itemD.boughtUpdate();
                PlayerSetting.item = myItem;
                PlayerSetting.money -= myItem.itemPrice;
-                playerInfo.updateMoney(); 
-               }
-           }
+               curmoney.text = PlayerSetting.money.ToString();
+
+            }
+        }
     }
 
     public void buyExpAttack(){
-        if (checkMoney(myItem.itemPrice))
+        if (checkMoney(100))
         {
             itemD.popup.SetActive(true);
         }
@@ -77,7 +74,7 @@ public class buyScript : MonoBehaviour
     }
 
     public void buyExpDefense(){
-        if (checkMoney(myItem.itemPrice))
+        if (checkMoney(100))
         {
             itemD.popup.SetActive(true);
         }
@@ -91,7 +88,7 @@ public class buyScript : MonoBehaviour
     }
 
     public void buyExpRecovery(){
-        if (checkMoney(myItem.itemPrice))
+        if (checkMoney(100))
         {
             itemD.popup.SetActive(true);
         }
@@ -106,11 +103,11 @@ public class buyScript : MonoBehaviour
 
     bool checkMoney(int money){
         if ((PlayerSetting.money-money) <= 0) {
+            Debug.Log("attackexp");
             return true;
         }
         return false;        
     }
-
 
     public void popup() {
         GameObject.Find("popup").SetActive(false);

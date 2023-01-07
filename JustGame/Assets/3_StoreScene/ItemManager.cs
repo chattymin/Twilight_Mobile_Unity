@@ -10,7 +10,7 @@ using TMPro;
  * start버튼, 구매버튼과 연결됨. 
  * 외부 스크립트(buyScript)에서 boughtUpdate 메소드를 활용하여 구매 정보 업데이트함.  
  */
-public class ItemData : MonoBehaviour
+public class ItemManager : MonoBehaviour
 {
     public List<Item> AllItemList = new List<Item>(10);
     public Image showImage;
@@ -39,16 +39,19 @@ public class ItemData : MonoBehaviour
 
         buy = GameObject.Find("buy");
         buyBtnImg = buy.GetComponent<Image>();
-        popup =  GameObject.Find("popup");
+        popup = GameObject.Find("popup");
         popup.SetActive(false);
     }
 
-    public void changeImage() {
+    public void changeImage()
+    {
         indexNumber = Random.Range(0, 10);
-        if (bought[indexNumber] == true){ 
+        if (bought[indexNumber] == true)
+        {
             buyBtnImg.color = Color.gray;
         }
-        else { 
+        else
+        {
             exitItem = AllItemList[indexNumber];
             showImage.sprite = exitItem.itemImage;
             itemdesc = GameObject.Find("desc");
@@ -59,16 +62,16 @@ public class ItemData : MonoBehaviour
     /* 구매 버튼 클릭 시 bought 배열 true로 변경. 
      * indexNumber활용해 해당 인덱스번호 내용 수정. 
     */
-    public void boughtUpdate() {
+    public void boughtUpdate()
+    {
         buyBtnImg.color = Color.gray;
 
-       bought[indexNumber] = true;
-       showImage.sprite = AllItemList[10].itemImage;
-       AllItemList[indexNumber].itemImage = AllItemList[10].itemImage;
-       AllItemList[indexNumber].itemdesc = (indexNumber+1).ToString()+"은 SOLD OUT입니다.";
-       itemdesc = GameObject.Find("desc");
-       itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[indexNumber].itemdesc;
-
-        
+        bought[indexNumber] = true;
+        showImage.sprite = AllItemList[10].itemImage;
+        AllItemList[indexNumber].itemImage = AllItemList[10].itemImage;
+        AllItemList[indexNumber].itemdesc = "SOLD OUT입니다.";
+        itemdesc = GameObject.Find("desc");
+        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[indexNumber].itemdesc;
+        buy.GetComponent<Button>().onClick = null;
     }
 }
