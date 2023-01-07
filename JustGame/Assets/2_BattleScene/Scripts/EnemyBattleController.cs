@@ -50,6 +50,7 @@ public class EnemyBattleController : MonoBehaviour {
                 ShowRecoveryValue(); //ȸ�� �ൿ�� ǥ��
             }
             flag = false;
+            GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().BattleRun(enemyRandomAction);
         }
     }
 

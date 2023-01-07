@@ -40,18 +40,16 @@ public class PlayerBattleController : MonoBehaviour {
         if (playerSelected == "Attack") { //������ ������ ���
             SelectAttackImg(); //���� �̹��� ǥ��
             ShowAttackValue(); //���� �ൿ�� ǥ��
-            StateSetting.SetStates(BATTLEST);
-        }
+            }
         else if (playerSelected == "Defense") { //�� ������ ���
             SelectDefenseImg(); //��� �̹��� ǥ��
             ShowDefenseValue(); //��� �ൿ�� ǥ��
-            StateSetting.SetStates(BATTLEST);
         }
         else if (playerSelected == "Recovery") { //ȸ���� ������ ���
             SelectRecoveryImg(); //ȸ�� �̹��� ǥ��
             ShowRecoveryValue(); //ȸ�� �ൿ�� ǥ��
-            StateSetting.SetStates(BATTLEST);
         }
+        StateSetting.SetStates(BATTLEST);
     }
 
 
