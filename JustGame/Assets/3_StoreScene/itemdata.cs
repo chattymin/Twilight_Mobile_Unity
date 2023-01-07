@@ -6,9 +6,9 @@ using TMPro;
 
 
 /*
- * Å¬·¡½º ¼³¸í : ·£´ýÀ¸·Î ¾ÆÀÌÅÛÀ» º¸¿©ÁÖ°í ±¸¸ÅÇÏ´Â Å¬·¡½º. 
- * start¹öÆ°, ±¸¸Å¹öÆ°°ú ¿¬°áµÊ. 
- * ¿ÜºÎ ½ºÅ©¸³Æ®(buyScript)¿¡¼­ boughtUpdate ¸Þ¼Òµå¸¦ È°¿ëÇÏ¿© ±¸¸Å Á¤º¸ ¾÷µ¥ÀÌÆ®ÇÔ.  
+ * Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½. 
+ * startï¿½ï¿½Æ°, ï¿½ï¿½ï¿½Å¹ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½. 
+ * ï¿½Üºï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®(buyScript)ï¿½ï¿½ï¿½ï¿½ boughtUpdate ï¿½Þ¼Òµå¸¦ È°ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½.  
  */
 public class ItemData : MonoBehaviour
 {
@@ -22,15 +22,15 @@ public class ItemData : MonoBehaviour
     Image buyBtnImg;
     public GameObject popup;
 
-    /* start ¹öÆ° Å¬¸¯½Ã ÀÛµ¿µÇ´Â ¸Þ¼Òµå 
-     * indexNumber : AllItemList¿¡ ÀúÀåµÈ Item ¿ä¼Ò È°¿ë À§ÇØ indexnumber È°¿ë. 
-     indexNumberÀº 0~10 Áß ·£´ýÀ¸·Î ¼ýÀÚ ÃßÃâ. ´Ü, bought ¹è¿­À» È°¿ëÇØ ÀÌÀü¿¡ ±¸¸ÅÇß´ÂÁö È®ÀÎ.
-     ±¸¸ÅÇßÀ¸¸é while¹®¿¡ ÀÇÇØ ´Ù½Ã ·£´ý ¼ýÀÚ ÃßÃâ. ÀÌ¸¦ ÅëÇØ ±¸¸ÅÇÑ ¾ÆÀÌÅÛ ´Ù½Ã ±¸¸Å ¸øÇÏµµ·Ï ÇÔ. 
-     * exitItem : indexnumberÀ» ÀÌ¿ëÇØ AllItemList ¿ä¼Ò¸¦ °¡Á®¿Í ÀúÀåÇÔ. 
+    /* start ï¿½ï¿½Æ° Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ûµï¿½ï¿½Ç´ï¿½ ï¿½Þ¼Òµï¿½ 
+     * indexNumber : AllItemListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Item ï¿½ï¿½ï¿½ È°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ indexnumber È°ï¿½ï¿½. 
+     indexNumberï¿½ï¿½ 0~10 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½, bought ï¿½è¿­ï¿½ï¿½ È°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½ È®ï¿½ï¿½.
+     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ whileï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½. 
+     * exitItem : indexnumberï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ AllItemList ï¿½ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. 
      * 
-     * showImage : exitItemÀÇ itemImage¸¦ ÀúÀåÇÏ´Â º¯¼ö  itemImage¸¦ showImageÀÇ 
-     sprite ÄÄÆ÷³ÍÆ®¿¡ ÀúÀåÇÔ.
-     *itemdesc : exitItem ÀÇ itemdesc¸¦ ÀúÀåÇÔ. 
+     * showImage : exitItemï¿½ï¿½ itemImageï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½  itemImageï¿½ï¿½ showImageï¿½ï¿½ 
+     sprite ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+     *itemdesc : exitItem ï¿½ï¿½ itemdescï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. 
     */
 
     private void Start()
@@ -56,8 +56,8 @@ public class ItemData : MonoBehaviour
         }
     }
 
-    /* ±¸¸Å ¹öÆ° Å¬¸¯ ½Ã bought ¹è¿­ true·Î º¯°æ. 
-     * indexNumberÈ°¿ëÇØ ÇØ´ç ÀÎµ¦½º¹øÈ£ ³»¿ë ¼öÁ¤. 
+    /* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½ bought ï¿½è¿­ trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. 
+     * indexNumberÈ°ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. 
     */
     public void boughtUpdate() {
         buyBtnImg.color = Color.gray;
@@ -65,7 +65,7 @@ public class ItemData : MonoBehaviour
        bought[indexNumber] = true;
        showImage.sprite = AllItemList[10].itemImage;
        AllItemList[indexNumber].itemImage = AllItemList[10].itemImage;
-       AllItemList[indexNumber].itemdesc = (indexNumber+1).ToString()+"Àº SOLD OUTÀÔ´Ï´Ù.";
+       AllItemList[indexNumber].itemdesc = (indexNumber+1).ToString()+"ï¿½ï¿½ SOLD OUTï¿½Ô´Ï´ï¿½.";
        itemdesc = GameObject.Find("desc");
        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[indexNumber].itemdesc;
 
