@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
+using static UnityEditor.PlayerSettings;
+using System;
 
 public class BattleMechanism : MonoBehaviour {
     public string playerSelected; //플레이어가 선택한 행동의 종류
@@ -15,16 +18,15 @@ public class BattleMechanism : MonoBehaviour {
     }
 
 
-    public void BattleRun(int enemySelected) { //배틀 시작
+    public void BattleRun() { //배틀 시작
         playerSelected = GameObject.Find("PlayerBattleManager") //플레이어 행동
             .GetComponent<PlayerBattleController>().playerSelected;
-        //enemySelected = GameObject.Find("EnemyBattleManager") //적 행동
-        //    .GetComponent<EnemyBattleController>().enemyRandomAction;
+        enemySelected = GameObject.Find("EnemyBattleManager") //적 행동값
+            .GetComponent<EnemyBattleController>().enemyRandomAction;
         playerValue = GameObject.Find("PlayerBattleManager") //플레이어 행동값
             .GetComponent<PlayerBattleController>().playerActionValue;
         enemyValue = GameObject.Find("EnemyBattleManager") //적 행동값
             .GetComponent<EnemyBattleController>().enemyActionValue;
-
         switch (playerSelected) {
             case "Attack":
                 if (enemySelected == 1) { //p공 VS e공
