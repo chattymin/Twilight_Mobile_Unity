@@ -25,12 +25,11 @@ public class EnemyBattleController : MonoBehaviour {
         enemyAttackValueText.text = "";
         enemyDefenseValueText.text = "";
         enemyRecoveryValueText.text = "";
-        flag = true;
     }
 
     public int enemyRandomAction; //���� �ൿ: 1, 2, 3 �� ������� ����
     public void EnemyActionSelectRun() { //Ȯ�� ��ư�� ������ �� �޴��� �������� 
-        if (StateSetting.CompareStates("BattleST") && flag)
+        if (StateSetting.CompareStates("BattleST"))
         {
             Start();                         //�ൿ ������ ���� �÷��̾�� ���ÿ� �޼ҵ� ����
             int enemyRandomAction = Random.Range(1, 4); //���� �ൿ: 1, 2, 3 �� �������� ����
@@ -49,8 +48,6 @@ public class EnemyBattleController : MonoBehaviour {
                 SelectRecoveryImg(); //ȸ�� �̹��� ǥ��
                 ShowRecoveryValue(); //ȸ�� �ൿ�� ǥ��
             }
-            flag = false;
-            GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().BattleRun(enemyRandomAction);
         }
     }
 
