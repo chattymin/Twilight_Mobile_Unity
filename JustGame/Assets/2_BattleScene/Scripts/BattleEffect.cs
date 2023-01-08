@@ -16,7 +16,8 @@ public class BattleEffect : MonoBehaviour
     {
         if (StateSetting.CompareStates("SelectST"))
         {
-            // 배틀 이펙트 없애
+            GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOff();
+            GameObject.Find("EnemyBattleEffect").GetComponent<EnemyBattleEffect>().EffectOff();
         }
         else if (StateSetting.CompareStates("BattleST"))
         {
