@@ -48,6 +48,7 @@ public class EnemyBattleController : MonoBehaviour {
                 SelectRecoveryImg(); //ȸ�� �̹��� ǥ��
                 ShowRecoveryValue(); //ȸ�� �ൿ�� ǥ��
             }
+            GameObject.Find("EnemyBattleEffect").GetComponent<EnemyBattleEffect>().EffectOn(enemyRandomAction);
             GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().BattleRun(enemyRandomAction);
         }
     }
