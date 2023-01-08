@@ -10,14 +10,16 @@ using TMPro;
  * start버튼, 구매버튼과 연결됨. 
  * 외부 스크립트(buyScript)에서 boughtUpdate 메소드를 활용하여 구매 정보 업데이트함.  
  */
+
 public class ItemManager : MonoBehaviour
 {
     public List<Item> AllItemList = new List<Item>(10);
     public Image showImage;
     public GameObject itemdesc;
     public Item exitItem;
-    int indexNumber;
-    public static bool[] bought = new bool[10];
+    public int indexNumber;
+    
+    //public  bool[] bought = new bool[10];
     GameObject buy;
     Image buyBtnImg;
     GameObject inventoryItem;
@@ -45,6 +47,7 @@ public class ItemManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerSetting.bought[0] = true;
         itemPrice = GameObject.Find("itemPrice").GetComponent<TextMeshProUGUI>();
 
         attackPrice = GameObject.Find("attackPrice").GetComponent<TextMeshProUGUI>();
@@ -61,7 +64,7 @@ public class ItemManager : MonoBehaviour
         popup = GameObject.Find("popup");
 
         inventoryItem = GameObject.Find("inventoryitem");
-
+        itemdesc = GameObject.Find("desc");
         popup.SetActive(false);
         changeImage();
     }
@@ -76,12 +79,15 @@ public class ItemManager : MonoBehaviour
         }
         
         indexNumber = Random.Range(0, 10);
-        if (bought[indexNumber] == true)
+        if (PlayerSetting.bought[indexNumber] == true)
         {
+            showImage.sprite = PlayerSetting.item.itemImage;
+            itemdesc.GetComponent<TextMeshProUGUI>().text = "SOLD OUT";
             buyBtnImg.color = Color.gray;
         }
         else
         {
+            buy.GetComponent<Button>().interactable = true;
             exitItem = AllItemList[indexNumber];
             showImage.sprite = exitItem.itemImage;
             itemdesc = GameObject.Find("desc");
@@ -99,11 +105,11 @@ public class ItemManager : MonoBehaviour
         itemPrice.text = "";
         inventoryItem.SetActive(true);
 
-        bought[indexNumber] = true;
+        PlayerSetting.bought[indexNumber] = true;
+
         showImage.sprite = AllItemList[10].itemImage;
-        itemdesc = GameObject.Find("desc");
         itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[10].itemdesc;
-        buy.GetComponent<Button>().onClick = null;
+        buy.GetComponent<Button>().interactable = false;
     }
 
     public void setPrice(string expName) {

@@ -8,5 +8,6 @@ public class PlayerSetting : MonoBehaviour {
     public static int defenseLV = 1; //deffenceMin, deffenceMax;
     public static int recoveryLV = 1; //recoveryMin, recoveryMax;
     public static int money =0;
+    public static bool [] bought = new bool[10];
     public static Item item;
 }

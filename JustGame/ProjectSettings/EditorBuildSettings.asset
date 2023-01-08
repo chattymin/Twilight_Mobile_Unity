@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/3_StoreScene/StoreScene.unity
     guid: 10f48c6f5d2534446b6421e8c88c1142
   - enabled: 1
+    path: Assets/3_StoreScene/testscene.unity
+    guid: c3650fb5284efd145bfc7e03f637eb47
+  - enabled: 0
     path: Assets/2_BattleScene/Scripts/BattleScene.unity
     guid: d77315ad82468af4991c9b9ae75cedf0
   m_configObjects: {}

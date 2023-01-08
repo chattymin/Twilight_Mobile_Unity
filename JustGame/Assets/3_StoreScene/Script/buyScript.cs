@@ -13,7 +13,6 @@ public class buyScript : MonoBehaviour
     TextMeshProUGUI attackexp;
     TextMeshProUGUI defenseexp;
     TextMeshProUGUI recoveryexp;
-    bool check = false;
     ItemManager itemD;
    
     //ï¿½ï¿½ï¿½Å¹ï¿½Æ° Å¬ï¿½ï¿½ï¿½ï¿½ buy ï¿½Þ¼Òµå¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ Ç¥ï¿½ï¿½
@@ -44,13 +43,13 @@ public class buyScript : MonoBehaviour
             itemD.popup.SetActive(true) ;
           }
           else {
-            if (check == true)
+            if (PlayerSetting.bought[itemD.indexNumber] == true)
             {
                 Debug.Log("ÀÌ¹Ì ±¸¸ÅÇÑ ¾ÆÀÌÅÛ");
             }
             else 
             {
-                check = true;
+                //check = true;
                 myItemImg.sprite = myItem.itemImage;
                 itemD.boughtUpdate();
                 PlayerSetting.item = myItem;
