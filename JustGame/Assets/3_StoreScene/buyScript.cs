@@ -57,8 +57,6 @@ public class buyScript : MonoBehaviour
 
                 PlayerSetting.money -= myItem.itemPrice;
                 curmoney.text = PlayerSetting.money.ToString();
-                Debug.Log(PlayerSetting.item.itemdesc);
-
             }    
         }
     }
@@ -75,8 +73,7 @@ public class buyScript : MonoBehaviour
 
             attackexp.text = PlayerSetting.attackLV.ToString();
             curmoney.text = PlayerSetting.money.ToString();
-
-         }
+        }
     }
 
     public void buyExpDefense(){
