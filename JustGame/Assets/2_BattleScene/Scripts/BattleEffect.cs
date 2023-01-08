@@ -16,6 +16,7 @@ public class BattleEffect : MonoBehaviour
     {
         if (StateSetting.CompareStates("SelectST"))
         {
+            // 액션 이펙트 지우는 코드
             GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOff();
             GameObject.Find("EnemyBattleEffect").GetComponent<EnemyBattleEffect>().EffectOff();
         }
@@ -23,8 +24,7 @@ public class BattleEffect : MonoBehaviour
         {
             if (GameObject.Find("Action_Back").transform.position.y < -250)
             {
-                // 배틀 이펙트
-                //GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().BattleRun();
+                // 특정 시간 지나면 다시 ui 올라오도록  ()밀리세크
                 Thread.Sleep(2000);
                 StateSetting.SetStates("SelectST");
             }
