@@ -43,19 +43,23 @@ public class buyScript : MonoBehaviour
           {
             itemD.popup.SetActive(true) ;
           }
-          else { 
-             if (check == true) {
+          else {
+            if (check == true)
+            {
                 Debug.Log("이미 구매한 아이템");
-             }
-             else {
-               check = true;
-               myItemImg.sprite = myItem.itemImage;
-               itemD.boughtUpdate();
-               PlayerSetting.item = myItem;
-               PlayerSetting.money -= myItem.itemPrice;
-               curmoney.text = PlayerSetting.money.ToString();
-
             }
+            else 
+            {
+                check = true;
+                myItemImg.sprite = myItem.itemImage;
+                itemD.boughtUpdate();
+                PlayerSetting.item = myItem;
+
+                PlayerSetting.money -= myItem.itemPrice;
+                curmoney.text = PlayerSetting.money.ToString();
+                Debug.Log(PlayerSetting.item.itemdesc);
+
+            }    
         }
     }
 
@@ -66,7 +70,9 @@ public class buyScript : MonoBehaviour
         }
         else { 
             PlayerSetting.attackLV += 1;
-            PlayerSetting.money -= 100;
+            PlayerSetting.money -= itemD.getPrice("attack");
+            itemD.setPrice("attack");
+
             attackexp.text = PlayerSetting.attackLV.ToString();
             curmoney.text = PlayerSetting.money.ToString();
 
@@ -81,7 +87,9 @@ public class buyScript : MonoBehaviour
         else
         {
         PlayerSetting.defenseLV += 1;
-            PlayerSetting.money -= 100;
+            PlayerSetting.money -= itemD.getPrice("defense");
+            itemD.setPrice("defense");
+            
             defenseexp.text = PlayerSetting.defenseLV.ToString();
             curmoney.text = PlayerSetting.money.ToString();
         } 
@@ -94,8 +102,10 @@ public class buyScript : MonoBehaviour
         }
         else
         {
-            PlayerSetting.recoveryLV += 1;
-            PlayerSetting.money -= 100;
+            PlayerSetting.recoveryLV += 1; 
+            PlayerSetting.money -= itemD.getPrice("recovery");
+            itemD.setPrice("recovery");
+           
             recoveryexp.text = PlayerSetting.recoveryLV.ToString();
             curmoney.text = PlayerSetting.money.ToString();
         }
@@ -103,7 +113,6 @@ public class buyScript : MonoBehaviour
 
     bool checkMoney(int money){
         if ((PlayerSetting.money-money) <= 0) {
-            Debug.Log("attackexp");
             return true;
         }
         return false;        

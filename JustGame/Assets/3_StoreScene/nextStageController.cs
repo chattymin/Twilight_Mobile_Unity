@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class nextScene : MonoBehaviour
+public class nextStageController : MonoBehaviour
 {
     // Start is called before the first frame update
     public void nextBtnClick() {
-        SceneManager.LoadScene("storeNextScene");
+        SceneManager.LoadScene("BattleScene");
     }
 }
