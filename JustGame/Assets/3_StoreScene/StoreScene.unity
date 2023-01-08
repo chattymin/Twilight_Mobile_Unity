@@ -1515,7 +1515,7 @@ MonoBehaviour:
   m_text: No Money
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
-  m_sharedMaterial: {fileID: 9183169565860488290, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
+  m_sharedMaterial: {fileID: 2643936480361291306, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2639,7 +2639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2a48e7d58899ffe45b339679598a7e34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 038818040db7fde42bf7a360aacf0601, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2854,61 +2854,61 @@ MonoBehaviour:
     itemexp: 1
     itemdesc: FirstItem
     itemPrice: 1
-    itemImage: {fileID: 21300000, guid: a013ecb8ba06c6848baf52ad88de05d1, type: 3}
+    itemImage: {fileID: 21300000, guid: 723a78206c0dfa54d9217452b3e9cf6e, type: 3}
   - type: Item
     itemName: Two
     itemexp: 2
     itemdesc: TwoItem
     itemPrice: 2
-    itemImage: {fileID: 21300000, guid: d48b988060d9d7a419545fd985d92272, type: 3}
+    itemImage: {fileID: 21300000, guid: 701c0178a34b6dd44b023669ce1d1e04, type: 3}
   - type: Item
     itemName: Three
     itemexp: 3
     itemdesc: ThreeItem
     itemPrice: 3
-    itemImage: {fileID: 21300000, guid: d2e10c2008df61f4a97fa217dffef479, type: 3}
+    itemImage: {fileID: 21300000, guid: 8c348218387634e4b9813bba732372df, type: 3}
   - type: Item
     itemName: Four
     itemexp: 4
     itemdesc: FourItem
     itemPrice: 4
-    itemImage: {fileID: 21300000, guid: 8f7c56a5bec24ab4c8867e376aa00789, type: 3}
+    itemImage: {fileID: 21300000, guid: 148006a484d6adf4c97e2f2570caedbf, type: 3}
   - type: Item
     itemName: Five
     itemexp: 5
     itemdesc: FiveItem
     itemPrice: 5
-    itemImage: {fileID: 21300000, guid: 1cc775264320aee4ab20a1e604c8a678, type: 3}
+    itemImage: {fileID: 21300000, guid: 3993599cf4da66c49bce6bdd81dc0fd2, type: 3}
   - type: Item
     itemName: Six
     itemexp: 6
     itemdesc: SixItem
     itemPrice: 6
-    itemImage: {fileID: 21300000, guid: 9af046f32ad1d4143ab713b865e781c3, type: 3}
+    itemImage: {fileID: 21300000, guid: b0428277d7026a54dbc9ba10635f9189, type: 3}
   - type: Item
     itemName: Seven
     itemexp: 7
     itemdesc: SevenItem
     itemPrice: 7
-    itemImage: {fileID: 21300000, guid: f3f4d63f0156dc642b75ceab7af3e501, type: 3}
+    itemImage: {fileID: 21300000, guid: 0ca7f270a7253c14eb60d45343ac20d1, type: 3}
   - type: Item
     itemName: Eight
     itemexp: 8
     itemdesc: EightItem
     itemPrice: 8
-    itemImage: {fileID: 21300000, guid: bb7d3866e54898a4e8ce57957356904d, type: 3}
+    itemImage: {fileID: 21300000, guid: bd69c2adc9651184db3c4d2c7be8f259, type: 3}
   - type: Item
     itemName: Nine
     itemexp: 9
     itemdesc: NineItem
     itemPrice: 9
-    itemImage: {fileID: 21300000, guid: 3a323627bffdec44eb89860bd8ba8988, type: 3}
+    itemImage: {fileID: 21300000, guid: 82d1848330c8f0b43ac0b927f81bd478, type: 3}
   - type: Item
     itemName: Ten
     itemexp: 10
     itemdesc: TenItem
     itemPrice: 10
-    itemImage: {fileID: 21300000, guid: 73c10348e0544f14797a5c4b07fa72bf, type: 3}
+    itemImage: {fileID: 21300000, guid: d20de5c73c25cfa49a1c956d835ae34a, type: 3}
   - type: SoldOut
     itemName: Soldout
     itemexp: 0
