@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class storeStart : MonoBehaviour
 {
-    public ItemData itemdata;
+    public ItemManager itemdata;
     
     void Start() {
        
