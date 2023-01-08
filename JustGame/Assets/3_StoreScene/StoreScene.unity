@@ -2896,7 +2896,7 @@ MonoBehaviour:
     itemexp: 8
     itemdesc: EightItem
     itemPrice: 8
-    itemImage: {fileID: 21300000, guid: bd69c2adc9651184db3c4d2c7be8f259, type: 3}
+    itemImage: {fileID: 21300000, guid: 038818040db7fde42bf7a360aacf0601, type: 3}
   - type: Item
     itemName: Nine
     itemexp: 9
@@ -2924,6 +2924,7 @@ MonoBehaviour:
     itemdesc: 
     itemPrice: 0
     itemImage: {fileID: 0}
+  indexNumber: 0
   popup: {fileID: 1089728193}
 --- !u!1 &1501522807
 GameObject:
