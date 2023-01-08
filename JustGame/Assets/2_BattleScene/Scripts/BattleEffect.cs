@@ -23,7 +23,7 @@ public class BattleEffect : MonoBehaviour
             if (GameObject.Find("Action_Back").transform.position.y < -250)
             {
                 // 배틀 이펙트
-                GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().BattleRun();
+                //GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().BattleRun();
                 Thread.Sleep(2000);
                 StateSetting.SetStates("SelectST");
             }

@@ -18,11 +18,11 @@ public class BattleMechanism : MonoBehaviour {
     }
 
 
-    public void BattleRun() { //배틀 시작
+    public void BattleRun(int enemySelected) { //배틀 시작
         playerSelected = GameObject.Find("PlayerBattleManager") //플레이어 행동
             .GetComponent<PlayerBattleController>().playerSelected;
-        enemySelected = GameObject.Find("EnemyBattleManager") //적 행동값
-            .GetComponent<EnemyBattleController>().enemyRandomAction;
+        //enemySelected = GameObject.Find("EnemyBattleManager") //적 행동값
+        //    .GetComponent<EnemyBattleController>().enemyRandomAction;
         playerValue = GameObject.Find("PlayerBattleManager") //플레이어 행동값
             .GetComponent<PlayerBattleController>().playerActionValue;
         enemyValue = GameObject.Find("EnemyBattleManager") //적 행동값
