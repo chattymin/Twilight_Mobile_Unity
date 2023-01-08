@@ -17,10 +17,20 @@ public class ItemManager : MonoBehaviour
     public GameObject itemdesc;
     public Item exitItem;
     int indexNumber;
-    public bool[] bought = new bool[10];
+    public static bool[] bought = new bool[10];
     GameObject buy;
     Image buyBtnImg;
+    GameObject inventoryItem;
     public GameObject popup;
+    static TextMeshProUGUI itemPrice;
+    static TextMeshProUGUI attackPrice;
+    static TextMeshProUGUI defensePrice;
+    static TextMeshProUGUI recoveryPrice;
+    static int aPrice = 100;
+    static int dPrice = 100;
+    static int rPrice = 100;
+
+
 
     /* start 버튼 클릭시 작동되는 메소드 
      * indexNumber : AllItemList에 저장된 Item 요소 활용 위해 indexnumber 활용. 
@@ -35,16 +45,36 @@ public class ItemManager : MonoBehaviour
 
     private void Start()
     {
-        changeImage();
+        itemPrice = GameObject.Find("itemPrice").GetComponent<TextMeshProUGUI>();
+
+        attackPrice = GameObject.Find("attackPrice").GetComponent<TextMeshProUGUI>();
+        attackPrice.text = aPrice.ToString();
+
+        defensePrice = GameObject.Find("defensePrice").GetComponent<TextMeshProUGUI>();
+        defensePrice.text = dPrice.ToString();
+
+        recoveryPrice = GameObject.Find("recoveryPrice").GetComponent<TextMeshProUGUI>();
+        recoveryPrice.text = rPrice.ToString();
 
         buy = GameObject.Find("buy");
         buyBtnImg = buy.GetComponent<Image>();
         popup = GameObject.Find("popup");
+
+        inventoryItem = GameObject.Find("inventoryitem");
+
         popup.SetActive(false);
+        changeImage();
     }
 
     public void changeImage()
     {
+        if (PlayerSetting.item == null)
+        {
+            inventoryItem.SetActive(false);
+        }else {
+            inventoryItem.GetComponent<Image>().sprite = PlayerSetting.item.itemImage;
+        }
+        
         indexNumber = Random.Range(0, 10);
         if (bought[indexNumber] == true)
         {
@@ -56,6 +86,7 @@ public class ItemManager : MonoBehaviour
             showImage.sprite = exitItem.itemImage;
             itemdesc = GameObject.Find("desc");
             itemdesc.GetComponent<TextMeshProUGUI>().text = exitItem.itemdesc;
+            itemPrice.text = exitItem.itemPrice.ToString();
         }
     }
 
@@ -65,13 +96,50 @@ public class ItemManager : MonoBehaviour
     public void boughtUpdate()
     {
         buyBtnImg.color = Color.gray;
+        itemPrice.text = "";
+        inventoryItem.SetActive(true);
 
         bought[indexNumber] = true;
         showImage.sprite = AllItemList[10].itemImage;
-        AllItemList[indexNumber].itemImage = AllItemList[10].itemImage;
-        AllItemList[indexNumber].itemdesc = "SOLD OUT입니다.";
         itemdesc = GameObject.Find("desc");
-        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[indexNumber].itemdesc;
+        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[10].itemdesc;
         buy.GetComponent<Button>().onClick = null;
+    }
+
+    public void setPrice(string expName) {
+
+        switch (expName)
+        {
+            case "attack":
+                aPrice += 50;
+                attackPrice.text = aPrice.ToString();
+                break;
+            case "defense":
+                dPrice += 50;
+                defensePrice.text = dPrice.ToString();
+                break;
+            case "recovery":
+                rPrice += 50;
+                recoveryPrice.text = rPrice.ToString();
+                break;
+        }        
+    }
+
+    public int getPrice(string expName) {
+        int returnPrice=0;
+
+        switch (expName)
+        {
+            case "attack":
+                returnPrice=aPrice;
+                break;
+            case "defense":
+                returnPrice = dPrice;
+                break;
+            case "recovery":
+                returnPrice = rPrice;
+                break;
+        }
+        return returnPrice;
     }
 }
