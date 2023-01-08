@@ -50,6 +50,8 @@ public class PlayerBattleController : MonoBehaviour {
             ShowRecoveryValue(); //ȸ�� �ൿ�� ǥ��
         }
         StateSetting.SetStates(BATTLEST);
+        GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOn(playerSelected);
+        GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
     }
 
 
