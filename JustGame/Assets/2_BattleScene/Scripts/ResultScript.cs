@@ -41,11 +41,6 @@ public class ResultScript : MonoBehaviour
     void showCurState() { 
     }
 
-    public void StoreSceneBT()
-    {
-        SceneManager.LoadScene("StoreScene");
-    }
-
     public void MainSceneBT()
     {
         SceneManager.LoadScene("MainScene");
