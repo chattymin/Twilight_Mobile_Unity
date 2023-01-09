@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class BattleEffect : MonoBehaviour
 {
+    float timer;
+    int waitingTime;
     // Start is called before the first frame update
     void Start()
     {
+        timer = 0.0f;
+        waitingTime = 2;
         
     }
 
@@ -27,9 +31,15 @@ public class BattleEffect : MonoBehaviour
             if (GameObject.Find("Action_Back").transform.position.y < -250)
             {
                 // 특정 시간 지나면 다시 ui 올라오도록  ()밀리세크
-                Thread.Sleep(2000);
-                StateSetting.SetStates("SelectST");
-                GameObject.Find("ActionManager").GetComponent<ActionSelectController>().EffectOff();
+                //Thread.Sleep(2000);
+                timer += Time.deltaTime;
+
+                if (timer > waitingTime)
+                {
+                    StateSetting.SetStates("SelectST");
+                    GameObject.Find("ActionManager").GetComponent<ActionSelectController>().EffectOff();
+                    timer = 0.0f;
+                }
             }
         }
     }
