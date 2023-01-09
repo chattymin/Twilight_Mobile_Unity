@@ -25,6 +25,7 @@ public class BattleEffect : MonoBehaviour
             GameObject.Find("EnemyBattleEffect").GetComponent<EnemyBattleEffect>().EffectOff();
             GameObject.Find("PlayerBattleManager").GetComponent<PlayerBattleController>().EffectOff();
             GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EffectOff();
+            StateSetting.SetStates(GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().StateCheck());
         }
         else if (StateSetting.CompareStates("BattleST"))
         {

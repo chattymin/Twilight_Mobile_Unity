@@ -95,11 +95,20 @@ public class BattleMechanism : MonoBehaviour {
             default:
                 break;
         }
-        if (PlayerSetting.HP <= 0) {
-            StateSetting.SetStates("LoseST");
+    }
+
+    public string StateCheck()
+    {
+        if (PlayerSetting.HP <= 0)
+        {
+            return "LoseST";
+            //StateSetting.SetStates("LoseST");
         }
-        if (EnemySetting.HP <= 0) {
-            StateSetting.SetStates("WinST");
+        if (EnemySetting.HP <= 0)
+        {
+            return "WinST";
+            //StateSetting.SetStates("WinST");
         }
+        return "SelectST";
     }
 }
