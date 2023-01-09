@@ -35,23 +35,29 @@ public class PlayerBattleController : MonoBehaviour {
     }
 
     
-    public void ActionSelectRun() { //Ȯ�� ��ư�� ������ �� �޴��� �������� 
-        Start();                    //�ൿ ������ ���� �޼ҵ� ����
-        if (playerSelected == "Attack") { //������ ������ ���
-            SelectAttackImg(); //���� �̹��� ǥ��
-            ShowAttackValue(); //���� �ൿ�� ǥ��
+    public void ActionSelectRun() { //Ȯ�� ��ư�� ������ �� �޴��� ��������
+        Start();                    //�ൿ ������ ���� �޼ҵ� ����x
+        if (playerSelected != null)
+        {
+            if (playerSelected == "Attack")
+            { //������ ������ ���
+                SelectAttackImg(); //���� �̹��� ǥ��
+                ShowAttackValue(); //���� �ൿ�� ǥ��
             }
-        else if (playerSelected == "Defense") { //�� ������ ���
-            SelectDefenseImg(); //��� �̹��� ǥ��
-            ShowDefenseValue(); //��� �ൿ�� ǥ��
+            else if (playerSelected == "Defense")
+            { //�� ������ ���
+                SelectDefenseImg(); //��� �̹��� ǥ��
+                ShowDefenseValue(); //��� �ൿ�� ǥ��
+            }
+            else if (playerSelected == "Recovery")
+            { //ȸ���� ������ ���
+                SelectRecoveryImg(); //ȸ�� �̹��� ǥ��
+                ShowRecoveryValue(); //ȸ�� �ൿ�� ǥ��
+            }
+            StateSetting.SetStates(BATTLEST);
+            GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOn(playerSelected);
+            GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
         }
-        else if (playerSelected == "Recovery") { //ȸ���� ������ ���
-            SelectRecoveryImg(); //ȸ�� �̹��� ǥ��
-            ShowRecoveryValue(); //ȸ�� �ൿ�� ǥ��
-        }
-        StateSetting.SetStates(BATTLEST);
-        GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOn(playerSelected);
-        GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
     }
 
 
