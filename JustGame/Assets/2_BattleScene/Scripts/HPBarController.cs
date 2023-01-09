@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class HPBarController : MonoBehaviour
-{
+public class HPBarController : MonoBehaviour {
     public TextMeshProUGUI playerHP;
     public TextMeshProUGUI enemyHP;
 
-    int intPlayerHP = PlayerSetting.HP;
-    int intEnemyHP = EnemySetting.HP;
+    public void Start() {
+        playerHP.text = PlayerSetting.HP.ToString();
+        enemyHP.text = "50/" + EnemySetting.HP.ToString();
+    }
 
-    public void HPUpdate()
-    {
-        playerHP.text = "100/" + intPlayerHP.ToString();
-        enemyHP.text = intEnemyHP.ToString();
+    public void HPUpdate() {
+        playerHP.text = PlayerSetting.HP.ToString();
+        enemyHP.text = "50/" + EnemySetting.HP.ToString();
     }
 }
