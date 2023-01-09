@@ -7,25 +7,22 @@ using TMPro;
 public class ResultScript : MonoBehaviour
 {
     GameObject WinPage;
-    TextMeshProUGUI Hp;
-    TextMeshProUGUI playerAttack;
-    TextMeshProUGUI playerDefense;
-    TextMeshProUGUI playerRecovery;
-    TextMeshProUGUI playerMoney; 
+    public TextMeshProUGUI Hp;
+    public TextMeshProUGUI playerAttack;
+    public TextMeshProUGUI playerDefense;
+    public TextMeshProUGUI playerRecovery;
+    public TextMeshProUGUI playerMoney; 
     // Start is called before the first frame update
     void Start(){
 
-        Hp = GameObject.Find("HPText").GetComponent<TextMeshProUGUI>();
-        playerAttack = GameObject.Find("PlayerAttackLV").GetComponent<TextMeshProUGUI>();
-        playerDefense = GameObject.Find("PlayerDefenseLV").GetComponent<TextMeshProUGUI>();
-        Hp = GameObject.Find("HPText").GetComponent<TextMeshProUGUI>();
+        Hp.text = PlayerSetting.HP.ToString();
+        playerAttack.text = PlayerSetting.attackLV.ToString();
+        playerDefense.text = PlayerSetting.defenseLV.ToString();
+        playerRecovery.text = PlayerSetting.recoveryLV.ToString();
+        playerMoney.text = PlayerSetting.money.ToString();
 
-        Hp = GameObject.Find("HPText").GetComponent<TextMeshProUGUI>();
-
-
-
-        WinPage = GameObject.Find("WinPopup");
-        WinPage.SetActive(false);
+        //WinPage = GameObject.Find("WinPopup");
+        //WinPage.SetActive(false);
     }
 
     void popupOn() {

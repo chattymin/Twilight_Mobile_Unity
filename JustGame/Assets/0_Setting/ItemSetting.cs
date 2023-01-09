@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSetting : MonoBehaviour
 {
-    public List<Item> AllItemList = new List<Item>(12); //¾ÆÀÌÅÛ ¸®½ºÆ®
+    public List<Item> AllItemList = new List<Item>(12); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
     // Start is called before the first frame update
     
     public void Start()
