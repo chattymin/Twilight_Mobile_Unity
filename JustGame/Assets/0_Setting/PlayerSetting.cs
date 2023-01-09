@@ -12,4 +12,5 @@ public class PlayerSetting : MonoBehaviour
     public static int money = 0;
     public static bool[] bought = new bool[11];
     public static Item item;
+    public static int round = 0;
 }

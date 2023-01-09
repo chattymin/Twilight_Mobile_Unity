@@ -106,6 +106,7 @@ public class BattleMechanism : MonoBehaviour {
         }
         if (EnemySetting.HP <= 0)
         {
+            EnemySetting.HP = EnemySetting.MaxHP;
             return "WinST";
             //StateSetting.SetStates("WinST");
         }
