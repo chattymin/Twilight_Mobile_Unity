@@ -12,7 +12,7 @@ using TMPro;
 
 public class ItemManager : MonoBehaviour
 {
-    public static List<Item> AllItemList = new List<Item>(10); //아이템 리스트
+    public List<Item> AllItemList = new List<Item>(12); //아이템 리스트
     public Image showImage; // 랜덤으로 뽑힌 아이템을 보여주는 변수
     public GameObject itemdesc; // 아이템 설명 변수
     public Item exitItem; //player가 가질수 있는 아이템
