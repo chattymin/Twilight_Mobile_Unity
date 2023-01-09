@@ -12,7 +12,7 @@ using TMPro;
 
 public class ItemManager : MonoBehaviour
 {
-    public List<Item> AllItemList = new List<Item>(12); //아이템 리스트
+    ItemSetting itemsetting;
     public Image showImage; // 랜덤으로 뽑힌 아이템을 보여주는 변수
     public GameObject itemdesc; // 아이템 설명 변수
     public Item exitItem; //player가 가질수 있는 아이템
@@ -61,7 +61,7 @@ public class ItemManager : MonoBehaviour
 
     public void changeImage()
     {
-      
+        itemsetting = GameObject.Find("ItemDefaultSetting").GetComponent<ItemSetting>();
         inventoryItem.GetComponent<Image>().sprite = PlayerSetting.item.itemImage;
         
         
@@ -79,7 +79,7 @@ public class ItemManager : MonoBehaviour
             //상점에서 구매 후 버튼 기능 비활성화. 배틀씬 후 다시 상점에 올 경우엔
             //버튼 기능이 활성화되어야하기 때문에 기능활성화.
             buy.GetComponent<Button>().interactable = true;
-            exitItem = AllItemList[indexNumber]; //exititem에 뽑힌 아이템을 저장함. -> 구매 안할수도 있기 때문에 임시로 저장.
+            exitItem = itemsetting.AllItemList[indexNumber]; //exititem에 뽑힌 아이템을 저장함. -> 구매 안할수도 있기 때문에 임시로 저장.
             showImage.sprite = exitItem.itemImage;
             itemdesc = GameObject.Find("desc"); // itemdesc 내용을 아이템에 대한 설명으로 변경.
             itemdesc.GetComponent<TextMeshProUGUI>().text = exitItem.itemdesc;
@@ -98,8 +98,8 @@ public class ItemManager : MonoBehaviour
 
         PlayerSetting.bought[indexNumber] = true; // indexnumber을 활용해 player의 구매 정보 업데이트. 
 
-        showImage.sprite = AllItemList[11].itemImage; // 구매할 수 있는 아이템을 보여주는 이미지를 soldout으로 변경함. 
-        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[11].itemdesc; // 문구를 soldout으로 변경. 
+        showImage.sprite = itemsetting.AllItemList[11].itemImage; // 구매할 수 있는 아이템을 보여주는 이미지를 soldout으로 변경함. 
+        itemdesc.GetComponent<TextMeshProUGUI>().text = itemsetting.AllItemList[11].itemdesc; // 문구를 soldout으로 변경. 
         buy.GetComponent<Button>().interactable = false; // 구매할 수 없도록 button 기능 비활성화. 
     }
 
