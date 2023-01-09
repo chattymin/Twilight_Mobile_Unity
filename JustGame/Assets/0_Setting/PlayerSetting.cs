@@ -9,6 +9,6 @@ public class PlayerSetting : MonoBehaviour {
     public static int defenseLV = 5; //deffenceMin, deffenceMax;
     public static int recoveryLV = 5; //recoveryMin, recoveryMax;
     public static int money = 0;
-    public static bool [] bought = new bool[10];
-    public static Item item;
+    public static bool [] bought = new bool[11];
+    public static Item item = GameObject.Find("GameObject").GetComponent<ItemManager>().AllItemList[0];
 }
