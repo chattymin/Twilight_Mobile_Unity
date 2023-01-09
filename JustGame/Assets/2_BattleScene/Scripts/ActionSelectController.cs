@@ -33,4 +33,11 @@ public class ActionSelectController : MonoBehaviour {
         recoveryEffect.SetActive(true);
         Action = "Recovery";
     }
+
+    public void EffectOff()
+    {
+        attackEffect.SetActive(false);
+        defenseEffect.SetActive(false);
+        recoveryEffect.SetActive(false);
+    }
 }

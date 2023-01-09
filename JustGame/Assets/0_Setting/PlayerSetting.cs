@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSetting : MonoBehaviour {
+    public const int MaxHP = 100;
     public static int HP = 100;
     public static int attackLV = 1; //attackMin, attackMax; (min: LV / max: LV * 2)
     public static int defenseLV = 1; //deffenceMin, deffenceMax;

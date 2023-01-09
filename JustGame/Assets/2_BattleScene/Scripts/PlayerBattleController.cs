@@ -107,4 +107,15 @@ public class PlayerBattleController : MonoBehaviour {
         defenseValueText.text = "";
         SelectRecoveryVal();
     }
+
+    public void EffectOff()
+    {
+        selectAttack.SetActive(false); //�ൿ �̹���
+        selectDefense.SetActive(false); //���!!!
+        selectRecovery.SetActive(false); //���� ����.
+
+        attackValueText.text = "";
+        defenseValueText.text = "";
+        recoveryValueText.text = "";
+    }
 }
