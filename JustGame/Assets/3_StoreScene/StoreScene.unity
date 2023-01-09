@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllItemList:
-  - type: Item
+  - type: basicItem
     itemName: One
     itemexp: 1
     itemdesc: FirstItem
@@ -2909,6 +2909,12 @@ MonoBehaviour:
     itemdesc: TenItem
     itemPrice: 10
     itemImage: {fileID: 21300000, guid: d20de5c73c25cfa49a1c956d835ae34a, type: 3}
+  - type: Item
+    itemName: Eleven
+    itemexp: 11
+    itemdesc: ElevenItem
+    itemPrice: 11
+    itemImage: {fileID: 21300000, guid: 563789d18c9c74a4dbc1a5c7b2064a0b, type: 3}
   - type: SoldOut
     itemName: Soldout
     itemexp: 0
