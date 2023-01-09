@@ -851,7 +851,7 @@ MonoBehaviour:
   - type: Item
     itemName: Four
     itemexp: 4
-    itemdesc: Attack card stats increased by 2
+    itemdesc: Attack stats increased by 2
     itemPrice: 4
     itemImage: {fileID: 21300000, guid: be5f8e6fb298a6d4496025d43bb4b484, type: 3}
   - type: Item
@@ -863,13 +863,13 @@ MonoBehaviour:
   - type: Item
     itemName: Six
     itemexp: 6
-    itemdesc: Know your opponent's attack pattern.
+    itemdesc: Know  attack pattern.
     itemPrice: 6
     itemImage: {fileID: 21300000, guid: 8717ed6d1c352ee4fa8ad77a06d14ae7, type: 3}
   - type: Item
     itemName: Seven
     itemexp: 7
-    itemdesc: Increases the player's defensive stats by 1
+    itemdesc: Recovery increased by 1
     itemPrice: 7
     itemImage: {fileID: 21300000, guid: 715123b83697a0041a0ea5c5dc9a0a7b, type: 3}
   - type: Item
@@ -887,7 +887,7 @@ MonoBehaviour:
   - type: Item
     itemName: Ten
     itemexp: 10
-    itemdesc: Increases Attack by 3 when confronting Blue Dragon
+    itemdesc: 'Increases Defense by 3 '
     itemPrice: 10
     itemImage: {fileID: 21300000, guid: 9b08035f79859a94a97d6a6e1ec93346, type: 3}
   - type: SoldOut
@@ -1348,7 +1348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.4031, y: -13.6107}
+  m_AnchoredPosition: {x: -3.4030762, y: -13.610718}
   m_SizeDelta: {x: 61.2488, y: 81.6655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1274612014
