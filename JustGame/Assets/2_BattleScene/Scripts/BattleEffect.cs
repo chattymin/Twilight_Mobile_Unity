@@ -59,6 +59,7 @@ public class BattleEffect : MonoBehaviour
         {
             basicPanel.SetActive(true);
             winPanel.SetActive(true);
+            EnemySetting.HP = EnemySetting.MaxHP;
         }
         else if (StateSetting.CompareStates("LoseST"))
         {
