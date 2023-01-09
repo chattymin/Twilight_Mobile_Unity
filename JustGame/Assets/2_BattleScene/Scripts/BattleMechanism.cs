@@ -95,5 +95,11 @@ public class BattleMechanism : MonoBehaviour {
             default:
                 break;
         }
+        if (PlayerSetting.HP <= 0) {
+            StateSetting.SetStates("LoseST");
+        }
+        if (EnemySetting.HP <= 0) {
+            StateSetting.SetStates("WinST");
+        }
     }
 }
