@@ -25,7 +25,7 @@ public class HPBarController : MonoBehaviour {
 
     public void HPUpdate() {
         playerHP.text = PlayerSetting.HP + "";
-        enemyHP.text = EnemySetting.MaxHP + "/" + EnemySetting.HP;
+        enemyHP.text = EnemySetting.HP + "/" + EnemySetting.MaxHP;
 
         this.playerHPGauge.GetComponent<Image>().fillAmount = PlayerSetting.HP * 0.01f;
         this.enemyHPGauge.GetComponent<Image>().fillAmount 
