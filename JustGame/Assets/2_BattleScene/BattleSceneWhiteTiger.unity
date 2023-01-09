@@ -510,10 +510,10 @@ MonoBehaviour:
   AttackEffect: {fileID: 96470499}
   DefenseEffect: {fileID: 1445383718}
   RecoveryEffect: {fileID: 1314559327}
-  EnemyStay: {fileID: 1321169704}
-  EnemyAttack: {fileID: 1584365121}
-  EnemyDefense: {fileID: 380141374}
-  EnemyRecovery: {fileID: 1874403864}
+  EnemyStay: {fileID: 1870760790}
+  EnemyAttack: {fileID: 1511163151}
+  EnemyDefense: {fileID: 1866318961}
+  EnemyRecovery: {fileID: 423338215}
 --- !u!4 &58999533
 Transform:
   m_ObjectHideFlags: 0
@@ -1711,7 +1711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01ea92a6387404ba1a2c6e8b28bfd9b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aad56159eb3f94757a92b005be043320, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1886,7 +1886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &180469079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3837,7 +3837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423338215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -601.5397, y: -516.09235, z: -4.235197}
+  m_LocalPosition: {x: -601, y: -517, z: -4.235197}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4716,7 +4716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01ea92a6387404ba1a2c6e8b28bfd9b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aad56159eb3f94757a92b005be043320, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11237,7 +11237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1321169705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13102,7 +13102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511163151}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -601.50964, y: -516.0705, z: -4.235197}
+  m_LocalPosition: {x: -601, y: -517, z: -4.235197}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14981,7 +14981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866318961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -601.50964, y: -516.09235, z: -4.235197}
+  m_LocalPosition: {x: -601, y: -517, z: -4.235197}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15056,7 +15056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1870760791
 Transform:
   m_ObjectHideFlags: 0
@@ -15065,7 +15065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870760790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -601.50964, y: -516.09235, z: -4.235197}
+  m_LocalPosition: {x: -601, y: -517, z: -4.235197}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16368,7 +16368,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stage 1
+  m_text: 'Stage 2
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97355d53d4c427146bc7341ff145e357, type: 2}
   m_sharedMaterial: {fileID: 8475848352258782752, guid: 97355d53d4c427146bc7341ff145e357, type: 2}

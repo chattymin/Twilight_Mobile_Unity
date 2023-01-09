@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class nextStageController : MonoBehaviour
 {
+
     // Start is called before the first frame update
     public void nextBtnClick() {
-        SceneManager.LoadScene("testscene");
+        StateSetting.SetStates("SelectST");
+        
+        PlayerSetting.round++;
+        SceneManager.LoadScene("BattleScene" + StateSetting.boss[PlayerSetting.round]);
     }
 }

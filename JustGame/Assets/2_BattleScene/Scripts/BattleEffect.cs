@@ -14,6 +14,10 @@ public class BattleEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        basicPanel.SetActive(false);
+        winPanel.SetActive(false);
+        losePanel.SetActive(false);
+
         timer = 0.0f;
         waitingTime = 2;
         
@@ -33,6 +37,7 @@ public class BattleEffect : MonoBehaviour
             basicPanel.SetActive(false);
             winPanel.SetActive(false);
             losePanel.SetActive(false);
+
         }
         else if (StateSetting.CompareStates("BattleST"))
         {

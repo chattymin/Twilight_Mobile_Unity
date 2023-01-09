@@ -5,12 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class FadeOutController : MonoBehaviour {
-    public Image image; //°ËÀº È­¸é
-    public GameObject storeButton; //»óÁ¡ ¹öÆ°
-
+    public Image image; //ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½
+    public GameObject storeButton; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
 
     public void StoreButton() {
         image.enabled = true;
+
         StartCoroutine(FadeCoroutine());
     }
 
@@ -21,6 +21,7 @@ public class FadeOutController : MonoBehaviour {
             yield return new WaitForSeconds(0.01f);
             image.color = new Color(0, 0, 0, fadeCount);
         }
-        SceneManager.LoadScene("StoreScene");
+        if(PlayerSetting.round == 3) SceneManager.LoadScene("EndingScene");
+        else SceneManager.LoadScene("StoreScene");
     }
 }

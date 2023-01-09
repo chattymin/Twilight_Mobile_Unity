@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StartBtnManager : MonoBehaviour {
-    public Image image; //°ËÀº È­¸é
-    public GameObject startButton; //°ÔÀÓ ½ÃÀÛ
-    public GameObject exitButton; //°ÔÀÓ Á¾·á
+    public Image image; //ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½
+    public GameObject startButton; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public GameObject exitButton; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     public void FadeButton() {
         startButton.SetActive(false);
@@ -26,6 +26,7 @@ public class StartBtnManager : MonoBehaviour {
     }
 
     public void SceneChange() {
+        StateSetting.states = "SelectST";
         SceneManager.LoadScene("BattleScene");
     }
 }
