@@ -6,48 +6,31 @@ using TMPro;
 
 
 /*
- * 클래스 설명 : 랜덤으로 아이템을 보여주고 구매하는 클래스. 
- * start버튼, 구매버튼과 연결됨. 
+ * 클래스 설명 : 랜덤으로 아이템을 보여줌, 가격 정보 업데이트, 구매시 buyscript와 연결되는 클래스. 
  * 외부 스크립트(buyScript)에서 boughtUpdate 메소드를 활용하여 구매 정보 업데이트함.  
  */
 
 public class ItemManager : MonoBehaviour
 {
-    public List<Item> AllItemList = new List<Item>(10);
-    public Image showImage;
-    public GameObject itemdesc;
-    public Item exitItem;
-    public int indexNumber;
-    
-    //public  bool[] bought = new bool[10];
-    GameObject buy;
-    Image buyBtnImg;
-    GameObject inventoryItem;
-    public GameObject popup;
-    static TextMeshProUGUI itemPrice;
-    static TextMeshProUGUI attackPrice;
-    static TextMeshProUGUI defensePrice;
-    static TextMeshProUGUI recoveryPrice;
-    static int aPrice = 100;
-    static int dPrice = 100;
-    static int rPrice = 100;
-
-
-
-    /* start 버튼 클릭시 작동되는 메소드 
-     * indexNumber : AllItemList에 저장된 Item 요소 활용 위해 indexnumber 활용. 
-     indexNumber은 0~10 중 랜덤으로 숫자 추출. 단, bought 배열을 활용해 이전에 구매했는지 확인.
-     구매했으면 while문에 의해 다시 랜덤 숫자 추출. 이를 통해 구매한 아이템 다시 구매 못하도록 함. 
-     * exitItem : indexnumber을 이용해 AllItemList 요소를 가져와 저장함. 
-     * 
-     * showImage : exitItem의 itemImage를 저장하는 변수  itemImage를 showImage의 
-     sprite 컴포넌트에 저장함.
-     *itemdesc : exitItem 의 itemdesc를 저장함. 
-    */
+    public List<Item> AllItemList = new List<Item>(10); //아이템 리스트
+    public Image showImage; // 랜덤으로 뽑힌 아이템을 보여주는 변수
+    public GameObject itemdesc; // 아이템 설명 변수
+    public Item exitItem; //player가 가질수 있는 아이템
+    public int indexNumber; // 리스트 활용 위한 index number
+     GameObject buy; // buy 버튼 찾기 위한 오브젝트
+    Image buyBtnImg; // 버튼 컬러 변경하기 위한 변수
+    GameObject inventoryItem; //inventoryitem 오브젝트. player의 인벤토리 상태를 보여줌 
+    public GameObject popup; //팝업창
+    static TextMeshProUGUI itemPrice; //item가격을 보여주는 text
+    static TextMeshProUGUI attackPrice; //attack up 가격 보여주는 text
+    static TextMeshProUGUI defensePrice; //defense up 가격 보여주는 text
+    static TextMeshProUGUI recoveryPrice; //recovery up 가격 보여주는 text
+    public static int aPrice = 100; // attack price 초기값 
+    public static int dPrice = 100; // defense price 초기값 
+    public static int rPrice = 100; // recovery price 초기값 
 
     private void Start()
     {
-        PlayerSetting.bought[0] = true;
         itemPrice = GameObject.Find("itemPrice").GetComponent<TextMeshProUGUI>();
 
         attackPrice = GameObject.Find("attackPrice").GetComponent<TextMeshProUGUI>();
@@ -69,16 +52,25 @@ public class ItemManager : MonoBehaviour
         changeImage();
     }
 
+    /* changeImage 메소드 
+     * 구매할 수 있는 아이템을 랜덤으로 뽑아 이미지로 보여줌. 아이템에 따른 설명, 가격 띄움. 
+     * 인벤토리 이미지를 통해 현재 player가 갖고 있는 아이템을 보여줌. 
+     * player의 인벤토리 속 들어간 아이템에 따른 버튼 기능 활성/비활성
+     */
+
     public void changeImage()
     {
-        if (PlayerSetting.item == null)
+        //만약 player에게 아이템이 없을 경우 아이템 이미지가 뜨지 않도록 함. -> player가 구매한 상품이 하나도 없을 경우에만 작동됨. 
+        if (PlayerSetting.item == null) 
         {
             inventoryItem.SetActive(false);
-        }else {
+        }else{//아닐 경우 inventoryitem의 이미지를 현재 player가 갖고 있는 이미지로 변경함. 
             inventoryItem.GetComponent<Image>().sprite = PlayerSetting.item.itemImage;
         }
         
-        indexNumber = Random.Range(0, 10);
+        indexNumber = Random.Range(0, 10); //random을 이용해 나온 indexnumber을 활용해 itemlist에서 아이템 뽑음
+        
+        //만약 player가 이미 구매한 상품일 경우(PlayerSetting.bought[indexnumber]) 버튼 색을 gray로 변경.item설명 부분에 sold out로 변경.
         if (PlayerSetting.bought[indexNumber] == true)
         {
             showImage.sprite = PlayerSetting.item.itemImage;
@@ -87,31 +79,40 @@ public class ItemManager : MonoBehaviour
         }
         else
         {
+            //상점에서 구매 후 버튼 기능 비활성화. 배틀씬 후 다시 상점에 올 경우엔
+            //버튼 기능이 활성화되어야하기 때문에 기능활성화.
             buy.GetComponent<Button>().interactable = true;
-            exitItem = AllItemList[indexNumber];
+            exitItem = AllItemList[indexNumber]; //exititem에 뽑힌 아이템을 저장함. -> 구매 안할수도 있기 때문에 임시로 저장.
             showImage.sprite = exitItem.itemImage;
-            itemdesc = GameObject.Find("desc");
+            itemdesc = GameObject.Find("desc"); // itemdesc 내용을 아이템에 대한 설명으로 변경.
             itemdesc.GetComponent<TextMeshProUGUI>().text = exitItem.itemdesc;
-            itemPrice.text = exitItem.itemPrice.ToString();
+            itemPrice.text = exitItem.itemPrice.ToString(); //item가격 text를 item의 가격으로 변경
         }
     }
 
-    /* 구매 버튼 클릭 시 bought 배열 true로 변경. 
+    /* boughtUpdate 메소드
+     * 구매 버튼 클릭 시( buyscript의 buyItem 메소드와 연결됨) bought 배열 true로 변경. 
      * indexNumber활용해 해당 인덱스번호 내용 수정. 
     */
     public void boughtUpdate()
     {
-        buyBtnImg.color = Color.gray;
-        itemPrice.text = "";
-        inventoryItem.SetActive(true);
+        buyBtnImg.color = Color.gray; // 구매버튼 클릭 시 구매를 막기 위해 색을 gray로 변경 
+        itemPrice.text = ""; // item의 가격을 표시해주는 text를 ""로 변경. 
+        inventoryItem.SetActive(true); //구매했기 때문에 inventory의 현 상황을 보여주어야 하므로 inventoryitem을 true로 변경함.
 
-        PlayerSetting.bought[indexNumber] = true;
+        PlayerSetting.bought[indexNumber] = true; // indexnumber을 활용해 player의 구매 정보 업데이트. 
 
-        showImage.sprite = AllItemList[10].itemImage;
-        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[10].itemdesc;
-        buy.GetComponent<Button>().interactable = false;
+        showImage.sprite = AllItemList[10].itemImage; // 구매할 수 있는 아이템을 보여주는 이미지를 soldout으로 변경함. 
+        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[10].itemdesc; // 문구를 soldout으로 변경. 
+        buy.GetComponent<Button>().interactable = false; // 구매할 수 없도록 button 기능 비활성화. 
     }
 
+
+    /*setPrice 메소드
+     * 구매한 능력치의 이름에 따라 해당 능력치의 가격 정보를 업데이트함.
+     * 현재 모든 능력치가 1레벨 올라갈 때마다 50코인 상승. 
+     * 모든 능력치의 시작값(aPrice,dPrice,rPrice)은 100.
+     */
     public void setPrice(string expName) {
 
         switch (expName)
@@ -131,6 +132,11 @@ public class ItemManager : MonoBehaviour
         }        
     }
 
+    /*getPrice
+     * buyScript의 구매버튼과 연결된 구매 메소드에서 사용됨.  
+     * 구매했을 경우 player의 소지금에서 아이템/능력치 비용이 빠지는데 이때 각 아이템/능력치의
+     * 가격을 반환하는 메소드
+     */
     public int getPrice(string expName) {
         int returnPrice=0;
 
