@@ -21,12 +21,12 @@ public class BattleMechanism : MonoBehaviour {
     public void BattleRun(int enemySelected) { //배틀 시작
         playerSelected = GameObject.Find("PlayerBattleManager") //플레이어 행동
             .GetComponent<PlayerBattleController>().playerSelected;
-        //enemySelected = GameObject.Find("EnemyBattleManager") //적 행동값
-        //    .GetComponent<EnemyBattleController>().enemyRandomAction;
+
         playerValue = GameObject.Find("PlayerBattleManager") //플레이어 행동값
             .GetComponent<PlayerBattleController>().playerActionValue;
         enemyValue = GameObject.Find("EnemyBattleManager") //적 행동값
             .GetComponent<EnemyBattleController>().enemyActionValue;
+
         switch (playerSelected) {
             case "Attack":
                 if (enemySelected == 1) { //p공 VS e공
@@ -44,6 +44,8 @@ public class BattleMechanism : MonoBehaviour {
                 else { //p공 VS e회
                     EnemySetting.HP -= playerValue;
                     EnemySetting.HP += enemyValue;
+                    if (EnemySetting.HP > EnemySetting.MaxHP)
+                        EnemySetting.HP = EnemySetting.MaxHP;                        
                 }
                 break;
 
@@ -62,6 +64,8 @@ public class BattleMechanism : MonoBehaviour {
                 }
                 else { //p방 VS e회
                     EnemySetting.HP += enemyValue;
+                    if (EnemySetting.HP > EnemySetting.MaxHP)
+                        EnemySetting.HP = EnemySetting.MaxHP;
                 }
                 break;
 
@@ -69,13 +73,22 @@ public class BattleMechanism : MonoBehaviour {
                 if (enemySelected == 1) { //p회 VS e공
                     PlayerSetting.HP -= enemyValue;
                     PlayerSetting.HP += playerValue;
+                    if (PlayerSetting.HP > PlayerSetting.MaxHP)
+                        PlayerSetting.HP = PlayerSetting.MaxHP;
                 }
                 else if (enemySelected == 2) { //p회 VS e방
                     PlayerSetting.HP += playerValue;
+                    if (PlayerSetting.HP > PlayerSetting.MaxHP)
+                        PlayerSetting.HP = PlayerSetting.MaxHP;
                 }
                 else { //p회 VS e회
                     PlayerSetting.HP += playerValue;
+                    if (PlayerSetting.HP > PlayerSetting.MaxHP)
+                        PlayerSetting.HP = PlayerSetting.MaxHP;
+
                     EnemySetting.HP += enemyValue;
+                    if (EnemySetting.HP > EnemySetting.MaxHP)
+                        EnemySetting.HP = EnemySetting.MaxHP;
                 }
                 break;
 
