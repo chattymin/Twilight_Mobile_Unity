@@ -40,4 +40,28 @@ public class ResultScript : MonoBehaviour
 
     void showCurState() { 
     }
+
+    public void StoreSceneBT()
+    {
+        SceneManager.LoadScene("StoreScene");
+    }
+
+    public void MainSceneBT()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void ExitSceneBT()
+    {
+        // 메인페이지로 돌아갈 경우
+        // SceneManager.LoadScene("NextScene");
+
+        // 게임을 종료할 경우
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
 }

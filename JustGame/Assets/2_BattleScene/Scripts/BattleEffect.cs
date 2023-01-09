@@ -7,6 +7,10 @@ public class BattleEffect : MonoBehaviour
 {
     float timer;
     int waitingTime;
+    public GameObject basicPanel;
+    public GameObject winPanel;
+    public GameObject losePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,9 @@ public class BattleEffect : MonoBehaviour
             GameObject.Find("PlayerBattleManager").GetComponent<PlayerBattleController>().EffectOff();
             GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EffectOff();
             StateSetting.SetStates(GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().StateCheck());
+            basicPanel.SetActive(false);
+            winPanel.SetActive(false);
+            losePanel.SetActive(false);
         }
         else if (StateSetting.CompareStates("BattleST"))
         {
@@ -42,6 +49,16 @@ public class BattleEffect : MonoBehaviour
                     timer = 0.0f;
                 }
             }
+        }
+        else if (StateSetting.CompareStates("WinST"))
+        {
+            basicPanel.SetActive(true);
+            winPanel.SetActive(true);
+        }
+        else if (StateSetting.CompareStates("LoseST"))
+        {
+            basicPanel.SetActive(true);
+            losePanel.SetActive(true);
         }
     }
 }
