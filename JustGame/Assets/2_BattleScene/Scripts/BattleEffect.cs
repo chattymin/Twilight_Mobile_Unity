@@ -19,6 +19,8 @@ public class BattleEffect : MonoBehaviour
             // 액션 이펙트 지우는 코드
             GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOff();
             GameObject.Find("EnemyBattleEffect").GetComponent<EnemyBattleEffect>().EffectOff();
+            GameObject.Find("PlayerBattleManager").GetComponent<PlayerBattleController>().EffectOff();
+            GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EffectOff();
         }
         else if (StateSetting.CompareStates("BattleST"))
         {
@@ -27,6 +29,7 @@ public class BattleEffect : MonoBehaviour
                 // 특정 시간 지나면 다시 ui 올라오도록  ()밀리세크
                 Thread.Sleep(2000);
                 StateSetting.SetStates("SelectST");
+                GameObject.Find("ActionManager").GetComponent<ActionSelectController>().EffectOff();
             }
         }
     }

@@ -105,5 +105,16 @@ public class EnemyBattleController : MonoBehaviour {
         enemyDefenseValueText.text = "";
         SelectRecoveryVal();
     }
+
+    public void EffectOff()
+    {
+        enemyAttack.SetActive(false); //�ൿ �̹���
+        enemyDefense.SetActive(false); //����!!!
+        enemyRecovery.SetActive(false); //����� ����.
+
+        enemyAttackValueText.text = "";
+        enemyDefenseValueText.text = "";
+        enemyRecoveryValueText.text = "";
+    }
 }
 
