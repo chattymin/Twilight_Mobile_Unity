@@ -10,6 +10,7 @@ public class ActionSelectController : MonoBehaviour {
     public string Action;
 
     public void Start() {
+        Action = null;
         attackEffect.SetActive(false);
         defenseEffect.SetActive(false);
         recoveryEffect.SetActive(false);
@@ -39,5 +40,6 @@ public class ActionSelectController : MonoBehaviour {
         attackEffect.SetActive(false);
         defenseEffect.SetActive(false);
         recoveryEffect.SetActive(false);
+        Action = null;
     }
 }
