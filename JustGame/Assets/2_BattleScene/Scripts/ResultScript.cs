@@ -19,7 +19,8 @@ public class ResultScript : MonoBehaviour
         playerAttack.text = PlayerSetting.attackLV.ToString();
         playerDefense.text = PlayerSetting.defenseLV.ToString();
         playerRecovery.text = PlayerSetting.recoveryLV.ToString();
-        playerMoney.text = PlayerSetting.money.ToString();
+        playerMoney.text = PlayerSetting.money.ToString() + "+" + EnemySetting.dropMoney.ToString();
+        PlayerSetting.money += EnemySetting.dropMoney;
 
         //WinPage = GameObject.Find("WinPopup");
         //WinPage.SetActive(false);
