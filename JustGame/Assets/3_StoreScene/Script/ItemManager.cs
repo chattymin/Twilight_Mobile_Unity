@@ -31,6 +31,7 @@ public class ItemManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerSetting.bought[0] = true;
         itemPrice = GameObject.Find("itemPrice").GetComponent<TextMeshProUGUI>();
 
         attackPrice = GameObject.Find("attackPrice").GetComponent<TextMeshProUGUI>();
@@ -60,15 +61,11 @@ public class ItemManager : MonoBehaviour
 
     public void changeImage()
     {
-        //만약 player에게 아이템이 없을 경우 아이템 이미지가 뜨지 않도록 함. -> player가 구매한 상품이 하나도 없을 경우에만 작동됨. 
-        if (PlayerSetting.item == null) 
-        {
-            inventoryItem.SetActive(false);
-        }else{//아닐 경우 inventoryitem의 이미지를 현재 player가 갖고 있는 이미지로 변경함. 
-            inventoryItem.GetComponent<Image>().sprite = PlayerSetting.item.itemImage;
-        }
+      
+        inventoryItem.GetComponent<Image>().sprite = PlayerSetting.item.itemImage;
         
-        indexNumber = Random.Range(0, 10); //random을 이용해 나온 indexnumber을 활용해 itemlist에서 아이템 뽑음
+        
+        indexNumber = Random.Range(1, 11); //random을 이용해 나온 indexnumber을 활용해 itemlist에서 아이템 뽑음
         
         //만약 player가 이미 구매한 상품일 경우(PlayerSetting.bought[indexnumber]) 버튼 색을 gray로 변경.item설명 부분에 sold out로 변경.
         if (PlayerSetting.bought[indexNumber] == true)
@@ -98,12 +95,11 @@ public class ItemManager : MonoBehaviour
     {
         buyBtnImg.color = Color.gray; // 구매버튼 클릭 시 구매를 막기 위해 색을 gray로 변경 
         itemPrice.text = ""; // item의 가격을 표시해주는 text를 ""로 변경. 
-        inventoryItem.SetActive(true); //구매했기 때문에 inventory의 현 상황을 보여주어야 하므로 inventoryitem을 true로 변경함.
 
         PlayerSetting.bought[indexNumber] = true; // indexnumber을 활용해 player의 구매 정보 업데이트. 
 
-        showImage.sprite = AllItemList[10].itemImage; // 구매할 수 있는 아이템을 보여주는 이미지를 soldout으로 변경함. 
-        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[10].itemdesc; // 문구를 soldout으로 변경. 
+        showImage.sprite = AllItemList[11].itemImage; // 구매할 수 있는 아이템을 보여주는 이미지를 soldout으로 변경함. 
+        itemdesc.GetComponent<TextMeshProUGUI>().text = AllItemList[11].itemdesc; // 문구를 soldout으로 변경. 
         buy.GetComponent<Button>().interactable = false; // 구매할 수 없도록 button 기능 비활성화. 
     }
 
