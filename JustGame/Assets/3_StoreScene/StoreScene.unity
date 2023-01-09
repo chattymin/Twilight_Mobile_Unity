@@ -2849,68 +2849,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllItemList:
+  - type: Basic Item
+    itemName: Basic Item
+    itemexp: 1
+    itemdesc: Basic Item
+    itemPrice: 0
+    itemImage: {fileID: 21300000, guid: 2045274bbfa419e4d8fe5d07582b14fa, type: 3}
   - type: Item
     itemName: One
     itemexp: 1
-    itemdesc: FirstItem
+    itemdesc: One Item
     itemPrice: 1
     itemImage: {fileID: 21300000, guid: 723a78206c0dfa54d9217452b3e9cf6e, type: 3}
   - type: Item
     itemName: Two
     itemexp: 2
-    itemdesc: TwoItem
+    itemdesc: Two Item
     itemPrice: 2
     itemImage: {fileID: 21300000, guid: 701c0178a34b6dd44b023669ce1d1e04, type: 3}
   - type: Item
     itemName: Three
     itemexp: 3
-    itemdesc: ThreeItem
+    itemdesc: Three Item
     itemPrice: 3
     itemImage: {fileID: 21300000, guid: 8c348218387634e4b9813bba732372df, type: 3}
   - type: Item
     itemName: Four
     itemexp: 4
-    itemdesc: FourItem
+    itemdesc: Four Item
     itemPrice: 4
     itemImage: {fileID: 21300000, guid: 148006a484d6adf4c97e2f2570caedbf, type: 3}
   - type: Item
     itemName: Five
     itemexp: 5
-    itemdesc: FiveItem
+    itemdesc: Five Item
     itemPrice: 5
     itemImage: {fileID: 21300000, guid: 3993599cf4da66c49bce6bdd81dc0fd2, type: 3}
   - type: Item
     itemName: Six
     itemexp: 6
-    itemdesc: SixItem
+    itemdesc: Six Item
     itemPrice: 6
     itemImage: {fileID: 21300000, guid: b0428277d7026a54dbc9ba10635f9189, type: 3}
   - type: Item
     itemName: Seven
     itemexp: 7
-    itemdesc: SevenItem
+    itemdesc: Seven Item
     itemPrice: 7
     itemImage: {fileID: 21300000, guid: 0ca7f270a7253c14eb60d45343ac20d1, type: 3}
   - type: Item
     itemName: Eight
     itemexp: 8
-    itemdesc: EightItem
+    itemdesc: Eight Item
     itemPrice: 8
-    itemImage: {fileID: 21300000, guid: 038818040db7fde42bf7a360aacf0601, type: 3}
+    itemImage: {fileID: 21300000, guid: 563789d18c9c74a4dbc1a5c7b2064a0b, type: 3}
   - type: Item
     itemName: Nine
     itemexp: 9
-    itemdesc: NineItem
+    itemdesc: Nine Item
     itemPrice: 9
     itemImage: {fileID: 21300000, guid: 82d1848330c8f0b43ac0b927f81bd478, type: 3}
   - type: Item
     itemName: Ten
     itemexp: 10
-    itemdesc: TenItem
+    itemdesc: Ten Item
     itemPrice: 10
     itemImage: {fileID: 21300000, guid: d20de5c73c25cfa49a1c956d835ae34a, type: 3}
-  - type: SoldOut
-    itemName: Soldout
+  - type: Sold Out
+    itemName: Sold Out
     itemexp: 0
     itemdesc: SOLD OUT
     itemPrice: 0
