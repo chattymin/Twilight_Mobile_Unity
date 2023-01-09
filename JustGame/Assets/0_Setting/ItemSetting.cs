@@ -9,6 +9,7 @@ public class ItemSetting : MonoBehaviour
     
     public void Start()
     {
+        DontDestroyOnLoad(gameObject);
         PlayerSetting.item = AllItemList[0];
     }
 
