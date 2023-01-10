@@ -1885,9 +1885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a98e48ecdb2749fba054fbd78307ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  RestartButton: {fileID: 0}
-  ExitButton: {fileID: 0}
+  image: {fileID: 1731579102}
+  RestartButton: {fileID: 1329163856}
 --- !u!1 &1402426276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,7 +2471,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1731579102}
   RestartButton: {fileID: 1329163856}
-  ExitButton: {fileID: 263744968}
 --- !u!1 &1731579100
 GameObject:
   m_ObjectHideFlags: 0
