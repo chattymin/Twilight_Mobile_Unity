@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
-using static UnityEditor.PlayerSettings;
+//using static UnityEditor.PlayerSettings;
 using System;
 
 public class BattleMechanism : MonoBehaviour {
