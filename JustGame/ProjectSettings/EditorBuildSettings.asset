@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/2_BattleScene/BattleSceneWhiteTiger.unity
     guid: 74a5011506012406aa7b2dc328e9a3a5
+  - enabled: 1
+    path: Assets/1_MainScene/MainScene.unity
+    guid: d9e6b90df6d81ab40afc88c5cbdeafea
   m_configObjects: {}
