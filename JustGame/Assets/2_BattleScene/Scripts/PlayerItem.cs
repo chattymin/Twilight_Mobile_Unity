@@ -5,10 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 
 public class PlayerItem : MonoBehaviour {
-    GameObject inventoryItem;
+    public GameObject inventoryItem;
 
     void Start() {
-        /*inventoryItem = GameObject.Find("Image");
-        inventoryItem.GetComponent<Image>().sprite = PlayerSetting.item.itemImage;*/
+        inventoryItem.GetComponent<Image>().sprite = PlayerSetting.item.itemImage;
     }
 }
