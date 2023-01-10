@@ -1292,7 +1292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1110696845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -732.989, y: -300}
+  m_AnchoredPosition: {x: -500, y: -250}
   m_SizeDelta: {x: 1419.2128, y: 357.4113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836316005
@@ -1897,7 +1897,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: "\uC5B4\uC2A4\uB984"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97355d53d4c427146bc7341ff145e357, type: 2}
   m_sharedMaterial: {fileID: 8475848352258782752, guid: 97355d53d4c427146bc7341ff145e357, type: 2}
@@ -1906,8 +1906,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281996311
-  m_fontColor: {r: 0.08919444, g: 0.08009968, b: 0.2264151, a: 1}
+    rgba: 4283317024
+  m_fontColor: {r: 0.1254902, g: 0.23137257, b: 0.30588236, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1924,8 +1924,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 250
+  m_fontSizeBase: 250
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
