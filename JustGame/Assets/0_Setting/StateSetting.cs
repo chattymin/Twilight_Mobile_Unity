@@ -11,8 +11,7 @@ public class StateSetting : MonoBehaviour
      * WinST : player won the battle
      * LoseST : player lose the battle
      */
-    public static string[] boss = {"BlackTurtoise", "WhiteTiger"
-            , "RedBird", "BlueDragon", "END"};
+    public static string[] boss = { "BlackTurtoise", "WhiteTiger", "RedBird", "BlueDragon","END" };
 
     /* 현무 -> 백호 -> 주작 -> 청룡 순서
      * BlackTurtoise -> WhiteTiger -> RedBird -> BlueDragon
