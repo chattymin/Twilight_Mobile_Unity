@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
 public class EndingFadeOutController : MonoBehaviour {
-    public Image image; //깨졌던거~~
-    public GameObject RestartButton;
+    public Image image; //���� ȭ��
+    public GameObject RestartButton; //���� ��ư
 
     public void EndingButton() {
         image.enabled = true;
