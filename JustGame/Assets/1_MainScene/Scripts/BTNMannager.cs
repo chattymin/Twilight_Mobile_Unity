@@ -19,7 +19,7 @@ public class ButtonManager : MonoBehaviour {
     public void StartClick() {
         startButton.SetActive(false);
         exitButton.SetActive(false);
-        //FadeOut 코루틴 실행
+        // (+ FadeOut 코루틴 실행)
     }
 
     public void SceneChange() {
