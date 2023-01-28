@@ -2,29 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+
 [System.Serializable]
-public class Item
-{
-    public string type;
+public class Item{
+    //ì•„ì´í…œ ì†ì„±
     public string itemName;
     public string itemexp;
     public string itemdesc;
     public int itemPrice;
     public Sprite itemImage;
-
-    // °ÔÀÓ Ã¹ ½ÃÀÛ ½Ã Item ¸®½ºÆ® Á¤ÀÇÇÏ´Â »ı¼ºÀÚ
-    public Item(string type, string itemName, string itemexp, string itemdesc, int itemPrice)
-    {
-        this.type = type;
-        this.itemName = itemName;
-        this .itemexp = itemexp;
-        this.itemdesc = itemdesc;
-        this.itemPrice = itemPrice;
-    }
-
-    //°ÔÀÓ Ã¹ ½ÃÀÛ player ¶Ç´Â enemy °´Ã¼ »ı¼º½Ã player¿Í enemyÀÇ Ã¹ ¾ÆÀÌÅÛÀ» ¼³Á¤ÇÏ´Â »ı¼ºÀÚ 
-    public Item()
-    {
-       
-    }
 }
