@@ -8,6 +8,7 @@ public class PlayerItem : MonoBehaviour {
     public GameObject inventoryItem;
 
     void Start() {
-        inventoryItem.GetComponent<Image>().sprite = PlayerSetting.item.itemImage;
+        if(GameManager.instance.playerInventoryItem != null)
+            inventoryItem.GetComponent<Image>().sprite = GameManager.instance.playerInventoryItem.itemImage;
     }
 }
