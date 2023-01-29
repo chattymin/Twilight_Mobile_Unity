@@ -17,7 +17,14 @@ public class EnemyBattleEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EffectOff();
+        AttackEffect.SetActive(false);
+        DefenseEffect.SetActive(false);
+        RecoveryEffect.SetActive(false);
+
+        EnemyStay.SetActive(true);
+        EnemyAttack.SetActive(false);
+        EnemyDefense.SetActive(false);
+        EnemyRecovery.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,22 +35,36 @@ public class EnemyBattleEffect : MonoBehaviour
 
     public void EffectOn(int num)
     {
-        EffectOff();
         switch (num)
         {
             case 1:
                 AttackEffect.SetActive(true);
+                DefenseEffect.SetActive(false);
+                RecoveryEffect.SetActive(false);
+
                 EnemyStay.SetActive(false);
                 EnemyAttack.SetActive(true);
+                EnemyDefense.SetActive(false);
+                EnemyRecovery.SetActive(false);
                 break;
             case 2:
+                AttackEffect.SetActive(false);
                 DefenseEffect.SetActive(true);
+                RecoveryEffect.SetActive(false);
+
                 EnemyStay.SetActive(false);
+                EnemyAttack.SetActive(false);
                 EnemyDefense.SetActive(true);
+                EnemyRecovery.SetActive(false);
                 break;
             case 3:
+                AttackEffect.SetActive(false);
+                DefenseEffect.SetActive(false);
                 RecoveryEffect.SetActive(true);
+
                 EnemyStay.SetActive(false);
+                EnemyAttack.SetActive(false);
+                EnemyDefense.SetActive(false);
                 EnemyRecovery.SetActive(true);
                 break;
         }
