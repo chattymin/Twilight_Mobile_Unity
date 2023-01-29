@@ -11,10 +11,10 @@ public class HPBarController : MonoBehaviour {
     GameObject playerHPGauge;
     GameObject enemyHPGauge;
 
+    const float FILL = 0.01f;
 
     public void Start() {
-        playerHP.text = PlayerSetting.MaxHP + "";
-        enemyHP.text = EnemySetting.MaxHP + "/" + EnemySetting.MaxHP;
+        setHP();
 
         this.playerHPGauge = GameObject.Find("HPGauge");
         this.enemyHPGauge = GameObject.Find("HP_GaugeFront");
@@ -24,11 +24,14 @@ public class HPBarController : MonoBehaviour {
     }
 
     public void HPUpdate() {
-        playerHP.text = PlayerSetting.HP + "";
-        enemyHP.text = EnemySetting.HP + "/" + EnemySetting.MaxHP;
-
-        this.playerHPGauge.GetComponent<Image>().fillAmount = PlayerSetting.HP * 0.01f;
+        setHP();
+        this.playerHPGauge.GetComponent<Image>().fillAmount = GameManager.instance.playerCurrentHP * FILL;
         this.enemyHPGauge.GetComponent<Image>().fillAmount 
-            = EnemySetting.HP * (0.01f * ((float)PlayerSetting.MaxHP / (float)EnemySetting.MaxHP));
+            = GameManager.instance.enemyCurrentHP * (FILL * (100.0f * (float)GameManager.instance.enemyMaxHP));
+    }
+
+    private void setHP(){
+        playerHP.text = GameManager.instance.playerCurrentHP + "";
+        enemyHP.text = GameManager.instance.enemyMaxHP + "/" + GameManager.instance.enemyCurrentHP;
     }
 }
