@@ -7,39 +7,39 @@ public class ActionSelectController : MonoBehaviour {
     public GameObject attackEffect;
     public GameObject defenseEffect;
     public GameObject recoveryEffect;
+
     public string Action;
 
-    public void Start() {
+
+    // *** Effect Initialization(Reset) ***
+    private void Reset() {
         Action = null;
         attackEffect.SetActive(false);
         defenseEffect.SetActive(false);
         recoveryEffect.SetActive(false);
     }
 
+
+    // *** Attack Action Selected ***
     public void SelectAttack() {
+        Reset();
         attackEffect.SetActive(true);
-        defenseEffect.SetActive(false);
-        recoveryEffect.SetActive(false);
         Action = "Attack";
     }
+
+
+    // *** Defense Action Selected ***
     public void SelectDefense() {
-        attackEffect.SetActive(false);
+        Reset();
         defenseEffect.SetActive(true);
-        recoveryEffect.SetActive(false);
         Action = "Defense";
     }
+
+
+    // *** Recovery Action Selected ***
     public void SelectRecovery() {
-        attackEffect.SetActive(false);
-        defenseEffect.SetActive(false);
+        Reset();
         recoveryEffect.SetActive(true);
         Action = "Recovery";
-    }
-
-    public void EffectOff()
-    {
-        attackEffect.SetActive(false);
-        defenseEffect.SetActive(false);
-        recoveryEffect.SetActive(false);
-        Action = null;
     }
 }

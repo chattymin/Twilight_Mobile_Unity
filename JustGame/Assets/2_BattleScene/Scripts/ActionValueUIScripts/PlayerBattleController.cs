@@ -5,123 +5,94 @@ using UnityEngine.UI;
 using TMPro;
 
 public class PlayerBattleController : MonoBehaviour {
-    public GameObject selectAttack; //�÷��̾
-    public GameObject selectDefense; //������ �ൿ��
-    public GameObject selectRecovery; //�̹�����.
+    GameObject selectAttack;
+    GameObject selectDefense;
+    GameObject selectRecovery;
+
+    TextMeshProUGUI attackValueText;
+    TextMeshProUGUI defenseValueText;
+    TextMeshProUGUI recoveryValueText;
+
+    public string playerSelected;
+    public float playerActionValue;
+    private const string BATTLEST = "BattleST";
+    private const float VALUE_INCREASE_RATE = 2.0f; //레벨 * 행동값 증가 비율 = 최대 행동값
 
 
-    public TextMeshProUGUI attackValueText;
-    public TextMeshProUGUI defenseValueText;
-    public TextMeshProUGUI recoveryValueText;
-
-    public int maxValue; //�ൿ���� �ִ밪.
-    public string playerSelected; //�÷��̾ ������ �ൿ ���� ��ȯ.
-    public int playerActionValue; //행동값
-
-    public const string BATTLEST = "BattleST";
-
-
-    public void Start() { //�⺻ ��� (��� ��Ȱ��ȭ)
-        selectAttack.SetActive(false); //�ൿ �̹���
-        selectDefense.SetActive(false); //���!!!
-        selectRecovery.SetActive(false); //���� ����.
-
-        attackValueText.text = "";
-        defenseValueText.text = "";
-        recoveryValueText.text = "";
-
-        playerSelected = GameObject.Find("ActionManager") //�ൿ ������
-            .GetComponent<ActionSelectController>().Action;
-    }
-
-    
-    public void ActionSelectRun() { //Ȯ�� ��ư�� ������ �� �޴��� ��������
-        Start();                    //�ൿ ������ ���� �޼ҵ� ����x
-        if (playerSelected != null)
-        {
-            if (playerSelected == "Attack")
-            { //������ ������ ���
-                SelectAttackImg(); //���� �̹��� ǥ��
-                ShowAttackValue(); //���� �ൿ�� ǥ��
-            }
-            else if (playerSelected == "Defense")
-            { //�� ������ ���
-                SelectDefenseImg(); //��� �̹��� ǥ��
-                ShowDefenseValue(); //��� �ൿ�� ǥ��
-            }
-            else if (playerSelected == "Recovery")
-            { //ȸ���� ������ ���
-                SelectRecoveryImg(); //ȸ�� �̹��� ǥ��
-                ShowRecoveryValue(); //ȸ�� �ൿ�� ǥ��
-            }
-            StateSetting.SetStates(BATTLEST);
-            GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOn(playerSelected);
-            GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
+    // *** Player Battle Run ***
+    public void ActionSelectRun() {
+        playerSelected = GameObject.Find("ActionManager").GetComponent<ActionSelectController>().Action;
+        switch (playerSelected) {
+            case "Attack":
+                ShowAttack(); break;
+            case "Defense":
+                ShowDefense(); break;
+            case "Recovery":
+                ShowRecovery(); break;
+            default:
+                StateSetting.SetStates(BATTLEST); break;
         }
+        GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOn(playerSelected);
+        GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
     }
 
 
-    public void SelectAttackImg() { //���� �̹��� ǥ��
-        selectAttack.SetActive(true); //�̹��� ǥ��
-        selectDefense.SetActive(false);
-        selectRecovery.SetActive(false);
-    }
-    public void SelectAttackVal() { //��� ���� �� ���ϱ�
-        int attack = PlayerSetting.attackLV; //��� �ɷ�ġ �ҷ����
-        maxValue = attack * 2; //�ִ밪� ��� ������ 2��
-        playerActionValue = Random.Range(attack, maxValue + 1); //����
-        attackValueText.text = playerActionValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
-    }
-    public void ShowAttackValue() { //��� �ൿ�� ǥ��
-        SelectAttackVal();
-        defenseValueText.text = "";
-        recoveryValueText.text = "";
-    }
-
-
-    public void SelectDefenseImg() { //��� �̹��� ǥ��
+    // *** Action Image, Text Initialization(Reset) ***
+    private void Reset() {
         selectAttack.SetActive(false);
-        selectDefense.SetActive(true); //�̹��� ǥ��
-        selectRecovery.SetActive(false);
-    }
-    public void SelectDefenseVal() { //��� ���� �� ���ϱ�
-        int defense = PlayerSetting.defenseLV; //��� �ɷ�ġ �ҷ����
-        maxValue = defense * 2; //�ִ밪� ��� ������ 2��
-        playerActionValue = Random.Range(defense, maxValue + 1); //����
-        defenseValueText.text = playerActionValue.ToString(); //��� ���ڿ��� ��ȯ
-    }
-    public void ShowDefenseValue() { //��� �ൿ�� ǥ��
-        attackValueText.text = "";
-        SelectDefenseVal();
-        recoveryValueText.text = "";
-    }
-
-
-    public void SelectRecoveryImg() { //ȸ�� �̹��� ǥ��
-        selectAttack.SetActive(false); 
         selectDefense.SetActive(false);
-        selectRecovery.SetActive(true); //�̹��� ǥ��
-    }
-    public void SelectRecoveryVal() { //ȸ�� ���� �� ���ϱ�
-        int recovery = PlayerSetting.recoveryLV; //ȸ�� �ɷ�ġ �ҷ����
-        maxValue = recovery * 2; //�ִ밪� ȸ�� ������ 2��
-        playerActionValue = Random.Range(recovery, maxValue + 1); //����
-        recoveryValueText.text = playerActionValue.ToString(); //��ݰ�� ���ڿ��� ��ȯ
-    }
-    public void ShowRecoveryValue() { //ȸ�� �ൿ�� ǥ��
-        attackValueText.text = "";
-        defenseValueText.text = "";
-        SelectRecoveryVal();
-    }
-
-    public void EffectOff()
-    {
-        selectAttack.SetActive(false); //�ൿ �̹���
-        selectDefense.SetActive(false); //���!!!
-        selectRecovery.SetActive(false); //���� ����.
+        selectRecovery.SetActive(false);
 
         attackValueText.text = "";
         defenseValueText.text = "";
         recoveryValueText.text = "";
+    }
+
+
+    // *** Action Value Calculation ***
+    private string ValueCalc(int action) {
+        float maxValue = action * VALUE_INCREASE_RATE;
+        playerActionValue = Random.Range(action, maxValue + 1);
+        return playerActionValue.ToString();
+    }
+
+
+    // *** Attack Controller ***
+    private void ShowAttack() {
+        Reset();
+        selectAttack.SetActive(true);
+        AttackValue();
+    }
+
+    private void AttackValue() {
+        int attack = GameManager.instance.playerAttackLV;
+        attackValueText.text = ValueCalc(attack);
+    }
+
+
+    // *** Defense Controller ***
+    private void ShowDefense() {
+        Reset();
+        selectDefense.SetActive(true);
+        DefenseValue();
+    }
+
+    private void DefenseValue() {
+        int defense = GameManager.instance.playerDefenseLV;
+        defenseValueText.text = ValueCalc(defense);
+    }
+
+
+
+    // *** Recovery Controller ***
+    private void ShowRecovery() {
+        Reset();
+        selectRecovery.SetActive(true);
+        RecoveryValue();
+    }
+
+    private void RecoveryValue() {
+        int recovery = GameManager.instance.playerRecoveryLV;
+        recoveryValueText.text = ValueCalc(recovery);
     }
 }

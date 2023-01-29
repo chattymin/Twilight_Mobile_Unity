@@ -6,19 +6,19 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
 
     private void Awake() {
-        if (instance == null) { //instance°¡ Á¸ÀçÇÏÁö ¾Ê´Â´Ù¸é
-            instance = this; //ÀÚ½ÅÀ» instance·Î ³Ö¾î ÁÜ.
-            DontDestroyOnLoad(gameObject); //¾À ·Îµå ½Ã µ¥ÀÌÅÍ À¯Áö
+        if (instance == null) { //instanceê°€ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´
+            instance = this; //ìì‹ ì„ instanceë¡œ ë„£ì–´ ì¤Œ.
+            DontDestroyOnLoad(gameObject); //ì”¬ ë¡œë“œ ì‹œ ë°ì´í„° ìœ ì§€
         }
         else {
-            if (instance != this) //ÀÌ¹Ì instance°¡ Á¸ÀçÇÒ ¶§
+            if (instance != this) //ì´ë¯¸ instanceê°€ ì¡´ì¬í•  ë•Œ
                 Destroy(this.gameObject);
-            //À¯ÀÏÇÑ °´Ã¼ÀÌ¹Ç·Î »õ·Î AwakeµÈ ÀÚ½Å »èÁ¦
+            //ìœ ì¼í•œ ê°ì²´ì´ë¯€ë¡œ ìƒˆë¡œ Awakeëœ ìì‹  ì‚­ì œ
         }
     }
 
     /*public static GameManager Instance {
-        //Instance¸¦ staticÀ¸·Î ¼±¾ğ. ´Ù¸¥ Å¬·¡½º¿¡¼­ È£Ãâ °¡´É
+        //Instanceë¥¼ staticìœ¼ë¡œ ì„ ì–¸. ë‹¤ë¥¸ í´ë˜ìŠ¤ì—ì„œ í˜¸ì¶œ ê°€ëŠ¥
         get {
             if (null == instance)
                 return null;
@@ -27,37 +27,42 @@ public class GameManager : MonoBehaviour {
     }*/
 
 
-    // *** »ç¿ë¹ı ***
-    // GameManager.instance.(¸Ş¼­µå or º¯¼ö);
+    // *** ì‚¬ìš©ë²• ***
+    // GameManager.instance.(ë©”ì„œë“œ or ë³€ìˆ˜);
 
 
-    // *** PlayerSetting ***
-    public int playerCurrentHP = 100; //ÇÃ·¹ÀÌ¾î ÇöÀç Ã¼·Â
-    public int playerMoney = 0; //ÇÃ·¹ÀÌ¾î ÇöÀç ¼ÒÁö±İ
-    public int playerAttackLV = 1; //ÇÃ·¹ÀÌ¾î °ø°İ ·¹º§
-    public int playerDefenseLV = 1; //¹æ¾î
-    public int playerRecoveryLV = 1; //È¸º¹
-    public Item playerInventoryItem = null; //ÇÃ·¹ÀÌ¾î ¼ÒÁö ¾ÆÀÌÅÛ
+    // *** Player Setting ***
+    public const int PLAYER_MAX_HP = 100; //í”Œë ˆì´ì–´ ìµœëŒ€ ì²´ë ¥
+    public int playerCurrentHP = 100; //í”Œë ˆì´ì–´ í˜„ì¬ ì²´ë ¥
+    public int playerMoney = 0; //í”Œë ˆì´ì–´ í˜„ì¬ ì†Œì§€ê¸ˆ
+    public int playerAttackLV = 1; //í”Œë ˆì´ì–´ ê³µê²© ë ˆë²¨
+    public int playerDefenseLV = 1; //ë°©ì–´
+    public int playerRecoveryLV = 1; //íšŒë³µ
+    public Item playerInventoryItem = null; //í”Œë ˆì´ì–´ ì†Œì§€ ì•„ì´í…œ
 
 
-    // *** EnemySetting ***
-    public int EnemyBaseNumber = 1; //Àû ½ºÅİ ±â¹İ ¼ıÀÚ
+    // *** Enemy Setting ***
+    public int enemyMaxHP = 1; //ì  ìµœëŒ€ ì²´ë ¥
+    public int enemyCurrentHP = 1; //ì  í˜„ì¬ ì²´ë ¥
+    public int enemyAttackLV = 1; //ì  ê³µê²© ë ˆë²¨
+    public int enemyDefenseLV = 1; //ë°©ì–´
+    public int enemyrRecoveryLV = 1; //íšŒë³µ
 
 
-    // *** ShopSetting ***
-    private const int NUMBER_OF_ITEMS = 10; //»óÁ¡ ¾ÆÀÌÅÛ °¡Áş¼ö(±âº»°ª)
+    // *** Shop Setting ***
+    private const int NUMBER_OF_ITEMS = 10; //ìƒì  ì•„ì´í…œ ê°€ì§“ìˆ˜(ê¸°ë³¸ê°’)
     public List<Item> ShopItemList = new List<Item>(NUMBER_OF_ITEMS);
-    //»óÁ¡ ¾ÆÀÌÅÛ ¸®½ºÆ®
+    //ìƒì  ì•„ì´í…œ ë¦¬ìŠ¤íŠ¸
 
 
     // *** GameManagement ***
-    public void StartGame() { //¸ŞÀÎ ¾À -> »õ °ÔÀÓ ½ÃÀÛ
+    public void StartGame() { //ë©”ì¸ ì”¬ -> ìƒˆ ê²Œì„ ì‹œì‘
 
     }
-    public void ContinueGame() { //¸ŞÀÎ ¾À -> ÀÌ¾îÇÏ±â
+    public void ContinueGame() { //ë©”ì¸ ì”¬ -> ì´ì–´í•˜ê¸°
 
     }
-    public void PauseGame() { //Esc °ÔÀÓ ¸ØÃã
+    public void PauseGame() { //Esc ê²Œì„ ë©ˆì¶¤
 
     }
 }

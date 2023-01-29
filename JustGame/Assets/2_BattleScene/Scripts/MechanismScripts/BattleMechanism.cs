@@ -1,23 +1,24 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
-//using static UnityEditor.PlayerSettings;
 using System;
 
 public class BattleMechanism : MonoBehaviour {
     public string playerSelected; //플레이어가 선택한 행동의 종류
     public int enemySelected; //적이 선택한 행동의 종류
 
-    public int playerValue; //플레이어 행동값
-    public int enemyValue; //적 행동값
+    public float playerValue; //플레이어 행동값
+    public float enemyValue; //적 행동값
+
+    private int playerHP = GameManager.instance.playerCurrentHP;
+    private const int PLAYER_MAX_HP = GameManager.PLAYER_MAX_HP;
+
+    private int enemyHP = GameManager.instance.enemyCurrentHP;
+    private int enemyMaxHP = GameManager.instance.enemyMaxHP;
 
 
-    public void Start() {
-        
-    }
-
-
+    // *** Battle Run ***
     public void BattleRun(int enemySelected) { //배틀 시작
         playerSelected = GameObject.Find("PlayerBattleManager") //플레이어 행동
             .GetComponent<PlayerBattleController>().playerSelected;
@@ -27,89 +28,99 @@ public class BattleMechanism : MonoBehaviour {
         enemyValue = GameObject.Find("EnemyBattleManager") //적 행동값
             .GetComponent<EnemyBattleController>().enemyActionValue;
 
+        Mechanism();
+    }
+
+
+    // *** Battle Mechanism ***
+    private void Mechanism() {
         switch (playerSelected) {
             case "Attack":
                 if (enemySelected == 1) { //p공 VS e공
-                    PlayerSetting.HP -= enemyValue;
-                    EnemySetting.HP -= playerValue;
+                    PlayerHPDown(enemyValue);
+                    EnemyHPDown(playerValue);
                 }
                 else if (enemySelected == 2) { //p공 VS e방
                     if (playerValue > enemyValue) { //p공 > e방
-                        EnemySetting.HP -= (playerValue - enemyValue);
+                        EnemyHPDown(playerValue - enemyValue);
                     }
                     else if (playerValue < enemyValue) { //p공 < e방
-                        PlayerSetting.HP -= (enemyValue - playerValue);
+                        PlayerHPDown(enemyValue - playerValue);
                     }
                 }
                 else { //p공 VS e회
-                    EnemySetting.HP -= playerValue;
-                    EnemySetting.HP += enemyValue;
-                    if (EnemySetting.HP > EnemySetting.MaxHP)
-                        EnemySetting.HP = EnemySetting.MaxHP;                        
+                    EnemyHPDown(playerValue);
+                    EnemyHPUP(enemyValue);
                 }
                 break;
 
             case "Defense":
                 if (enemySelected == 1) { //p방 VS e공
                     if (playerValue > enemyValue) { //p방 > e공
-                        EnemySetting.HP -= (playerValue - enemyValue);
+                        EnemyHPDown(playerValue - enemyValue);
                     }
                     else if (playerValue < enemyValue) { //p방 < e공
-                        PlayerSetting.HP -= (enemyValue - playerValue);
+                        PlayerHPDown(enemyValue - playerValue);
                     }
                 }
                 else if (enemySelected == 2) { //p방 VS e방
-                    PlayerSetting.HP -= playerValue;
-                    EnemySetting.HP -= enemyValue;
+                    PlayerHPDown(playerValue);
+                    EnemyHPDown(enemyValue);
                 }
                 else { //p방 VS e회
-                    EnemySetting.HP += enemyValue;
-                    if (EnemySetting.HP > EnemySetting.MaxHP)
-                        EnemySetting.HP = EnemySetting.MaxHP;
+                    EnemyHPUP(enemyValue);
                 }
                 break;
 
             case "Recovery":
                 if (enemySelected == 1) { //p회 VS e공
-                    PlayerSetting.HP -= enemyValue;
-                    PlayerSetting.HP += playerValue;
-                    if (PlayerSetting.HP > PlayerSetting.MaxHP)
-                        PlayerSetting.HP = PlayerSetting.MaxHP;
+                    PlayerHPDown(enemyValue);
+                    PlayerHPUP(playerValue);
                 }
                 else if (enemySelected == 2) { //p회 VS e방
-                    PlayerSetting.HP += playerValue;
-                    if (PlayerSetting.HP > PlayerSetting.MaxHP)
-                        PlayerSetting.HP = PlayerSetting.MaxHP;
+                    PlayerHPUP(playerValue);
                 }
                 else { //p회 VS e회
-                    PlayerSetting.HP += playerValue;
-                    if (PlayerSetting.HP > PlayerSetting.MaxHP)
-                        PlayerSetting.HP = PlayerSetting.MaxHP;
-
-                    EnemySetting.HP += enemyValue;
-                    if (EnemySetting.HP > EnemySetting.MaxHP)
-                        EnemySetting.HP = EnemySetting.MaxHP;
+                    PlayerHPUP(playerValue);
+                    EnemyHPUP(enemyValue);
                 }
                 break;
 
-            default:
-                break;
+            default: break;
         }
     }
 
-    public string StateCheck()
-    {
-        if (PlayerSetting.HP <= 0)
-        {
-            return "LoseST";
-            //StateSetting.SetStates("LoseST");
+
+    // *** Battle Mechanism - Player HP ***
+    private void PlayerHPUP(float value) {
+        playerHP += ((int)value);
+
+        if (playerHP > PLAYER_MAX_HP) //최대 체력 초과 시
+            playerHP = PLAYER_MAX_HP;
+    }
+
+    private void PlayerHPDown(float value) {
+        playerHP -= ((int)value);
+
+        if (playerHP <= 0) { //체력 소진 시
+            playerHP = 0;
         }
-        if (EnemySetting.HP <= 0)
-        {
-            EnemySetting.HP = EnemySetting.MaxHP;
-            return "WinST";
-            //StateSetting.SetStates("WinST");
+    }
+
+
+    // *** Battle Mechanism - Enemy HP ***
+    private void EnemyHPUP(float value) {
+        enemyHP += (int)value;
+
+        if (enemyHP > enemyMaxHP) //최대 체력 초과 시
+            enemyHP = enemyMaxHP;
+    }
+
+    private void EnemyHPDown(float value) {
+        enemyHP -= (int)value;
+
+        if (enemyHP <= 0) {  //체력 소진 시
+            enemyHP = enemyMaxHP;
         }
-        return "SelectST";
     }
 }

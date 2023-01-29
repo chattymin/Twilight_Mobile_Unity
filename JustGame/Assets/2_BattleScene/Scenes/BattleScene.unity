@@ -10859,7 +10859,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2046766772}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HPBarController, Assembly-CSharp
         m_MethodName: HPUpdate
         m_Mode: 1
@@ -16955,9 +16955,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2046766771}
-  - component: {fileID: 2046766770}
-  - component: {fileID: 2046766769}
-  - component: {fileID: 2046766772}
   m_Layer: 0
   m_Name: BattleMechanism
   m_TagString: Untagged
@@ -16965,37 +16962,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2046766769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046766768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a7df24d1f1d4bdab023ac31a537a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basicPanel: {fileID: 606059980}
-  winPanel: {fileID: 173727947}
-  losePanel: {fileID: 1183572383}
---- !u!114 &2046766770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046766768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8415a3a4ad395f34dbdacef28eb19c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSelected: 
-  enemySelected: 0
-  playerValue: 0
-  enemyValue: 0
 --- !u!4 &2046766771
 Transform:
   m_ObjectHideFlags: 0
@@ -17011,20 +16977,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2046766772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046766768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4fd503b0b40743e5bba30942c2feef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHP: {fileID: 1994130100}
-  enemyHP: {fileID: 1943015980}
 --- !u!1 &2069735255
 GameObject:
   m_ObjectHideFlags: 0
