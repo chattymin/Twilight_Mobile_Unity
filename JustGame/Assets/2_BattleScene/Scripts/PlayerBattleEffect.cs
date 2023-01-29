@@ -16,7 +16,14 @@ public class PlayerBattleEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EffectOff();
+        AttackEffect.SetActive(false);
+        DefenseEffect.SetActive(false);
+        RecoveryEffect.SetActive(false);
+
+        PlayerStay.SetActive(true);
+        PlayerAttack.SetActive(false);
+        PlayerDefense.SetActive(false);
+        PlayerRecovery.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,22 +34,36 @@ public class PlayerBattleEffect : MonoBehaviour
 
     public void EffectOn(string str)
     {
-        EffectOff();
         switch (str)
         {
             case "Attack":
                 AttackEffect.SetActive(true);
+                DefenseEffect.SetActive(false);
+                RecoveryEffect.SetActive(false);
+
                 PlayerStay.SetActive(false);
                 PlayerAttack.SetActive(true);
+                PlayerDefense.SetActive(false);
+                PlayerRecovery.SetActive(false);
                 break;
             case "Defense":
+                AttackEffect.SetActive(false);
                 DefenseEffect.SetActive(true);
+                RecoveryEffect.SetActive(false);
+
                 PlayerStay.SetActive(false);
+                PlayerAttack.SetActive(false);
                 PlayerDefense.SetActive(true);
+                PlayerRecovery.SetActive(false);
                 break;
             case "Recovery":
+                AttackEffect.SetActive(false);
+                DefenseEffect.SetActive(false);
                 RecoveryEffect.SetActive(true);
+
                 PlayerStay.SetActive(false);
+                PlayerAttack.SetActive(false);
+                PlayerDefense.SetActive(false);
                 PlayerRecovery.SetActive(true);
                 break;
         }
