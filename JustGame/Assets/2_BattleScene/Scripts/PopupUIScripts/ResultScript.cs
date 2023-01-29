@@ -4,57 +4,38 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class ResultScript : MonoBehaviour
-{
+public class ResultScript : MonoBehaviour {
     GameObject WinPage;
-    public TextMeshProUGUI Hp;
-    public TextMeshProUGUI playerAttack;
-    public TextMeshProUGUI playerDefense;
-    public TextMeshProUGUI playerRecovery;
-    public TextMeshProUGUI playerMoney; 
-    // Start is called before the first frame update
-    void Start(){
 
-        Hp.text = PlayerSetting.HP.ToString();
-        playerAttack.text = PlayerSetting.attackLV.ToString();
-        playerDefense.text = PlayerSetting.defenseLV.ToString();
-        playerRecovery.text = PlayerSetting.recoveryLV.ToString();
-        playerMoney.text = PlayerSetting.money.ToString() + "+" + EnemySetting.dropMoney.ToString();
-        PlayerSetting.money += EnemySetting.dropMoney;
+    TextMeshProUGUI playerHp;
+    TextMeshProUGUI playerAttack;
+    TextMeshProUGUI playerDefense;
+    TextMeshProUGUI playerRecovery;
+    TextMeshProUGUI playerMoney;
 
-        //WinPage = GameObject.Find("WinPopup");
-        //WinPage.SetActive(false);
+    public int enemyDropMoney = 0;
+
+
+    private void Start() {
+        playerHp.text = GameManager.instance.playerCurrentHP.ToString();
+        playerAttack.text = GameManager.instance.playerAttackLV.ToString();
+        playerDefense.text = GameManager.instance.playerDefenseLV.ToString();
+        playerRecovery.text = GameManager.instance.playerRecoveryLV.ToString();
+        playerMoney.text = GameManager.instance.playerMoney.ToString() + " + " + enemyDropMoney.ToString();
+        GameManager.instance.playerMoney += enemyDropMoney;
     }
 
-    void popupOn() {
-        if (PlayerSetting.HP < 0 && EnemySetting.HP <= 0) {
-            WinPage.SetActive(true);
-        } 
-    }
 
-    void btnClick() {
-        SceneManager.LoadScene("");
-    }
-
-    void showCurState() { 
-    }
-
-    public void MainSceneBT()
-    {
+    // *** Info Pannel Buttons ***
+    public void ResultMainButton() {
         SceneManager.LoadScene("MainScene");
     }
 
-    public void ExitSceneBT()
-    {
-        // 메인페이지로 돌아갈 경우
-        // SceneManager.LoadScene("NextScene");
-
-        // 게임을 종료할 경우
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+    public void ResultExitButton() {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
-
 }

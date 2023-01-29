@@ -3,62 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InfoButtonController : MonoBehaviour {
-    public GameObject infoPanelAll;
+    public GameObject infoPanelAll; //Í∏∞Î∞ò Ìå®ÎÑê
+
     public GameObject infoPanel1;
     public GameObject infoPanel2;
     public GameObject infoPanel3;
     public GameObject infoPanel4;
 
-    static int num = 1;
+    private int num = 1;
 
-    private void Start() { //∞‘¿”¿Ã Ω√¿€«œ¿⁄∏∂¿⁄ Ω««‡
-        infoPanelAll.SetActive(false); //Info Panel¿ª ∫Ò»∞º∫»≠
+
+    private void Start() {
+        infoPanelAll.SetActive(false); //Info Panel ÎπÑÌôúÏÑ±Ìôî
+    }
+
+
+    // *** Info Pannel Initialization(Reset) ***
+    private void Reset() {
         infoPanel2.SetActive(false);
         infoPanel3.SetActive(false);
         infoPanel4.SetActive(false);
     }
 
-    public void InfoButton() { //Info πˆ∆∞¿ª ≈¨∏Ø«œ∏È
+
+    // *** Info Pannel Buttons ***
+    public void InfoRunButton() { //Info Î≤ÑÌäº ÌÅ¥Îûô
         infoPanelAll.SetActive(true);
-        infoPanel1.SetActive(true); //Info Panel 1¿ª «•Ω√
+        infoPanel1.SetActive(true); //Info Panel 1 ÌëúÏãú
     }
 
-    public void InfoExit() { //X πˆ∆∞¿ª ≈¨∏Ø«œ∏È
-        infoPanelAll.SetActive(false); //Info Panel¿ª ¥›±‚
+    public void InfoExitButton() { //X Î≤ÑÌäº(ÎÇòÍ∞ÄÍ∏∞) ÌÅ¥Î¶≠ÌïòÎ©¥
+        Start();
     }
 
-    public void PannelNum() {
-        switch(num) {
-            case 1:
-                infoPanel1.SetActive(true);
-                infoPanel2.SetActive(false);
-                break;
-            case 2:
-                infoPanel1.SetActive(false);
-                infoPanel2.SetActive(true);
-                infoPanel3.SetActive(false);
-                break;
-            case 3:
-                infoPanel2.SetActive(false);
-                infoPanel3.SetActive(true);
-                infoPanel4.SetActive(false);
-                break;
-            case 4:
-                infoPanel3.SetActive(false);
-                infoPanel4.SetActive(true);
-                break;
-            default:
-                break;
-        }
-    }
-
-    public void NextButton() {
+    public void InfoNextButton() {
         ++num;
         PannelNum();
     }
 
-    public void PrevButton() {
+    public void InfoPrevButton() {
         --num;
         PannelNum();
+    }
+
+
+    // *** Info Pannel Button Mechanism ***
+    private void PannelNum() {
+        switch (num) {
+            case 1:
+                Reset();
+                infoPanel1.SetActive(true); break;
+            case 2:
+                Reset();
+                infoPanel2.SetActive(true); break;
+            case 3:
+                Reset();
+                infoPanel3.SetActive(true); break;
+            case 4:
+                Reset();
+                infoPanel4.SetActive(true); break;
+            default: break;
+        }
     }
 }
