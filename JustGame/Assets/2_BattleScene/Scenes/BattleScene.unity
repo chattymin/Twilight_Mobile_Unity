@@ -1755,7 +1755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b4f2cd991e7c644b1efa30fc04c6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 180469079}
 --- !u!4 &178977233
 Transform:
   m_ObjectHideFlags: 0
@@ -1783,8 +1782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5f27e8e6c3e7d4193ecb1bc3f68068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 180469079}
-  storeButton: {fileID: 1744762963}
 --- !u!1 &180469078
 GameObject:
   m_ObjectHideFlags: 0
@@ -5138,11 +5135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d0f7a767e75d6438d8cfdcdbc30073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: {fileID: 157310296}
-  playerAttack: {fileID: 1692706733}
-  playerDefense: {fileID: 3753457}
-  playerRecovery: {fileID: 252670285}
-  playerMoney: {fileID: 1880843782}
+  enemyDropMoney: 0
 --- !u!1 &608904718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9683,11 +9676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d0f7a767e75d6438d8cfdcdbc30073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: {fileID: 1257738753}
-  playerAttack: {fileID: 2108682267}
-  playerDefense: {fileID: 462017127}
-  playerRecovery: {fileID: 1644887550}
-  playerMoney: {fileID: 2014992778}
+  enemyDropMoney: 0
 --- !u!1 &1190050083
 GameObject:
   m_ObjectHideFlags: 0
@@ -13786,16 +13775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06019970991d084e9bd62fe0a8ba042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAttack: {fileID: 2020933476}
-  enemyDefense: {fileID: 808747362}
-  enemyRecovery: {fileID: 1338573023}
-  enemyAttackValueText: {fileID: 721644041}
-  enemyDefenseValueText: {fileID: 548173984}
-  enemyRecoveryValueText: {fileID: 2143478780}
-  enemyMaxValue: 0
   enemyActionValue: 0
-  flag: 0
-  enemyRandomAction: 0
 --- !u!4 &1667193597
 Transform:
   m_ObjectHideFlags: 0
@@ -16070,13 +16050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f48ea3c441649b42a7a56fdc2ce67a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectAttack: {fileID: 574554170}
-  selectDefense: {fileID: 1460862549}
-  selectRecovery: {fileID: 1050851385}
-  attackValueText: {fileID: 1477994149}
-  defenseValueText: {fileID: 1221704753}
-  recoveryValueText: {fileID: 2141865317}
-  maxValue: 0
   playerSelected: 
   playerActionValue: 0
 --- !u!4 &1958651049
@@ -16103,7 +16076,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958651046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff62caa7e4c4b047a2b852146a7abdc, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1959164456

@@ -12,7 +12,7 @@ public class ActionSelectController : MonoBehaviour {
 
 
     // *** Effect Initialization(Reset) ***
-    private void Reset() {
+    public void Reset() {
         Action = null;
         attackEffect.SetActive(false);
         defenseEffect.SetActive(false);

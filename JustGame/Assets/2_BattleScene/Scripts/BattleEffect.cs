@@ -21,10 +21,10 @@ public class BattleEffect : MonoBehaviour {
     
     void Update() {
         if (StateSetting.CompareStates("SelectST")) {
-            GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOff();
-            GameObject.Find("EnemyBattleEffect").GetComponent<EnemyBattleEffect>().EffectOff();
-            GameObject.Find("PlayerBattleManager").GetComponent<PlayerBattleController>().EffectOff();
-            GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EffectOff();
+            GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().Reset();
+            GameObject.Find("EnemyBattleEffect").GetComponent<EnemyBattleEffect>().Reset();
+            GameObject.Find("PlayerBattleManager").GetComponent<PlayerBattleController>().Reset();
+            GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().Reset();
             // 액션 이펙트 지우는 코드
 
             StateSetting.SetStates(GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().StateCheck());
@@ -35,7 +35,7 @@ public class BattleEffect : MonoBehaviour {
 
                 if (timer > WAITING_TIME) {
                     StateSetting.SetStates("SelectST");
-                    GameObject.Find("ActionManager").GetComponent<ActionSelectController>().EffectOff();
+                    GameObject.Find("ActionManager").GetComponent<ActionSelectController>().Reset();
                     timer = 0.0f;
                 }
             }

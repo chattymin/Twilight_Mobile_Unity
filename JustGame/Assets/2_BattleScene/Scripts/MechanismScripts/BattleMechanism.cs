@@ -123,4 +123,16 @@ public class BattleMechanism : MonoBehaviour {
             enemyHP = enemyMaxHP;
         }
     }
+    public string StateCheck() {
+        if (GameManager.instance.playerCurrentHP <= 0) {
+            return "LoseST";
+        }
+
+        if (GameManager.instance.enemyCurrentHP <= 0){
+            GameManager.instance.enemyCurrentHP = GameManager.instance.enemyMaxHP;
+            return "WinST";
+        }
+
+        return "SelectST";
+    }
 }

@@ -17,7 +17,7 @@ public class EnemyBattleEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EffectOff();
+        Reset();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class EnemyBattleEffect : MonoBehaviour
 
     public void EffectOn(int num)
     {
-        EffectOff();
+        Reset();
         switch (num)
         {
             case 1:
@@ -49,7 +49,7 @@ public class EnemyBattleEffect : MonoBehaviour
         }
     }
 
-    public void EffectOff()
+    public void Reset()
     {
         AttackEffect.SetActive(false);
         DefenseEffect.SetActive(false);

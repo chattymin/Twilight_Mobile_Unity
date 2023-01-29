@@ -37,7 +37,7 @@ public class EnemyBattleController : MonoBehaviour {
 
 
     // *** Action Image, Text Initialization(Reset) ***
-    private void Reset() {
+    public void Reset() {
         enemyAttack.SetActive(false);
         enemyDefense.SetActive(false);
         enemyRecovery.SetActive(false);

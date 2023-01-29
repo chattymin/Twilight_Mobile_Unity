@@ -38,7 +38,7 @@ public class PlayerBattleController : MonoBehaviour {
 
 
     // *** Action Image, Text Initialization(Reset) ***
-    private void Reset() {
+    public void Reset() {
         selectAttack.SetActive(false);
         selectDefense.SetActive(false);
         selectRecovery.SetActive(false);
