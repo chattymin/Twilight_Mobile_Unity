@@ -35,7 +35,7 @@ public class EnemyBattleController : MonoBehaviour {
                 default: break;
             }
             GameObject.Find("EnemyBattleEffect").GetComponent<EnemyBattleEffect>().EffectOn(enemyRandomAction);
-            GameObject.Find("BattleMechanism").GetComponent<BattleMechanism>().BattleRun(enemyRandomAction);
+            GameObject.Find("BattleManager").GetComponent<BattleMechanism>().BattleRun(enemyRandomAction);
         }
     }
 

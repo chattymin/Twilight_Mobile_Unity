@@ -15978,6 +15978,7 @@ GameObject:
   - component: {fileID: 1958651051}
   - component: {fileID: 1958651050}
   - component: {fileID: 1958651054}
+  - component: {fileID: 1958651055}
   m_Layer: 5
   m_Name: BattleManager
   m_TagString: Untagged
@@ -16088,6 +16089,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHP: {fileID: 1994130100}
   enemyHP: {fileID: 1943015980}
+--- !u!114 &1958651055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a7df24d1f1d4bdab023ac31a537a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicPanel: {fileID: 606059980}
+  winPanel: {fileID: 173727947}
+  losePanel: {fileID: 1183572383}
 --- !u!1 &1959164456
 GameObject:
   m_ObjectHideFlags: 0
