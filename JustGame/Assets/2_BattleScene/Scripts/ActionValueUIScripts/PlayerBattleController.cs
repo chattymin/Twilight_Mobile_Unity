@@ -37,6 +37,8 @@ public class PlayerBattleController : MonoBehaviour {
             default:
                 StateSetting.SetStates(BATTLEST); break;
         }
+        StateSetting.SetStates(BATTLEST);
+        Debug.Log(StateSetting.GetState());
         GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOn(playerSelected);
         GameObject.Find("BattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
     }

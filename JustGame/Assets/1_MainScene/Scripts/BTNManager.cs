@@ -14,7 +14,7 @@ public class BTNManager : MonoBehaviour {
     public void StartButton() {
         startButton.SetActive(false);
         exitButton.SetActive(false);
-        StartCoroutine(Fade.GetComponent<FadeManager>().FadeOutCoroutine("SelectST", "EndingScene"));
+        StartCoroutine(Fade.GetComponent<FadeManager>().FadeOutCoroutine("SelectST", "BattleScene"));
     }
 
     // *** Exit Button Click ***
