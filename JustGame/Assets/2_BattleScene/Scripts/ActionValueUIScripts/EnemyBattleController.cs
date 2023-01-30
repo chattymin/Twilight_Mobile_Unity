@@ -5,17 +5,21 @@ using UnityEngine.UI;
 using TMPro;
 
 public class EnemyBattleController : MonoBehaviour {
-    GameObject enemyAttack;
-    GameObject enemyDefense;
-    GameObject enemyRecovery;
+    public GameObject enemyAttack;
+    public GameObject enemyDefense;
+    public GameObject enemyRecovery;
 
-    TextMeshProUGUI enemyAttackValueText;
-    TextMeshProUGUI enemyDefenseValueText;
-    TextMeshProUGUI enemyRecoveryValueText;
+    public TextMeshProUGUI enemyAttackValueText;
+    public TextMeshProUGUI enemyDefenseValueText;
+    public TextMeshProUGUI enemyRecoveryValueText;
 
     public float enemyActionValue;
     private const float VALUE_INCREASE_RATE = 2.0f; //레벨 * 행동값 증가 비율 = 최대 행동값
 
+
+    private void Start() {
+        Reset();
+    }
 
     // *** Enemy Battle Run ***
     public void EnemyActionSelectRun() {
@@ -51,7 +55,7 @@ public class EnemyBattleController : MonoBehaviour {
     // *** Action Value Calculation ***
     private string ValueCalc(int action) {
         float maxValue = action * VALUE_INCREASE_RATE;
-        enemyActionValue = Random.Range(action, maxValue + 1);
+        enemyActionValue = (int)(Random.Range(action, maxValue + 1));
         return enemyActionValue.ToString();
     }
 

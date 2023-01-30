@@ -28,6 +28,7 @@ public class InfoButtonController : MonoBehaviour {
 
     // *** Info Pannel Buttons ***
     public void InfoRunButton() { //Info 버튼 클랙
+        Reset();
         infoPanelAll.SetActive(true);
         infoPanel1.SetActive(true); //Info Panel 1 표시
     }

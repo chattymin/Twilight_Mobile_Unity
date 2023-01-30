@@ -5,18 +5,23 @@ using UnityEngine.UI;
 using TMPro;
 
 public class PlayerBattleController : MonoBehaviour {
-    GameObject selectAttack;
-    GameObject selectDefense;
-    GameObject selectRecovery;
+    public GameObject selectAttack;
+    public GameObject selectDefense;
+    public GameObject selectRecovery;
 
-    TextMeshProUGUI attackValueText;
-    TextMeshProUGUI defenseValueText;
-    TextMeshProUGUI recoveryValueText;
+    public TextMeshProUGUI attackValueText;
+    public TextMeshProUGUI defenseValueText;
+    public TextMeshProUGUI recoveryValueText;
 
     public string playerSelected;
     public float playerActionValue;
     private const string BATTLEST = "BattleST";
     private const float VALUE_INCREASE_RATE = 2.0f; //레벨 * 행동값 증가 비율 = 최대 행동값
+
+
+    public void Start() {
+        Reset();
+    }
 
 
     // *** Player Battle Run ***
@@ -33,7 +38,7 @@ public class PlayerBattleController : MonoBehaviour {
                 StateSetting.SetStates(BATTLEST); break;
         }
         GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOn(playerSelected);
-        GameObject.Find("EnemyBattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
+        GameObject.Find("BattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
     }
 
 
@@ -52,7 +57,7 @@ public class PlayerBattleController : MonoBehaviour {
     // *** Action Value Calculation ***
     private string ValueCalc(int action) {
         float maxValue = action * VALUE_INCREASE_RATE;
-        playerActionValue = Random.Range(action, maxValue + 1);
+        playerActionValue = (int)(Random.Range(action, maxValue + 1));
         return playerActionValue.ToString();
     }
 

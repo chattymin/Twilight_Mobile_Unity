@@ -6,34 +6,35 @@ using System;
 
 public class BattleMechanism : MonoBehaviour {
     public string playerSelected; //플레이어가 선택한 행동의 종류
-    public int enemySelected; //적이 선택한 행동의 종류
 
     public float playerValue; //플레이어 행동값
     public float enemyValue; //적 행동값
 
-    private int playerHP = GameManager.instance.playerCurrentHP;
-    private const int PLAYER_MAX_HP = GameManager.PLAYER_MAX_HP;
+    public int playerHP;
+    public int PLAYER_MAX_HP;
+    public int enemyHP;
+    public int enemyMaxHP;
 
-    private int enemyHP = GameManager.instance.enemyCurrentHP;
-    private int enemyMaxHP = GameManager.instance.enemyMaxHP;
+
+    void Start() {
+        playerHP = GameManager.instance.playerCurrentHP;
+        PLAYER_MAX_HP = GameManager.PLAYER_MAX_HP;
+
+        enemyHP = GameManager.instance.enemyCurrentHP;
+        enemyMaxHP = GameManager.instance.enemyMaxHP;
+    }
 
 
     // *** Battle Run ***
     public void BattleRun(int enemySelected) { //배틀 시작
-        playerSelected = GameObject.Find("PlayerBattleManager") //플레이어 행동
+        playerSelected = GameObject.Find("BattleManager") //플레이어 행동
             .GetComponent<PlayerBattleController>().playerSelected;
 
-        playerValue = GameObject.Find("PlayerBattleManager") //플레이어 행동값
+        playerValue = GameObject.Find("BattleManager") //플레이어 행동값
             .GetComponent<PlayerBattleController>().playerActionValue;
-        enemyValue = GameObject.Find("EnemyBattleManager") //적 행동값
+        enemyValue = GameObject.Find("BattleManager") //적 행동값
             .GetComponent<EnemyBattleController>().enemyActionValue;
 
-        Mechanism();
-    }
-
-
-    // *** Battle Mechanism ***
-    private void Mechanism() {
         switch (playerSelected) {
             case "Attack":
                 if (enemySelected == 1) { //p공 VS e공

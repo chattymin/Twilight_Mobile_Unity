@@ -406,9 +406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01378170a014d56469b1551e202b798b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1274612017}
-  startButton: {fileID: 1928933333}
-  exitButton: {fileID: 164250653}
 --- !u!4 &344480831
 Transform:
   m_ObjectHideFlags: 0
@@ -436,7 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832492dfcf3f55844a52a3650cd280e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1110696845}
 --- !u!1 &505690164
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,79 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c835c626402d44d9a36d9735cd9bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllItemList:
-  - type: BasicItem
-    itemName: BasicItem
-    itemexp: 0
-    itemdesc: BasicItem
-    itemPrice: 0
-    itemImage: {fileID: 21300000, guid: 9befd543a37a7fe4d95d6b60b148abf0, type: 3}
-  - type: Item
-    itemName: One
-    itemexp: 1
-    itemdesc: Recover player HP
-    itemPrice: 1
-    itemImage: {fileID: 21300000, guid: 6809e3997f04d004d90857cb74bc4fce, type: 3}
-  - type: Item
-    itemName: Two
-    itemexp: 2
-    itemdesc: Get 100 coin
-    itemPrice: 2
-    itemImage: {fileID: 21300000, guid: eed0bf04a2411ab40a060c77f9b43dc3, type: 3}
-  - type: Item
-    itemName: Three
-    itemexp: 3
-    itemdesc: Reduces enemy's HP
-    itemPrice: 3
-    itemImage: {fileID: 21300000, guid: 2e12e299cababde4987764aeba384072, type: 3}
-  - type: Item
-    itemName: Four
-    itemexp: 4
-    itemdesc: Attack stats increased by 2
-    itemPrice: 4
-    itemImage: {fileID: 21300000, guid: be5f8e6fb298a6d4496025d43bb4b484, type: 3}
-  - type: Item
-    itemName: Five
-    itemexp: 5
-    itemdesc: FiveItem
-    itemPrice: 5
-    itemImage: {fileID: 21300000, guid: 1e552215e2c90f7418f13f70dabf8934, type: 3}
-  - type: Item
-    itemName: Six
-    itemexp: 6
-    itemdesc: Know  attack pattern.
-    itemPrice: 6
-    itemImage: {fileID: 21300000, guid: 8717ed6d1c352ee4fa8ad77a06d14ae7, type: 3}
-  - type: Item
-    itemName: Seven
-    itemexp: 7
-    itemdesc: Recovery increased by 1
-    itemPrice: 7
-    itemImage: {fileID: 21300000, guid: 715123b83697a0041a0ea5c5dc9a0a7b, type: 3}
-  - type: Item
-    itemName: Eight
-    itemexp: 8
-    itemdesc: Takes half damage
-    itemPrice: 8
-    itemImage: {fileID: 21300000, guid: 0f0e0de76bd2fb84bafb2aa439a31d37, type: 3}
-  - type: Item
-    itemName: Nine
-    itemexp: 9
-    itemdesc: HP increased by 20
-    itemPrice: 9
-    itemImage: {fileID: 21300000, guid: 7d97f6c3293b7cf4786b5302bd5c24c2, type: 3}
-  - type: Item
-    itemName: Ten
-    itemexp: 10
-    itemdesc: 'Increases Defense by 3 '
-    itemPrice: 10
-    itemImage: {fileID: 21300000, guid: 9b08035f79859a94a97d6a6e1ec93346, type: 3}
-  - type: SoldOut
-    itemName: SoldOut
-    itemexp: 0
-    itemdesc: SOLD OUT
-    itemPrice: 0
-    itemImage: {fileID: 21300000, guid: 53258435b5ef65a4992abc8040e7e8eb, type: 3}
 --- !u!4 &617284395
 Transform:
   m_ObjectHideFlags: 0
@@ -1115,13 +1038,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdadbbd53cbc4540bffd3dfda2c0442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossItem:
-    type: 
-    itemName: 
-    itemexp: 
-    itemdesc: 
-    itemPrice: 0
-    itemImage: {fileID: 0}
 --- !u!4 &1079967468
 Transform:
   m_ObjectHideFlags: 0
@@ -1994,6 +1910,7 @@ GameObject:
   - component: {fileID: 1928933338}
   - component: {fileID: 1928933337}
   - component: {fileID: 1928933336}
+  - component: {fileID: 1928933339}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2066,9 +1983,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 344480830}
-        m_TargetAssemblyTypeName: StartBtnManager, Assembly-CSharp
-        m_MethodName: FadeButton
+      - m_Target: {fileID: 1928933339}
+        m_TargetAssemblyTypeName: BTNManager, Assembly-CSharp
+        m_MethodName: StartButtonRun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2116,6 +2033,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928933333}
   m_CullTransparentMesh: 1
+--- !u!114 &1928933339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928933333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18eb2407f8ea79409219e031dfdd8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1110696845}
+  startButton: {fileID: 1928933333}
+  exitButton: {fileID: 164250653}
 --- !u!1 &2014498592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2057,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2014498593}
+  - component: {fileID: 2014498594}
   m_Layer: 0
   m_Name: FirstStart
   m_TagString: Untagged
@@ -2147,3 +2080,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2014498594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014498592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2941bcecfe15dea4fa93a4697848b1cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCurrentHP: 100
+  playerMoney: 0
+  playerAttackLV: 1
+  playerDefenseLV: 1
+  playerRecoveryLV: 1
+  playerInventoryItem:
+    itemName: 
+    itemexp: 
+    itemdesc: 
+    itemPrice: 0
+    itemImage: {fileID: 0}
+  enemyMaxHP: 1
+  enemyCurrentHP: 1
+  enemyAttackLV: 1
+  enemyDefenseLV: 1
+  enemyrRecoveryLV: 1
+  ShopItemList: []
