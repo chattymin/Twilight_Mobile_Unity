@@ -28,9 +28,9 @@ public class EndingBTNManager : MonoBehaviour
 
     // *** End Button Click ***
     public void EndButtonRun() {
-        EndClick();
-        GameObject.Find("FadeOutCoroutine").GetComponent<FadeManager>().FadeOutCoroutine();
+        //GameObject.Find("FadeOutCoroutine").GetComponent<FadeManager>().FadeOutCoroutine();
         //FadeOut 코루틴 실행
+        EndClick();
     }
 
     public void EndClick() { // 게임 종료 버튼 클릭
