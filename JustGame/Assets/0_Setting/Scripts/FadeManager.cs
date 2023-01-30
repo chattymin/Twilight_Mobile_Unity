@@ -10,15 +10,19 @@ public class FadeManager : MonoBehaviour {
 
 
     // *** Fade Out ***
-    public IEnumerator FadeOutCoroutine() {
+    public IEnumerator FadeOutCoroutine(string state, string scene) {
         float fadeCount = 0;
-
+        Debug.Log("cououtine Start");
         while (fadeCount < 1.0f) {
             fadeCount += FADE_SPEED;
+            Debug.Log(fadeCount + "hi");
             yield return new WaitForSeconds(0.01f);
             image.color = new Color(0, 0, 0, fadeCount);
+            Debug.Log("cououtine" +  fadeCount);
         }
+        Debug.Log("cououtine End");
         //(+ 씬 전환 코드)
+        SceneChange(state, scene);
     }
 
 
@@ -33,5 +37,10 @@ public class FadeManager : MonoBehaviour {
         }
         image.enabled = false;
     }
-}
 
+    public void SceneChange(string state, string scene) {
+        StateSetting.states = state;
+        SceneManager.LoadScene(scene);
+    }
+
+}
