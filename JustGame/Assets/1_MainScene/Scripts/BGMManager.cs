@@ -10,7 +10,7 @@ public class BGMManager : MonoBehaviour {
     void Start() {
         audioSource = this.GetComponent<AudioSource>();
 
-        AudioClip audioAsset = (AudioClip)Resources.Load("Main"); //myfile.mp3
+        AudioClip audioAsset = (AudioClip)Resources.Load("Sounds/MainBGM"); //myfile.mp3
         audioSource.clip = (AudioClip)audioAsset;
         audioSource.Play();
     }
