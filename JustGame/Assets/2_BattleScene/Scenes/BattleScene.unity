@@ -446,7 +446,7 @@ Transform:
   - {fileID: 1445383720}
   - {fileID: 1314559329}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &67407072
 GameObject:
@@ -805,7 +805,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: InfoNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1278,7 +1278,7 @@ Transform:
   - {fileID: 683649536}
   - {fileID: 961137855}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &158561614
 GameObject:
@@ -1734,7 +1734,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 178977233}
-  - component: {fileID: 178977232}
   - component: {fileID: 178977234}
   m_Layer: 0
   m_Name: FadeController
@@ -1743,18 +1742,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &178977232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178977231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8b4f2cd991e7c644b1efa30fc04c6b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &178977233
 Transform:
   m_ObjectHideFlags: 0
@@ -1768,7 +1755,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &178977234
 MonoBehaviour:
@@ -1779,9 +1766,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 178977231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b5f27e8e6c3e7d4193ecb1bc3f68068, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b62b7850f35f0149b7b53a2f7c43cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 180469079}
 --- !u!1 &180469078
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,7 +2007,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: PrevButton
+        m_MethodName: InfoPrevButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2300,7 +2288,7 @@ RectTransform:
   - {fileID: 606059981}
   - {fileID: 180469081}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2767,7 +2755,7 @@ Transform:
   - {fileID: 737747674}
   - {fileID: 639039935}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &334155183
 GameObject:
@@ -2855,7 +2843,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: InfoButton
+        m_MethodName: InfoRunButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2988,7 +2976,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: InfoNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5222,7 +5210,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: InfoExit
+        m_MethodName: InfoExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5302,7 +5290,7 @@ Transform:
   - {fileID: 808747363}
   - {fileID: 1338573024}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &639039934
 GameObject:
@@ -6967,7 +6955,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: InfoExit
+        m_MethodName: InfoExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7509,6 +7497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 868875583}
   - component: {fileID: 868875584}
+  - component: {fileID: 868875585}
   m_Layer: 5
   m_Name: ActionManager
   m_TagString: Untagged
@@ -7552,6 +7541,19 @@ MonoBehaviour:
   defenseEffect: {fileID: 1651320323}
   recoveryEffect: {fileID: 546820492}
   Action: 
+--- !u!114 &868875585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868875582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0a1fbd7e26f4c34b3fc66a3101807f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flag: 0
 --- !u!1 &898170998
 GameObject:
   m_ObjectHideFlags: 0
@@ -8295,7 +8297,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: PrevButton
+        m_MethodName: InfoPrevButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10713,7 +10715,7 @@ Transform:
   - {fileID: 1460862550}
   - {fileID: 1050851386}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294501072
 GameObject:
@@ -10836,7 +10838,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1958651048}
+      - m_Target: {fileID: 1958651051}
         m_TargetAssemblyTypeName: PlayerBattleController, Assembly-CSharp
         m_MethodName: ActionSelectRun
         m_Mode: 1
@@ -10848,9 +10850,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HPBarController, Assembly-CSharp
-        m_MethodName: HPUpdate
+      - m_Target: {fileID: 1958651050}
+        m_TargetAssemblyTypeName: EnemyBattleController, Assembly-CSharp
+        m_MethodName: EnemyActionSelectRun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11815,7 +11817,7 @@ Transform:
   - {fileID: 1086432093}
   - {fileID: 814498081}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376281302
 GameObject:
@@ -12948,7 +12950,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: PrevButton
+        m_MethodName: InfoPrevButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13745,64 +13747,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653514776}
   m_CullTransparentMesh: 1
---- !u!1 &1667193595
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1667193597}
-  - component: {fileID: 1667193596}
-  - component: {fileID: 1667193598}
-  m_Layer: 0
-  m_Name: EnemyBattleManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1667193596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667193595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06019970991d084e9bd62fe0a8ba042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyActionValue: 0
---- !u!4 &1667193597
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667193595}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 770.0155, y: 374.5707, z: 34.46782}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1667193598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667193595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 174c5f7fadd8a1d47907d7554a6de431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1692706731
 GameObject:
   m_ObjectHideFlags: 0
@@ -14031,7 +13975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1722494584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14211,7 +14155,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 178977234}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FadeOutController, Assembly-CSharp
         m_MethodName: StoreButton
         m_Mode: 1
@@ -14658,7 +14602,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: InfoExit
+        m_MethodName: InfoExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15414,7 +15358,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: InfoNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16029,29 +15973,18 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1958651049}
-  - component: {fileID: 1958651048}
+  - component: {fileID: 1958651053}
+  - component: {fileID: 1958651052}
+  - component: {fileID: 1958651051}
   - component: {fileID: 1958651050}
+  - component: {fileID: 1958651054}
   m_Layer: 5
-  m_Name: PlayerBattleManager
+  m_Name: BattleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1958651048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958651046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f48ea3c441649b42a7a56fdc2ce67a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSelected: 
-  playerActionValue: 0
 --- !u!4 &1958651049
 Transform:
   m_ObjectHideFlags: 0
@@ -16065,7 +15998,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1958651050
 MonoBehaviour:
@@ -16076,9 +16009,85 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958651046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c06019970991d084e9bd62fe0a8ba042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAttack: {fileID: 2020933476}
+  enemyDefense: {fileID: 808747362}
+  enemyRecovery: {fileID: 1338573023}
+  enemyAttackValueText: {fileID: 721644041}
+  enemyDefenseValueText: {fileID: 548173984}
+  enemyRecoveryValueText: {fileID: 2143478780}
+  enemyActionValue: 0
+--- !u!114 &1958651051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f48ea3c441649b42a7a56fdc2ce67a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectAttack: {fileID: 574554170}
+  selectDefense: {fileID: 1460862549}
+  selectRecovery: {fileID: 1050851385}
+  attackValueText: {fileID: 1477994149}
+  defenseValueText: {fileID: 1221704753}
+  recoveryValueText: {fileID: 2141865317}
+  playerSelected: 
+  playerActionValue: 0
+--- !u!114 &1958651052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8415a3a4ad395f34dbdacef28eb19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSelected: 
+  playerValue: 0
+  enemyValue: 0
+  playerHP: 100
+  PLAYER_MAX_HP: 0
+  enemyHP: 1
+  enemyMaxHP: 1
+--- !u!114 &1958651053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afb1b6e4653cea4ead7c5be7af0df13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackEffect: {fileID: 1722494583}
+  defenseEffect: {fileID: 1651320323}
+  recoveryEffect: {fileID: 546820492}
+  Action: 
+--- !u!114 &1958651054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fd503b0b40743e5bba30942c2feef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 1994130100}
+  enemyHP: {fileID: 1943015980}
 --- !u!1 &1959164456
 GameObject:
   m_ObjectHideFlags: 0
@@ -16165,7 +16174,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771048290}
         m_TargetAssemblyTypeName: InfoButtonController, Assembly-CSharp
-        m_MethodName: InfoExit
+        m_MethodName: InfoExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16352,7 +16361,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1990608281
 GameObject:
@@ -16919,37 +16928,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2046766768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2046766771}
-  m_Layer: 0
-  m_Name: BattleMechanism
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2046766771
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046766768}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069735255
 GameObject:
   m_ObjectHideFlags: 0
@@ -17454,7 +17432,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2108682265
 GameObject:
