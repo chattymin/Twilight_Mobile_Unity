@@ -8,23 +8,21 @@ public class FadeManager : MonoBehaviour {
     public Image image;
     const float FADE_SPEED = 0.01f;
 
+    private void Awake() {
+        StartCoroutine(FadeInCoroutine());
+    }
 
     // *** Fade Out ***
     public IEnumerator FadeOutCoroutine(string state, string scene) {
+        image.enabled = true;
         float fadeCount = 0;
-        Debug.Log("cououtine Start");
         while (fadeCount < 1.0f) {
             fadeCount += FADE_SPEED;
-            Debug.Log(fadeCount + "hi");
             yield return new WaitForSeconds(0.01f);
             image.color = new Color(0, 0, 0, fadeCount);
-            Debug.Log("cououtine" +  fadeCount);
         }
-        Debug.Log("cououtine End");
-        //(+ 씬 전환 코드)
         SceneChange(state, scene);
     }
-
 
     // *** Fade In ***
     IEnumerator FadeInCoroutine() {

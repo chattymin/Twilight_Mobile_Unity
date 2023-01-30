@@ -7,8 +7,13 @@ using UnityEngine.SceneManagement;
 public class EndingBTNManager : MonoBehaviour
 {
     public Image image;
+
     public GameObject endButton;
     public GameObject restartButton;
+
+    private void Start() {
+        
+    }
 
     // *** Restart Button Click ***
     public void RestartButtonRun() {
