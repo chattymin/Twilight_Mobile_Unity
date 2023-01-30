@@ -9,7 +9,6 @@ public class ButtonManager : MonoBehaviour {
     public GameObject startButton;
     public GameObject exitButton;
 
-
     // *** Start Button Click ***
     public void StartButtonRun() {
         StartClick();
@@ -19,7 +18,12 @@ public class ButtonManager : MonoBehaviour {
     public void StartClick() {
         startButton.SetActive(false);
         exitButton.SetActive(false);
+<<<<<<< Updated upstream
         // (+ FadeOut 코루틴 실행)
+=======
+        GameObject.Find("FadeOutCoroutine").GetComponent<FadeManager>().FadeOutCoroutine();
+        //FadeOut 코루틴 실행
+>>>>>>> Stashed changes
     }
 
     public void SceneChange() {

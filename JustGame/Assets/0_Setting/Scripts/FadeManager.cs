@@ -10,7 +10,7 @@ public class FadeManager : MonoBehaviour {
 
 
     // *** Fade Out ***
-    IEnumerator FadeOutCoroutine() {
+    public IEnumerator FadeOutCoroutine() {
         float fadeCount = 0;
 
         while (fadeCount < 1.0f) {

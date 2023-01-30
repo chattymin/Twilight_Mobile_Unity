@@ -1737,8 +1737,6 @@ GameObject:
   - component: {fileID: 1329163861}
   - component: {fileID: 1329163860}
   - component: {fileID: 1329163859}
-  - component: {fileID: 1329163858}
-  - component: {fileID: 1329163862}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -1767,18 +1765,6 @@ RectTransform:
   m_AnchoredPosition: {x: 682.72, y: -251.78247}
   m_SizeDelta: {x: -1516.8782, y: -960.5452}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1329163858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329163856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91ae189ce0cff401e9bac73cb0531e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1329163859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,7 +1809,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1329163862}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EndingFadeOutController, Assembly-CSharp
         m_MethodName: EndingButton
         m_Mode: 1
@@ -1873,20 +1859,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329163856}
   m_CullTransparentMesh: 1
---- !u!114 &1329163862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329163856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a98e48ecdb2749fba054fbd78307ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 1731579102}
-  RestartButton: {fileID: 1329163856}
 --- !u!1 &1402426276
 GameObject:
   m_ObjectHideFlags: 0
