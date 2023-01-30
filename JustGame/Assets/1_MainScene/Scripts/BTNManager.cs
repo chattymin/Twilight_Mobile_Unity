@@ -6,28 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class BTNManager : MonoBehaviour {
     public Image image;
+    public GameObject Fade;
     public GameObject startButton;
     public GameObject exitButton;
 
     // *** Start Button Click ***
-    public void StartButtonRun() {
-        StartClick();
-        //SceneChange();
-    }
-
-    public void StartClick() {
-        //GameObject.Find("Fade")
+    public void StartButton() {
         startButton.SetActive(false);
         exitButton.SetActive(false);
-        StartCoroutine(GameObject.Find("FadeController").GetComponent<FadeManager>().FadeOutCoroutine("SelectST", "EndingScene"));
-        //FadeOut 코루틴 실행
+        StartCoroutine(Fade.GetComponent<FadeManager>().FadeOutCoroutine("SelectST", "EndingScene"));
     }
-
-    public void SceneChange() {
-        StateSetting.states = "SelectST";
-        SceneManager.LoadScene("EndingScene");
-    }
-
 
     // *** Exit Button Click ***
     public void ExitButtonRun() {

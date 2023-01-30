@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b62b7850f35f0149b7b53a2f7c43cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 1274612017}
 --- !u!4 &1337272
 Transform:
   m_ObjectHideFlags: 0
@@ -451,6 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1274612017}
+  Fade: {fileID: 1337270}
   startButton: {fileID: 1928933333}
   exitButton: {fileID: 164250653}
 --- !u!1 &505690164
@@ -1483,7 +1484,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 344480832}
         m_TargetAssemblyTypeName: BTNManager, Assembly-CSharp
-        m_MethodName: StartClick
+        m_MethodName: StartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
