@@ -10,7 +10,7 @@ public class BattleBGM : MonoBehaviour
     {
         audioSource = this.GetComponent<AudioSource>();
 
-        AudioClip audioAsset = (AudioClip)Resources.Load("Battle");//myfile.mp3
+        AudioClip audioAsset = (AudioClip)Resources.Load("Sounds/BattleBGM");//myfile.mp3
         audioSource.clip = (AudioClip)audioAsset;
         audioSource.Play();
     }
