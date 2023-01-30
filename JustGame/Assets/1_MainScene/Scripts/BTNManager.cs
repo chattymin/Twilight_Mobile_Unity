@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ButtonManager : MonoBehaviour {
+public class BTNManager : MonoBehaviour {
     public Image image;
     public GameObject startButton;
     public GameObject exitButton;
@@ -18,14 +18,13 @@ public class ButtonManager : MonoBehaviour {
     public void StartClick() {
         startButton.SetActive(false);
         exitButton.SetActive(false);
-        GameObject.Find("FadeOutCoroutine").GetComponent<FadeManager>().FadeOutCoroutine();
+        //GameObject.Find("FadeOutCoroutine").GetComponent<FadeManager>().FadeOutCoroutine();
         //FadeOut 코루틴 실행
-
     }
 
     public void SceneChange() {
         StateSetting.states = "SelectST";
-        SceneManager.LoadScene("BattleScene");
+        SceneManager.LoadScene("EndingScene");
     }
 
 
