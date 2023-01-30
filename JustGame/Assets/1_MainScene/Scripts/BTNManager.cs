@@ -24,7 +24,7 @@ public class BTNManager : MonoBehaviour {
 
     public void SceneChange() {
         StateSetting.states = "SelectST";
-        SceneManager.LoadScene("BattleScene");
+        SceneManager.LoadScene("EndingScene");
     }
 
 
