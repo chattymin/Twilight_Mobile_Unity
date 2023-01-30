@@ -12,13 +12,14 @@ public class BTNManager : MonoBehaviour {
     // *** Start Button Click ***
     public void StartButtonRun() {
         StartClick();
-        SceneChange();
+        //SceneChange();
     }
 
     public void StartClick() {
+        //GameObject.Find("Fade")
         startButton.SetActive(false);
         exitButton.SetActive(false);
-        //GameObject.Find("FadeOutCoroutine").GetComponent<FadeManager>().FadeOutCoroutine();
+        StartCoroutine(GameObject.Find("FadeController").GetComponent<FadeManager>().FadeOutCoroutine("SelectST", "EndingScene"));
         //FadeOut 코루틴 실행
     }
 
