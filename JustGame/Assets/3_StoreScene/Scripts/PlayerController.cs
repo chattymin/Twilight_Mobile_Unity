@@ -9,41 +9,42 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour {
     private GameManager gameManager;
     private UiController uiController;
-    private Item itemBePurchased;
     private ItemController itemController;
 
     void Start() {
         gameManager = GameManager.instance;
-        itemController = GameObject.Find("GameObject").GetComponent<ItemController>();
-        uiController = GameObject.Find("GameObject").GetComponent<UiController>();
+        itemController = GameObject.Find("ScriptObject").GetComponent<ItemController>();
+        uiController = GameObject.Find("ScriptObject").GetComponent<UiController>();
     }
 
     /***buyItem 메소드***/
-    public void BuyItem() {
-        itemBePurchased = uiController.BoughtItem(); 
-        //uiController BoughtItem메소드를 이용해 구매하려는 아이템 객체를 itemBePurchased 변수에 저장
-
-        if (CheckMoney(itemBePurchased.itemPrice)){//Player의 소지금을 확인해 구매할 수 있는지 판단        
+    public void BuyItem(Item itemBePurchased) {
+        if (CheckMoney(itemBePurchased.itemPrice)) {//Player의 소지금을 확인해 구매할 수 있는지 판단        
             uiController.checkMoneyPopup.SetActive(true); //구매할 수 없을 경우 구매할 수 없다는 팝업창 활성화
         }
-        else if(IsTruePurchase()) {//소지금 확인 후 구매 의사를 묻기 위한 팝업창 활성화. True일 경우 구매한다는 뜻
+        /*else if(IsTruePurchase()) {//소지금 확인 후 구매 의사를 묻기 위한 팝업창 활성화. True일 경우 구매한다는 뜻
             itemController.ItemDelete(itemBePurchased.itemName);
             //itemController ItemDelete 메소드에 인자로 itemName을 넘겨 리스트에서 해당 아이템 삭제
             gameManager.playerInventoryItem = itemBePurchased; //player의 인벤토리 아이템 변수에 item 저장
             gameManager.playerMoney -= itemBePurchased.itemPrice; //player의 소지금 차감
+        }*/
+        else {
+            itemController.ItemDelete();
+            //itemController ItemDelete 메소드에 인자로 itemName을 넘겨 리스트에서 해당 아이템 삭제
+            gameManager.playerInventoryItem = itemBePurchased; //player의 인벤토리 아이템 변수에 item 저장
+            gameManager.playerMoney -= itemBePurchased.itemPrice; //player의 소지금 차감
         }
-
-        itemBePurchased = null; //itemBePurchased 변수 초기화
+        itemBePurchased = null;
     }
 
     /***buyExpRun 메소드***/
-    public void BuyExpRun() {
-        string expName = uiController.BoughtExp(); //반환된 능력치명을 expName 변수에 저장
+    public void BuyExpRun(string expName) {
+       //반환된 능력치명을 expName 변수에 저장
 
         if (CheckMoney(itemController.GetPrice(expName))) {//Player의 소지금을 확인해 구매할 수 있는지 판단        
             uiController.checkMoneyPopup.SetActive(true);//구매할 수 없을 경우 구매할 수 없다는 팝업창 활성화
         }
-        else if (IsTruePurchase()) {//소지금 확인 후 구매 의사를 묻기 위한 팝업창 활성화. True일 경우 구매
+        else {//소지금 확인 후 구매 의사를 묻기 위한 팝업창 활성화. True일 경우 구매
             switch (expName) {//expName에 따른 player의 능력치 업데이트
                 case "attack":
                     gameManager.playerAttackLV += 1;
@@ -72,14 +73,7 @@ public class PlayerController : MonoBehaviour {
     /***IsTruePurchase 메소드***/
     private bool IsTruePurchase() {
         uiController.isTruePurchasePopup.SetActive(true); // 구매여부를 묻는 팝업창 
-        GameObject clickObject = EventSystem.current.currentSelectedGameObject;//최근 클릭한 오브젝트를 반환
-        string answer = clickObject.name; //선택한 버튼의 이름(true,false)를 answer 변수에 저장
-
-        if (answer.Equals("true"))//구매할 경우 true 반환
-            return true;
-        else if (answer.Equals("false"))//구매하지 않을 경우 false 반환
-            return false;
-        else
-            return false;
+        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
+        return uiController.isTruePurchaseBTN(clickObject.name);
     }
 }
