@@ -351,7 +351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2045274bbfa419e4d8fe5d07582b14fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c6890bd3f19a16468bfd2384831aa96, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -516,8 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9766fc2808e14a62b350a2743817d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1820032805}
-  storeButton: {fileID: 249565599}
 --- !u!1 &361871171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1320,6 @@ GameObject:
   - component: {fileID: 597553627}
   - component: {fileID: 597553626}
   - component: {fileID: 597553625}
-  - component: {fileID: 597553628}
   m_Layer: 5
   m_Name: defense
   m_TagString: Untagged
@@ -1394,9 +1391,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 597553628}
-        m_TargetAssemblyTypeName: buyScript, Assembly-CSharp
-        m_MethodName: buyExpDefense
+      - m_Target: {fileID: 1610486582}
+        m_TargetAssemblyTypeName: UiController, Assembly-CSharp
+        m_MethodName: BoughtExp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1444,19 +1441,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597553623}
   m_CullTransparentMesh: 1
---- !u!114 &597553628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597553623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e35225289444ef408b59214d9143e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myItemImg: {fileID: 0}
 --- !u!1 &723244963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,7 +1966,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5253addb0df1e0446ac58511f088ded5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e0dbdf971c8c8a458ed5883859ba9a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2237,12 +2221,12 @@ GameObject:
   - component: {fileID: 1089728196}
   - component: {fileID: 1089728195}
   m_Layer: 5
-  m_Name: popup
+  m_Name: checkMoneyPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1089728194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2484,7 +2468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b4f2cd991e7c644b1efa30fc04c6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1820032805}
 --- !u!4 &1193015890
 Transform:
   m_ObjectHideFlags: 0
@@ -2858,7 +2841,6 @@ GameObject:
   - component: {fileID: 1278186742}
   - component: {fileID: 1278186741}
   - component: {fileID: 1278186740}
-  - component: {fileID: 1278186743}
   m_Layer: 5
   m_Name: attack
   m_TagString: Untagged
@@ -2930,9 +2912,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1278186743}
-        m_TargetAssemblyTypeName: buyScript, Assembly-CSharp
-        m_MethodName: buyExpAttack
+      - m_Target: {fileID: 1610486582}
+        m_TargetAssemblyTypeName: UiController, Assembly-CSharp
+        m_MethodName: BoughtExp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2980,19 +2962,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278186738}
   m_CullTransparentMesh: 1
---- !u!114 &1278186743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278186738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e35225289444ef408b59214d9143e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myItemImg: {fileID: 0}
 --- !u!1 &1444431379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,17 +3006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4117831f8a6aea641b73b63dc1d3a329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showImage: {fileID: 861688712}
-  itemdesc: {fileID: 1658367284}
-  exitItem:
-    type: 
-    itemName: 
-    itemexp: 
-    itemdesc: 
-    itemPrice: 0
-    itemImage: {fileID: 0}
-  indexNumber: 0
-  popup: {fileID: 1089728193}
 --- !u!1 &1501522807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,6 +3303,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571678902}
   m_CullTransparentMesh: 1
+--- !u!1 &1610486581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1610486585}
+  - component: {fileID: 1610486584}
+  - component: {fileID: 1610486583}
+  - component: {fileID: 1610486582}
+  m_Layer: 0
+  m_Name: ScriptObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1610486582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610486581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd80665207cdc1a4c9abef7e8ad7849d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItem: {fileID: 568529572}
+  checkMoneyPopup: {fileID: 1089728193}
+  isTruePurchasePopup: {fileID: 1089728193}
+  selectedItem:
+    itemName: 
+    itemexp: 
+    itemdesc: 
+    itemPrice: 0
+    itemImage: {fileID: 0}
+  expName: 
+--- !u!114 &1610486583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610486581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93dacaaa21c9d8641b194bc51b340b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1610486584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610486581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b297a98a9137e4ebb9c20c1f66a80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1610486585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610486581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 805.28534, y: 502.88168, z: -4.539576}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1658367284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3492,7 +3530,6 @@ GameObject:
   - component: {fileID: 1666153962}
   - component: {fileID: 1666153961}
   - component: {fileID: 1666153960}
-  - component: {fileID: 1666153963}
   m_Layer: 5
   m_Name: recovery
   m_TagString: Untagged
@@ -3564,9 +3601,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1666153963}
-        m_TargetAssemblyTypeName: buyScript, Assembly-CSharp
-        m_MethodName: buyExpRecovery
+      - m_Target: {fileID: 1610486582}
+        m_TargetAssemblyTypeName: UiController, Assembly-CSharp
+        m_MethodName: BoughtExp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3614,19 +3651,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666153958}
   m_CullTransparentMesh: 1
---- !u!114 &1666153963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1666153958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e35225289444ef408b59214d9143e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myItemImg: {fileID: 0}
 --- !u!1 &1668388536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,7 +4184,6 @@ GameObject:
   - component: {fileID: 1823181811}
   - component: {fileID: 1823181810}
   - component: {fileID: 1823181809}
-  - component: {fileID: 1823181812}
   m_Layer: 5
   m_Name: buy
   m_TagString: Untagged
@@ -4232,9 +4255,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823181812}
-        m_TargetAssemblyTypeName: buyScript, Assembly-CSharp
-        m_MethodName: buyItem
+      - m_Target: {fileID: 1610486582}
+        m_TargetAssemblyTypeName: UiController, Assembly-CSharp
+        m_MethodName: BoughtItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4282,19 +4305,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823181807}
   m_CullTransparentMesh: 1
---- !u!114 &1823181812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823181807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e35225289444ef408b59214d9143e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myItemImg: {fileID: 568529572}
 --- !u!1 &1908801188
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,9 +4528,8 @@ GameObject:
   - component: {fileID: 1992471608}
   - component: {fileID: 1992471607}
   - component: {fileID: 1992471606}
-  - component: {fileID: 1992471609}
   m_Layer: 5
-  m_Name: Button
+  m_Name: checkMoney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4590,9 +4599,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1992471609}
-        m_TargetAssemblyTypeName: buyScript, Assembly-CSharp
-        m_MethodName: popup
+      - m_Target: {fileID: 1610486582}
+        m_TargetAssemblyTypeName: UiController, Assembly-CSharp
+        m_MethodName: exitBTN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4622,7 +4631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 22be78a299599984ca8c20bc007f7e74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9289c826bca04ec89f2ef4424a27740, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4640,19 +4649,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992471604}
   m_CullTransparentMesh: 1
---- !u!114 &1992471609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992471604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e35225289444ef408b59214d9143e91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myItemImg: {fileID: 0}
 --- !u!1 &2000727150
 GameObject:
   m_ObjectHideFlags: 0
@@ -4804,7 +4800,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bccf0741348faab49b7cd649e58e1bfc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 988d43b6d722d4f4ca83dd3bbf87aa55, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
