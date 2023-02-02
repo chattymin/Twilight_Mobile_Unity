@@ -394,6 +394,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38957596}
   m_CullTransparentMesh: 1
+--- !u!1 &48366853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 48366856}
+  - component: {fileID: 48366854}
+  m_Layer: 0
+  m_Name: HPManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &48366854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48366853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fd503b0b40743e5bba30942c2feef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHPText: {fileID: 1994130100}
+  enemyHPText: {fileID: 1943015980}
+  playerHPGauge: {fileID: 1416474679}
+  enemyHPGauge: {fileID: 1577090294}
+--- !u!4 &48366856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48366853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 612.0364, y: 1068.6229, z: -3.471267}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &58999531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1902,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 270510240}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2297,13 +2345,18 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 691994375}
   - {fileID: 708207792}
   - {fileID: 1261586146}
   - {fileID: 1771048289}
   - {fileID: 606059981}
   - {fileID: 180469081}
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
   m_RootOrder: 5
+=======
+  m_RootOrder: 6
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5081,7 +5134,7 @@ RectTransform:
   - {fileID: 173727948}
   - {fileID: 1183572384}
   m_Father: {fileID: 270510240}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5309,7 +5362,11 @@ Transform:
   - {fileID: 808747363}
   - {fileID: 1338573024}
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
   m_RootOrder: 4
+=======
+  m_RootOrder: 5
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &639039934
 GameObject:
@@ -5943,11 +6000,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691994372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: 0, z: 0}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1846421081}
+  m_Father: {fileID: 270510240}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &708207791
@@ -5987,7 +6044,7 @@ RectTransform:
   - {fileID: 1567449938}
   - {fileID: 1296852211}
   m_Father: {fileID: 270510240}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6202,7 +6259,7 @@ RectTransform:
   - {fileID: 1294501073}
   - {fileID: 1990608282}
   m_Father: {fileID: 1846421081}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -6260,6 +6317,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag: 0
+--- !u!1 &711039861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 711039863}
+  - component: {fileID: 711039862}
+  m_Layer: 0
+  m_Name: GameManeger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &711039862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711039861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2941bcecfe15dea4fa93a4697848b1cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCurrentHP: 100
+  playerMoney: 0
+  playerAttackLV: 1
+  playerDefenseLV: 1
+  playerRecoveryLV: 1
+  playerInventoryItem:
+    itemName: 
+    itemexp: 
+    itemdesc: 
+    itemPrice: 0
+    itemImage: {fileID: 0}
+  enemyMaxHP: 5
+  enemyCurrentHP: 5
+  enemyAttackLV: 1
+  enemyDefenseLV: 1
+  enemyrRecoveryLV: 1
+  ShopItemList: []
+--- !u!4 &711039863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711039861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 789.4877, y: 970.2387, z: -2.622044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &711357851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7536,7 +7654,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1846421081}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10512,7 +10630,7 @@ RectTransform:
   m_Children:
   - {fileID: 1192765220}
   m_Father: {fileID: 270510240}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10724,7 +10842,11 @@ Transform:
   - {fileID: 1460862550}
   - {fileID: 1050851386}
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
   m_RootOrder: 3
+=======
+  m_RootOrder: 4
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294501072
 GameObject:
@@ -10859,7 +10981,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
       - m_Target: {fileID: 2046766772}
+=======
+      - m_Target: {fileID: 48366854}
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
         m_TargetAssemblyTypeName: HPBarController, Assembly-CSharp
         m_MethodName: HPUpdate
         m_Mode: 1
@@ -12178,7 +12304,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.65
+  m_FillAmount: 0.864
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -13301,9 +13427,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 985, y: 50}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -400, y: 0}
+  m_SizeDelta: {x: 800, y: 50}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1577090296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14568,7 +14694,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 270510240}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14755,7 +14881,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 691994375}
   - {fileID: 710471707}
   - {fileID: 868875583}
   m_Father: {fileID: 708207792}
@@ -15963,7 +16088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100/100
+  m_text: 50/50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
   m_sharedMaterial: {fileID: 2643936480361291306, guid: 631a91ec30205454182e9e90526e15eb, type: 2}
@@ -16049,8 +16174,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1958651049}
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
   - component: {fileID: 1958651048}
   - component: {fileID: 1958651050}
+=======
+  - component: {fileID: 1958651053}
+  - component: {fileID: 1958651051}
+  - component: {fileID: 1958651050}
+  - component: {fileID: 1958651055}
+  - component: {fileID: 1958651056}
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
   m_Layer: 5
   m_Name: PlayerBattleManager
   m_TagString: Untagged
@@ -16058,27 +16191,9 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
 --- !u!114 &1958651048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958651046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f48ea3c441649b42a7a56fdc2ce67a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectAttack: {fileID: 574554170}
-  selectDefense: {fileID: 1460862549}
-  selectRecovery: {fileID: 1050851385}
-  attackValueText: {fileID: 1477994149}
-  defenseValueText: {fileID: 1221704753}
-  recoveryValueText: {fileID: 2141865317}
-  maxValue: 0
-  playerSelected: 
-  playerActionValue: 0
+=======
 --- !u!4 &1958651049
 Transform:
   m_ObjectHideFlags: 0
@@ -16103,9 +16218,107 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958651046}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06019970991d084e9bd62fe0a8ba042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAttack: {fileID: 2020933476}
+  enemyDefense: {fileID: 808747362}
+  enemyRecovery: {fileID: 1338573023}
+  enemyAttackValueText: {fileID: 721644041}
+  enemyDefenseValueText: {fileID: 548173984}
+  enemyRecoveryValueText: {fileID: 2143478780}
+  enemyActionValue: 0
+--- !u!114 &1958651051
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f48ea3c441649b42a7a56fdc2ce67a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectAttack: {fileID: 574554170}
+  selectDefense: {fileID: 1460862549}
+  selectRecovery: {fileID: 1050851385}
+  attackValueText: {fileID: 1477994149}
+  defenseValueText: {fileID: 1221704753}
+  recoveryValueText: {fileID: 2141865317}
+  maxValue: 0
+  playerSelected: 
+  playerActionValue: 0
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
+--- !u!4 &1958651049
+Transform:
+=======
+--- !u!114 &1958651053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afb1b6e4653cea4ead7c5be7af0df13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackEffect: {fileID: 1722494583}
+  defenseEffect: {fileID: 1651320323}
+  recoveryEffect: {fileID: 546820492}
+  Action: 
+--- !u!114 &1958651055
+MonoBehaviour:
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 960, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958651050
+=======
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a7df24d1f1d4bdab023ac31a537a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicPanel: {fileID: 606059980}
+  winPanel: {fileID: 173727947}
+  losePanel: {fileID: 1183572383}
+--- !u!114 &1958651056
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958651046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+<<<<<<< Updated upstream:JustGame/Assets/2_BattleScene/BattleScene.unity
   m_Script: {fileID: 11500000, guid: dff62caa7e4c4b047a2b852146a7abdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  m_Script: {fileID: 11500000, guid: 8415a3a4ad395f34dbdacef28eb19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSelected: 
+  playerValue: 0
+  enemyValue: 0
+>>>>>>> Stashed changes:JustGame/Assets/2_BattleScene/Scenes/BattleScene.unity
 --- !u!1 &1959164456
 GameObject:
   m_ObjectHideFlags: 0
