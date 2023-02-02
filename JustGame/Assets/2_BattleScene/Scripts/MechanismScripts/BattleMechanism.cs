@@ -1,28 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
-using System;
 
 public class BattleMechanism : MonoBehaviour {
     public string playerSelected; //플레이어가 선택한 행동의 종류
 
     public float playerValue; //플레이어 행동값
     public float enemyValue; //적 행동값
-
-    public int playerHP;
-    public int PLAYER_MAX_HP;
-    public int enemyHP;
-    public int enemyMaxHP;
-
-
-    void Start() {
-        playerHP = GameManager.instance.playerCurrentHP;
-        PLAYER_MAX_HP = GameManager.PLAYER_MAX_HP;
-
-        enemyHP = GameManager.instance.enemyCurrentHP;
-        enemyMaxHP = GameManager.instance.enemyMaxHP;
-    }
 
 
     // *** Battle Run ***
@@ -94,34 +76,36 @@ public class BattleMechanism : MonoBehaviour {
 
     // *** Battle Mechanism - Player HP ***
     private void PlayerHPUP(float value) {
-        playerHP += ((int)value);
+        GameManager.instance.playerCurrentHP += (int)value;
 
-        if (playerHP > PLAYER_MAX_HP) //최대 체력 초과 시
-            playerHP = PLAYER_MAX_HP;
+        if (GameManager.instance.playerCurrentHP > GameManager.PLAYER_MAX_HP) //최대 체력 초과 시
+            GameManager.instance.playerCurrentHP = GameManager.PLAYER_MAX_HP;
     }
 
     private void PlayerHPDown(float value) {
-        playerHP -= ((int)value);
+        GameManager.instance.playerCurrentHP -= (int)value;
+        StateCheck();
 
-        if (playerHP <= 0) { //체력 소진 시
-            playerHP = 0;
+        if (GameManager.instance.playerCurrentHP <= 0) { //체력 소진 시
+            GameManager.instance.playerCurrentHP = 0;
         }
     }
 
 
     // *** Battle Mechanism - Enemy HP ***
     private void EnemyHPUP(float value) {
-        enemyHP += (int)value;
+        GameManager.instance.enemyCurrentHP += (int)value;
 
-        if (enemyHP > enemyMaxHP) //최대 체력 초과 시
-            enemyHP = enemyMaxHP;
+        if (GameManager.instance.enemyCurrentHP > GameManager.instance.enemyMaxHP) //최대 체력 초과 시
+            GameManager.instance.enemyCurrentHP = GameManager.instance.enemyMaxHP;
     }
 
     private void EnemyHPDown(float value) {
-        enemyHP -= (int)value;
+        GameManager.instance.enemyCurrentHP -= (int)value;
+        StateCheck();
 
-        if (enemyHP <= 0) {  //체력 소진 시
-            enemyHP = enemyMaxHP;
+        if (GameManager.instance.enemyCurrentHP <= 0) {  //체력 소진 시
+            GameManager.instance.enemyCurrentHP = GameManager.instance.enemyMaxHP;
         }
     }
     public string StateCheck() {
