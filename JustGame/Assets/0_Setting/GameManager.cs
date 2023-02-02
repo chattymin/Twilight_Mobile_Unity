@@ -42,8 +42,8 @@ public class GameManager : MonoBehaviour {
 
 
     // *** Enemy Setting ***
-    public int enemyMaxHP = 5; //적 최대 체력
-    public int enemyCurrentHP = 5; //적 현재 체력
+    public int enemyMaxHP = 1; //적 최대 체력
+    public int enemyCurrentHP = 1; //적 현재 체력
     public int enemyAttackLV = 1; //적 공격 레벨
     public int enemyDefenseLV = 1; //방어
     public int enemyrRecoveryLV = 1; //회복
