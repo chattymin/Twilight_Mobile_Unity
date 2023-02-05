@@ -23,10 +23,10 @@ public class BTNManager : MonoBehaviour {
     }
 
     public void ExitClick() { // 게임 종료 버튼 클릭
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false; //프로그램 종료
-        #else
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; //프로그램 종료
+#else
             Application.Quit();
-        #endif
+#endif
     }
 }

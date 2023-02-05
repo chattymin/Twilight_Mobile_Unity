@@ -33,7 +33,7 @@ public class BattleMechanism : MonoBehaviour {
                 }
                 else { //p공 VS e회
                     EnemyHPDown(playerValue);
-                    EnemyHPUP(enemyValue);
+                    if(GameManager.instance.enemyCurrentHP > 0) EnemyHPUP(enemyValue);
                 }
                 break;
 
@@ -84,7 +84,7 @@ public class BattleMechanism : MonoBehaviour {
 
     private void PlayerHPDown(float value) {
         GameManager.instance.playerCurrentHP -= (int)value;
-        StateCheck();
+        //StateSetting.SetStates(StateCheck());
 
         if (GameManager.instance.playerCurrentHP <= 0) { //체력 소진 시
             GameManager.instance.playerCurrentHP = 0;
@@ -102,22 +102,10 @@ public class BattleMechanism : MonoBehaviour {
 
     private void EnemyHPDown(float value) {
         GameManager.instance.enemyCurrentHP -= (int)value;
-        StateCheck();
+        
 
         if (GameManager.instance.enemyCurrentHP <= 0) {  //체력 소진 시
-            GameManager.instance.enemyCurrentHP = GameManager.instance.enemyMaxHP;
+            GameManager.instance.enemyCurrentHP = 0;//GameManager.instance.enemyMaxHP;
         }
-    }
-    public string StateCheck() {
-        if (GameManager.instance.playerCurrentHP <= 0) {
-            return "LoseST";
-        }
-
-        if (GameManager.instance.enemyCurrentHP <= 0) {
-            GameManager.instance.enemyCurrentHP = GameManager.instance.enemyMaxHP;
-            return "WinST";
-        }
-
-        return "SelectST";
     }
 }

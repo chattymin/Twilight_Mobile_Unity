@@ -27,8 +27,7 @@ public class BattleEffect : MonoBehaviour {
             GameObject.Find("BattleManager").GetComponent<PlayerBattleController>().Reset();
             GameObject.Find("BattleManager").GetComponent<EnemyBattleController>().Reset();
             // 액션 이펙트 지우는 코드
-
-            StateSetting.SetStates(GameObject.Find("BattleManager").GetComponent<BattleMechanism>().StateCheck());
+            StateSetting.SetStates(StateCheck());
         }else if (StateSetting.CompareStates("BattleST")) {
             if (GameObject.Find("Action_Back").transform.position.y < UI_POSITION_Y) {
                 // 특정 시간 지나면 다시 ui 올라오도록  ()밀리세크
@@ -48,5 +47,18 @@ public class BattleEffect : MonoBehaviour {
             basicPanel.SetActive(true);
             losePanel.SetActive(true);
         }
+    }
+
+    public string StateCheck() {
+        if (GameManager.instance.playerCurrentHP <= 0) {
+            return "LoseST";
+        }
+
+        if (GameManager.instance.enemyCurrentHP <= 0) {
+            GameManager.instance.enemyCurrentHP = GameManager.instance.enemyMaxHP;
+            return "WinST";
+        }
+
+        return "SelectST";
     }
 }
