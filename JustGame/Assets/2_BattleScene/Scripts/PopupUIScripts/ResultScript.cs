@@ -7,11 +7,11 @@ using TMPro;
 public class ResultScript : MonoBehaviour {
     GameObject WinPage;
 
-    TextMeshProUGUI playerHp;
-    TextMeshProUGUI playerAttack;
-    TextMeshProUGUI playerDefense;
-    TextMeshProUGUI playerRecovery;
-    TextMeshProUGUI playerMoney;
+    public TextMeshProUGUI playerHp;
+    public TextMeshProUGUI playerAttack;
+    public TextMeshProUGUI playerDefense;
+    public TextMeshProUGUI playerRecovery;
+    public TextMeshProUGUI playerMoney;
 
     public int enemyDropMoney = 0;
 

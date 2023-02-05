@@ -38,7 +38,6 @@ public class PlayerBattleController : MonoBehaviour {
                 StateSetting.SetStates(BATTLEST); break;
         }
         StateSetting.SetStates(BATTLEST);
-        Debug.Log(StateSetting.GetState());
         GameObject.Find("PlayerBattleEffect").GetComponent<PlayerBattleEffect>().EffectOn(playerSelected);
         GameObject.Find("BattleManager").GetComponent<EnemyBattleController>().EnemyActionSelectRun();
     }
@@ -88,7 +87,6 @@ public class PlayerBattleController : MonoBehaviour {
         int defense = GameManager.instance.playerDefenseLV;
         defenseValueText.text = ValueCalc(defense);
     }
-
 
 
     // *** Recovery Controller ***
