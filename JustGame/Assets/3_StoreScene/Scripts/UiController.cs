@@ -17,6 +17,7 @@ public class UiController : MonoBehaviour {
     private TextMeshProUGUI itemPrice; //아이템 가격
     private TextMeshProUGUI itemDesc;
     private Image itemImage;
+    private RectTransform rect;
 
     private GameObject buyButton;// 구매버튼
 
@@ -35,6 +36,7 @@ public class UiController : MonoBehaviour {
     TextMeshProUGUI recoveryexp;
     private string expName;
     private string playerSelect;
+    
 
     private void Start() {
         itemController = GameObject.Find("ScriptObject").GetComponent<ItemController>();
@@ -43,6 +45,7 @@ public class UiController : MonoBehaviour {
         itemPrice = GameObject.Find("itemPrice").GetComponent<TextMeshProUGUI>();
         itemDesc = GameObject.Find("desc").GetComponent<TextMeshProUGUI>();
         itemImage = GameObject.Find("item").GetComponent<Image>();
+        rect = (RectTransform)itemImage.transform;
 
         attackPrice = GameObject.Find("attackPrice").GetComponent<TextMeshProUGUI>();
         defensePrice = GameObject.Find("defensePrice").GetComponent<TextMeshProUGUI>();
@@ -76,6 +79,7 @@ public class UiController : MonoBehaviour {
         selectedItem = itemController.SelectItem(); //구매할 수 있는 아이템을 리스트에서 랜덤으로 선택
 
         itemImage.sprite = selectedItem.itemImage;
+        rect.sizeDelta = new Vector2(250, 240);
         itemDesc.text = selectedItem.itemdesc;
         itemPrice.text = selectedItem.itemPrice.ToString();
         UImodifyVariable();
@@ -122,11 +126,15 @@ public class UiController : MonoBehaviour {
         else if (playerSelect.Equals("true") && expName.Equals("not selected")) {
             playerController.BuyItem(selectedItem);
             
-            buyButton.GetComponent<Image>().color = Color.gray; // 구매버튼 클릭 시 동작. 구매를 막기 위해 색을 gray로 변경 
-            itemPrice.text = ""; // item의 가격을 표시해주는 text를 ""로 
-            itemImage.sprite = Resources.Load<Sprite>("Images/Icons/SoldOut");
+            itemPrice.text = ""; // item의 가격을 표시해주는 text를 ""로
             itemDesc.text = "";
+            
+            itemImage.sprite = Resources.Load<Sprite>("Images/Icons/SoldOut");
+            RectTransform rect = (RectTransform)itemImage.transform;
+            rect.sizeDelta = new Vector2(500, 280);
+            rect.anchoredPosition = new Vector3(0,7);
 
+            buyButton.GetComponent<Image>().color = Color.gray; // 구매버튼 클릭 시 동작. 구매를 막기 위해 색을 gray로 변경 
             buyButton.GetComponent<Button>().interactable = false; // 구매할 수 없도록 button 기능 비활성화. 
             
             selectedItem = null;
