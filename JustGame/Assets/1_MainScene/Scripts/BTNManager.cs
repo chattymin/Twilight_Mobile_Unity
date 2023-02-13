@@ -7,64 +7,35 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 public class BTNManager : MonoBehaviour {
-    public Image image;
     public GameObject startButton;
     public GameObject exitButton;
     public GameObject settingButton;
     public GameObject extraButton;
-    //public TextMeshProUGUI buttonText1;
-    public TextMeshProUGUI buttonText;
-    public string button = "Start"; // 하나만! 한번만 생성되는 스크립트에 넣어서 어디서 참조하더라도 같은 값이도록 만들기
+    public GameObject startParenthese;
+    public GameObject settingParenthese;
+    public GameObject extraParenthese;
+    public GameObject exitParenthese;
+    public GameObject settingPanelAll;
+    public GameObject settingPanel;
 
-    /*public void OnMouseOver() {
-        Debug.Log("1");
-        buttonText1.GetComponent<TextMeshProUGUI>().text = "<   START   >";
-    }*/
-
-    // *** 초기화 ***
-    public void Init() {
-        GameObject.Find("StartParenthese").SetActive(true);
-        GameObject.Find("SettingParenthese").SetActive(false);
-        GameObject.Find("ExtraParenthese").SetActive(false);
-        GameObject.Find("ExitParenthese").SetActive(false);
+    public static int button;
+    
+    public void Start() {
+        button=1;
+        startParenthese.SetActive(true);
+        settingParenthese.SetActive(false);
+        extraParenthese.SetActive(false);
+        exitParenthese.SetActive(false);
+        settingPanelAll.SetActive(false);
+        settingPanel.SetActive(false);
     }
 
-    // *** On Mouse Enter ***
-    public void OnMouseEnter() {
-        Remove(button);
-        Draw(Calc());
-    }
-
-    public void Remove(string target) {
-        GameObject.Find(target + "Parentheses").SetActive(false); // 괄호에 해당되는 오브젝트 만들고, 해당 변수명 맞추기
-    }
-
-    //StartPar
-
-
-    public string Calc() {
-        switch (buttonText.GetComponent<TextMeshProUGUI>().text) { // toString이 아니라 해당 텍스트매시프로가 가지고 있는 텍스트 값을 가져오는걸로 바꾸기
-            case "START":
-                return "Start";
-            case "SETTING":
-                return "Setting";
-            case "EXTRA":
-                return "Extra";
-            case "EXIT":
-                return "Exit";
-        }
-        return "";
-    }
-
-    public void Draw(string target) {
-        button = target;
-        //GameObject.Find("Button" + target.ToString()).SetActive(true);
-        GameObject.Find(target + "Parentheses").SetActive(true);
+    public void Update() {
+        KeyboardController();
     }
 
     // *** Start Button Click ***
     public void StartButtonRun() {
-        
         StartClick();
     }
 
@@ -98,13 +69,75 @@ public class BTNManager : MonoBehaviour {
 
     // *** Setting Button Click ***
     public void SettingButtonRun() {
-        StartClick();
-        SceneManager.LoadScene("EndingScene");
+        SettingButton();
+    }
+
+    public void SettingButton() {
+        settingPanelAll.SetActive(true);
+        settingPanel.SetActive(true);
+    }
+
+    public void SettingExit() {
+        settingPanelAll.SetActive(false);
     }
 
     // *** Extra Button Click ***
     public void ExtraButtonRun() {
         StartClick();
         SceneManager.LoadScene("EndingScene");
+    }
+
+    //*** Keyboard Controller ***
+    public void KeyboardController() {
+        if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            ++button;
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            --button;
+        }
+        switch (button) {
+            case 0:
+                button = 4;
+                break;
+            case 1:
+                startParenthese.SetActive(true);
+                settingParenthese.SetActive(false);
+                extraParenthese.SetActive(false);
+                exitParenthese.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.Return)) {
+                    StartButtonRun();
+                }
+                break;
+            case 2:
+                startParenthese.SetActive(false);
+                settingParenthese.SetActive(true);
+                extraParenthese.SetActive(false);
+                exitParenthese.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.Return)) {
+                    SettingButtonRun();
+                }
+                break;
+            case 3:
+                startParenthese.SetActive(false);
+                settingParenthese.SetActive(false);
+                extraParenthese.SetActive(true);
+                exitParenthese.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.Return)) {
+                    ExtraButtonRun();
+                }
+                break;
+            case 4:
+                startParenthese.SetActive(false);
+                settingParenthese.SetActive(false);
+                extraParenthese.SetActive(false);
+                exitParenthese.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.Return)) {
+                    ExitButtonRun();
+                }
+                break;
+            case 5:
+                button = 1;
+                break;
+        }
     }
 }
