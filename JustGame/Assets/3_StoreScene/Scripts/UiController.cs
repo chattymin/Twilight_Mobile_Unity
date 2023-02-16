@@ -27,18 +27,22 @@ public class UiController : MonoBehaviour {
     
     public GameObject checkMoneyPopup;//소지금 부족으로 구매할 수 없는 경우 뜨는 팝업창
     public GameObject isTruePurchasePopup;//구매 여부를 묻는 팝업창
-    
-    
+    private Transform itemDescribePopup;
+
+
     public Item selectedItem;//itemController의 SelectItem 메소드를 통해 선택된 아이템
     TextMeshProUGUI curMoney;
     TextMeshProUGUI attackexp;
     TextMeshProUGUI defenseexp;
     TextMeshProUGUI recoveryexp;
+    TextMeshProUGUI curMoneyText;
     private string expName;
     private string playerSelect;
+    public Animation animation;
     
 
     private void Start() {
+       
         itemController = GameObject.Find("ScriptObject").GetComponent<ItemController>();
         playerController = GameObject.Find("ScriptObject").GetComponent<PlayerController>();
 
@@ -57,13 +61,16 @@ public class UiController : MonoBehaviour {
         attackexp = GameObject.Find("attackexp").GetComponent<TextMeshProUGUI>();
         defenseexp =  GameObject.Find("defenseexp").GetComponent<TextMeshProUGUI>();
         recoveryexp = GameObject.Find("recoveryexp").GetComponent<TextMeshProUGUI>();
+        curMoneyText = GameObject.Find("curmoneyText").GetComponent<TextMeshProUGUI>();
 
         checkMoneyPopup = GameObject.Find("checkMoneyPopup");
         isTruePurchasePopup = GameObject.Find("isTruePurchasePopup");
+        itemDescribePopup = GameObject.Find("Canvas").transform.Find("itemDescribePopup");
 
         GameObject.Find("inventoryitem").SetActive(false);
         checkMoneyPopup.SetActive(false);//storescene 시작시 팝업 비활성화
         isTruePurchasePopup.SetActive(false);//storescene 시작시 팝업 비활성화
+        curMoneyText.enabled = false;
         expName = "not selected";
         playerSelect = "false";
         UiSetting();
@@ -72,10 +79,10 @@ public class UiController : MonoBehaviour {
      /*** UiSetting 메소드 ***/
     private void UiSetting() {
 
-        if (gameManager.playerInventoryItem.itemName.Equals("Item")) {
+        if (gameManager.playerInventoryItem.itemName.Equals("")) {
             UImodifyInventory();
         }
-     
+
         selectedItem = itemController.SelectItem(); //구매할 수 있는 아이템을 리스트에서 랜덤으로 선택
 
         itemImage.sprite = selectedItem.itemImage;
@@ -124,11 +131,14 @@ public class UiController : MonoBehaviour {
             Debug.Log("아무것도 구매 안함 상태 안바뀜. ");
         }
         else if (playerSelect.Equals("true") && expName.Equals("not selected")) {
+            curMoneyText.text = "-" + selectedItem.itemPrice.ToString();
             playerController.BuyItem(selectedItem);
-            
+            curMoneyText.enabled = true;
+            StartCoroutine(FadeMoneyText());
+            StartCoroutine(CountingMoney());
             itemPrice.text = ""; // item의 가격을 표시해주는 text를 ""로
             itemDesc.text = "";
-            
+
             itemImage.sprite = Resources.Load<Sprite>("Images/Icons/SoldOut");
             RectTransform rect = (RectTransform)itemImage.transform;
             rect.sizeDelta = new Vector2(500, 280);
@@ -141,7 +151,11 @@ public class UiController : MonoBehaviour {
             UImodifyInventory();
         }
         else {
+            curMoneyText.text = "-" + itemController.GetPrice(expName).ToString();
             playerController.BuyExpRun(expName);
+            curMoneyText.enabled = true;
+            StartCoroutine(FadeMoneyText());
+            StartCoroutine(CountingMoney());
         }
         UImodifyVariable();
     }
@@ -156,7 +170,7 @@ public class UiController : MonoBehaviour {
         attackPrice.text = itemController.GetPrice("attack").ToString();
         defensePrice.text = itemController.GetPrice("defense").ToString();
         recoveryPrice.text = itemController.GetPrice("recovery").ToString();
-
+        
         expName = "not selected";
         //exp 아이템 가격 표시
     }
@@ -164,5 +178,45 @@ public class UiController : MonoBehaviour {
     private void UImodifyInventory() {
         GameObject.Find("inventory").transform.Find("inventoryitem").gameObject.SetActive(true);
         GameObject.Find("inventoryitem").GetComponent<Image>().sprite = gameManager.playerInventoryItem.itemImage;
-    }   
+ 
+        itemDescribePopup.transform.Find("playerItemName").GetComponent<TextMeshProUGUI>().text = gameManager.playerInventoryItem.itemName;
+        itemDescribePopup.transform.Find("describeSection").transform.Find("playerItemDescribe").GetComponent<TextMeshProUGUI>().text = gameManager.playerInventoryItem.itemdesc;
+    }
+
+    IEnumerator FadeMoneyText() {
+
+        curMoneyText.color = new Color(curMoneyText.color.r, curMoneyText.color.g, curMoneyText.color.b, 1);
+        RectTransform rect2 = (RectTransform)curMoneyText.transform;
+        rect2.anchoredPosition = new Vector3(100, 124);
+        Vector3 dir = new Vector3(0, 30f, 0);
+
+        while (curMoneyText.color.a >=0.0f) {
+            float colorA = curMoneyText.color.a - 0.005f;
+            curMoneyText.color = new Color(curMoneyText.color.r, curMoneyText.color.g, curMoneyText.color.b, colorA);
+            rect2.transform.Translate(dir*0.03f);
+            yield return null;
+        }
+    }
+
+    IEnumerator CountingMoney() {
+        
+        float max = gameManager.playerMoney - int.Parse(curMoneyText.text);
+
+        while (max >= gameManager.playerMoney) {
+            if ((-int.Parse(curMoneyText.text)) < 10) {
+                max -= 0.05f;
+            }
+            else if ((-int.Parse(curMoneyText.text)) < 200) {
+                max -= 1.0f;
+            }
+            else if ((-int.Parse(curMoneyText.text)) < 400) {
+                max -= 2.0f;
+            }
+            else {
+                max -= 10.0f;
+            }      
+            curMoney.text = ((int)max).ToString();
+            yield return null;
+        }
+    }
 }
