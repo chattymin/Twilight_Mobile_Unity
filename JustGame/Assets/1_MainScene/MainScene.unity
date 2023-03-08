@@ -7578,6 +7578,8 @@ MonoBehaviour:
   playerDefenseLV: 1
   playerRecoveryLV: 1
   playerInventoryItem:
+    itemType: 0
+    itemCode: 
     itemName: 
     itemexp: 
     itemdesc: 
@@ -7588,7 +7590,77 @@ MonoBehaviour:
   enemyAttackLV: 1
   enemyDefenseLV: 1
   enemyrRecoveryLV: 1
-  ShopItemList: []
+  ShopItemList:
+  - itemType: 0
+    itemCode: 1000
+    itemName: One
+    itemexp: 1
+    itemdesc: OneTest
+    itemPrice: 1
+    itemImage: {fileID: 21300000, guid: 6809e3997f04d004d90857cb74bc4fce, type: 3}
+  - itemType: 0
+    itemCode: 1001
+    itemName: Two
+    itemexp: 2
+    itemdesc: TwoTest
+    itemPrice: 2
+    itemImage: {fileID: 21300000, guid: eed0bf04a2411ab40a060c77f9b43dc3, type: 3}
+  - itemType: 0
+    itemCode: 1002
+    itemName: Three
+    itemexp: 3
+    itemdesc: ThreeTest
+    itemPrice: 3
+    itemImage: {fileID: 21300000, guid: 2e12e299cababde4987764aeba384072, type: 3}
+  - itemType: 0
+    itemCode: 1003
+    itemName: Four
+    itemexp: 4
+    itemdesc: FourTest
+    itemPrice: 4
+    itemImage: {fileID: 21300000, guid: be5f8e6fb298a6d4496025d43bb4b484, type: 3}
+  - itemType: 0
+    itemCode: 1004
+    itemName: Five
+    itemexp: 5
+    itemdesc: FiveTest
+    itemPrice: 5
+    itemImage: {fileID: 21300000, guid: 1e552215e2c90f7418f13f70dabf8934, type: 3}
+  - itemType: 0
+    itemCode: 1005
+    itemName: Six
+    itemexp: 6
+    itemdesc: SixTest
+    itemPrice: 6
+    itemImage: {fileID: 21300000, guid: 8717ed6d1c352ee4fa8ad77a06d14ae7, type: 3}
+  - itemType: 0
+    itemCode: 1006
+    itemName: Seven
+    itemexp: 7
+    itemdesc: SevenTest
+    itemPrice: 7
+    itemImage: {fileID: 21300000, guid: 715123b83697a0041a0ea5c5dc9a0a7b, type: 3}
+  - itemType: 0
+    itemCode: 1007
+    itemName: Eight
+    itemexp: 8
+    itemdesc: EightTest
+    itemPrice: 8
+    itemImage: {fileID: 21300000, guid: 0f0e0de76bd2fb84bafb2aa439a31d37, type: 3}
+  - itemType: 0
+    itemCode: 1008
+    itemName: Nine
+    itemexp: 9
+    itemdesc: NineTest
+    itemPrice: 9
+    itemImage: {fileID: 21300000, guid: 7d97f6c3293b7cf4786b5302bd5c24c2, type: 3}
+  - itemType: 0
+    itemCode: 1009
+    itemName: Ten
+    itemexp: 10
+    itemdesc: TenTest
+    itemPrice: 10
+    itemImage: {fileID: 21300000, guid: 9b08035f79859a94a97d6a6e1ec93346, type: 3}
 --- !u!1 &2123688092
 GameObject:
   m_ObjectHideFlags: 0
