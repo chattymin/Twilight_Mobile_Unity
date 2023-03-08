@@ -13,8 +13,8 @@ public class BGMManager : MonoBehaviour {
 
     public void AudioControl() {
         float sound = audioSlider.value;
-        if (sound == -40f) masterMixer.SetFloat("BGM", -80);
-        else masterMixer.SetFloat("BGM", sound);
+        if (sound == -40f) masterMixer.SetFloat("Master", -80);
+        else masterMixer.SetFloat("Master", sound);
     }
 
     public void ToggleAudioVolume() {

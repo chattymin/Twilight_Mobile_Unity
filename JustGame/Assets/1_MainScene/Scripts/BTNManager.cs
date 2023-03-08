@@ -17,6 +17,8 @@ public class BTNManager : MonoBehaviour {
     public GameObject exitParenthese;
     public GameObject settingPanelAll;
     public GameObject settingPanel;
+    public GameObject extraPanelAll;
+    public GameObject extraPanel;
 
     public static int button;
     
@@ -28,6 +30,8 @@ public class BTNManager : MonoBehaviour {
         exitParenthese.SetActive(false);
         settingPanelAll.SetActive(false);
         settingPanel.SetActive(false);
+        extraPanelAll.SetActive(false);
+        extraPanel.SetActive(false);
     }
 
     public void Update() {
@@ -84,8 +88,16 @@ public class BTNManager : MonoBehaviour {
 
     // *** Extra Button Click ***
     public void ExtraButtonRun() {
-        StartClick();
-        SceneManager.LoadScene("EndingScene");
+        ExtraButton();
+    }
+
+    public void ExtraButton() {
+        extraPanelAll.SetActive(true);
+        extraPanel.SetActive(true);
+    }
+
+    public void ExtraExit() {
+        extraPanelAll.SetActive(false);
     }
 
     //*** Keyboard Controller ***
