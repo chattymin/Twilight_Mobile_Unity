@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.UI;
+
 
 public class CoroutineController : MonoBehaviour
 {
     private GameManager gameManager = GameManager.instance;
-    // Start is called before the first frame update
+    
+    /*FadeMoneyText : 구매시 구매 상품의 가격 텍스트 Fade out+위로 올라가는 효과 주는 코루틴*/
     public IEnumerator FadeMoneyText(TextMeshProUGUI curMoneyText) {
 
         curMoneyText.color = new Color(curMoneyText.color.r, curMoneyText.color.g, curMoneyText.color.b, 1);
@@ -23,6 +26,7 @@ public class CoroutineController : MonoBehaviour
         }
     }
 
+    /*CountingMoney : 구매시 구매 상품의 가격 카운팅 효과 주는 코루틴*/
     public IEnumerator CountingMoney(TextMeshProUGUI curMoneyText, TextMeshProUGUI curMoney) {
 
         float max = gameManager.playerMoney - int.Parse(curMoneyText.text);
@@ -44,5 +48,26 @@ public class CoroutineController : MonoBehaviour
             yield return null;
         } while (max >= gameManager.playerMoney);
         GameObject.Find("curmoney").GetComponent<TextMeshProUGUI>().text = gameManager.playerMoney.ToString();
+    }
+
+    /*FadeIcon : 구매한 해당 상품이 업그레이드 해주는 능력치 아이콘 Fadein&Fadeout 효과 주는 코루틴*/
+    public IEnumerator FadeIcon(Image icon) {
+
+        icon.color = new Color(icon.color.r, icon.color.g, icon.color.b, 1);
+        float time = 0;
+
+        while (time<0.5f) {
+
+            if (time < 0.25f) {
+                float colorA = icon.color.a - 0.05f;
+                icon.color = new Color(icon.color.r, icon.color.g, icon.color.b, colorA);
+            }
+            else if (time < 0.5f) {
+                float colorA = icon.color.a + 0.05f;
+                icon.color = new Color(icon.color.r, icon.color.g, icon.color.b, colorA);
+            }
+            time += Time.deltaTime;
+            yield return null;
+        }
     }
 }

@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 170097716}
   - component: {fileID: 170097715}
   m_Layer: 5
-  m_Name: Image
+  m_Name: recoveryIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2758,7 +2758,7 @@ GameObject:
   - component: {fileID: 905052169}
   - component: {fileID: 905052168}
   m_Layer: 5
-  m_Name: Image
+  m_Name: defenseIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6522,7 +6522,7 @@ GameObject:
   - component: {fileID: 2021274424}
   - component: {fileID: 2021274423}
   m_Layer: 5
-  m_Name: Image
+  m_Name: attackIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

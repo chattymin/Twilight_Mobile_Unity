@@ -147,6 +147,7 @@ public class UiController : MonoBehaviour
             ParticleController.particleON(expName);
             StartCoroutine(coroutineController.FadeMoneyText(curMoneyText));
             StartCoroutine(coroutineController.CountingMoney(curMoneyText, curMoney));
+            StartCoroutine(coroutineController.FadeIcon(GameObject.Find(expName + "Icon").GetComponent<Image>()));
         }
         playerController.UImodifyVariable();
         itemController.uiItemPrice();
