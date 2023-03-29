@@ -16,7 +16,11 @@ public class PlayerController : MonoBehaviour{
     private TextMeshProUGUI defenseexp;
     private TextMeshProUGUI recoveryexp;
     private TextMeshProUGUI curMoneyText;
+    private TextMeshProUGUI playerCurrentHP;
+    private Slider HPslider;
+
     private Transform itemDescribePopup;
+
     void Start() {
 
         itemController = GameObject.Find("ScriptObject").GetComponent<ItemController>();
@@ -25,7 +29,8 @@ public class PlayerController : MonoBehaviour{
         defenseexp = GameObject.Find("defenseexp").GetComponent<TextMeshProUGUI>();
         recoveryexp = GameObject.Find("recoveryexp").GetComponent<TextMeshProUGUI>();
         curMoneyText = GameObject.Find("curmoneyText").GetComponent<TextMeshProUGUI>();
-
+        playerCurrentHP = GameObject.Find("playerCurrentHP").GetComponent<TextMeshProUGUI>();
+        HPslider = GameObject.Find("Slider").GetComponent<Slider>();
         itemDescribePopup = GameObject.Find("Canvas").transform.Find("itemDescribePopup");
 
         GameObject.Find("ScriptObject").GetComponent<UiController>().UiSetting();
@@ -90,6 +95,9 @@ public class PlayerController : MonoBehaviour{
         attackexp.text = gameManager.playerAttackLV.ToString();
         defenseexp.text = gameManager.playerDefenseLV.ToString();
         recoveryexp.text = gameManager.playerRecoveryLV.ToString();
+        int hp = gameManager.playerCurrentHP;
+        HPslider.value = (float)hp / 100;
+        playerCurrentHP.text = hp.ToString() + "/100";
         //player info 표시
     }
 
