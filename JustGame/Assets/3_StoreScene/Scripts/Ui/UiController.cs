@@ -33,14 +33,6 @@ public class UiController : MonoBehaviour
     TextMeshProUGUI curMoneyText;
     private string expName;
 
-    //private TextMeshProUGUI attackPrice; //attack 가격
-    // private TextMeshProUGUI defensePrice;//defense 가격
-    //private TextMeshProUGUI recoveryPrice; //recovery 가격
-    //TextMeshProUGUI attackexp;
-    // TextMeshProUGUI defenseexp;
-    //TextMeshProUGUI recoveryexp;
-    // private Transform itemDescribePopup;
-
     private void Start() {
         itemController = GameObject.Find("ScriptObject").GetComponent<ItemController>();
         playerController = GameObject.Find("ScriptObject").GetComponent<PlayerController>();
