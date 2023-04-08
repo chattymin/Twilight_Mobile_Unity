@@ -16,19 +16,23 @@ public class ButtonController : MonoBehaviour
 
 
     public void BoughtExpBTN() {
-        GameObject clickObject = EventSystem.current.currentSelectedGameObject; //최근 클릭한 오브젝트를 반환함
-        string expName = clickObject.name;//클릭한 오브젝트의 이름을 expName 변수에 저장함.
-        
+        string expName = EventSystem.current.currentSelectedGameObject.name;//클릭한 오브젝트의 이름을 expName 변수에 저장함.
         UIController.BoughtExp(expName);
     }
 
     public void exitBTN() {
-        UIController.checkMoneyPopup.SetActive(false);
+        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
+        if (clickObject.name == "checkMoney") {
+            UIController.checkMoneyPopup.SetActive(false);
+        }
+        else if (clickObject.name == "itemDescribe") {
+            UIController.itemDescribePopup.SetActive(false);
+        }
+        
     }
 
     public void isTruePurchaseBTN() {
-        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
-        string playerSelect = clickObject.name;
+        string playerSelect = EventSystem.current.currentSelectedGameObject.name;
         UIController.isTruePurchasePopup.SetActive(false);
 
         UIController.isTruePurchase(playerSelect);

@@ -26,6 +26,8 @@ public class UiController : MonoBehaviour
     
     public GameObject checkMoneyPopup;//소지금 부족으로 구매할 수 없는 경우 뜨는 팝업창
     public GameObject isTruePurchasePopup;//구매 여부를 묻는 팝업창
+    public GameObject itemDescribePopup;
+    private TextMeshProUGUI needMoney; 
 
 
     public Item selectedItem;//itemController의 SelectItem 메소드를 통해 선택된 아이템
@@ -46,15 +48,17 @@ public class UiController : MonoBehaviour
 
         buyButton = GameObject.Find("buy");
 
-        //curMoney = GameObject.Find("curmoney").GetComponent<TextMeshProUGUI>();
+        needMoney = GameObject.Find("needMoney").GetComponent<TextMeshProUGUI>();
         curMoneyText = GameObject.Find("curmoneyText").GetComponent<TextMeshProUGUI>();
 
         checkMoneyPopup = GameObject.Find("checkMoneyPopup");
         isTruePurchasePopup = GameObject.Find("isTruePurchasePopup");
+        itemDescribePopup = GameObject.Find("itemDescribePopup");
 
         GameObject.Find("inventoryitem").SetActive(false);
         checkMoneyPopup.SetActive(false);//storescene 시작시 팝업 비활성화
         isTruePurchasePopup.SetActive(false);//storescene 시작시 팝업 비활성화
+        itemDescribePopup.SetActive(false);
         curMoneyText.enabled = false;
         expName = "not selected";
     
@@ -85,6 +89,7 @@ public class UiController : MonoBehaviour
 
         if (itemController.CheckMoney(selectedItem.itemPrice)) {//Player의 소지금을 확인해 구매할 수 있는지 판단        
             checkMoneyPopup.SetActive(true);//구매할 수 없을 경우 구매할 수 없다는 팝업창 활성화
+            needMoney.text = "필요 : <color=#ff0000>" + (-(gameManager.playerMoney - selectedItem.itemPrice)).ToString() + "</color> 코인";
         }
         else {
             isTruePurchasePopup.SetActive(true);
@@ -97,6 +102,8 @@ public class UiController : MonoBehaviour
 
         if (itemController.CheckMoney(itemController.GetPrice(expName))) {//Player의 소지금을 확인해 구매할 수 있는지 판단        
             checkMoneyPopup.SetActive(true); //구매할 수 없을 경우 구매할 수 없다는 팝업창 활성화
+            needMoney.text = "필요 : <color=#ff0000>" + (-(gameManager.playerMoney - itemController.GetPrice(expName))).ToString() + "</color> 코인";
+
         }
         else {
             isTruePurchasePopup.SetActive(true);
@@ -113,7 +120,7 @@ public class UiController : MonoBehaviour
             curMoneyText.enabled = true;
             
             playerController.BuyItem(selectedItem);
-            ParticleController.particleObject1.Play();
+            ParticleController.attackParticle.Play();
             StartCoroutine(coroutineController.FadeMoneyText(curMoneyText));
             StartCoroutine(coroutineController.CountingMoney(curMoneyText,curMoney));
             

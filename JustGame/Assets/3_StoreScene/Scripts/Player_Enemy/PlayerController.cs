@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour{
         int hp = gameManager.playerCurrentHP;
         HPslider.value = (float)hp / 100;
         playerCurrentHP.text = hp.ToString() + "/100";
-        //player info 표시
     }
 
     public void UImodifyInventory() {

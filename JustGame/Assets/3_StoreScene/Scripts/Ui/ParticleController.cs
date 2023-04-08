@@ -4,30 +4,39 @@ using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
-    public ParticleSystem particleObject1;
-    public ParticleSystem particleObject2;
-    public ParticleSystem particleObject3;
+    public ParticleSystem attackParticle;
+    public ParticleSystem defenseParticle;
+    public ParticleSystem recoveryParticle;
+
+    //public ParticleSystem clickParticle;
 
     void Start() {
-        particleObject1 = GameObject.Find("CFXR3 Hit Ice B (Air) (1)").GetComponent<ParticleSystem>();
-        particleObject2 = GameObject.Find("CFXR3 Hit Ice B (Air)").GetComponent<ParticleSystem>();
-        particleObject3 = GameObject.Find("CFXR3 Hit Ice B (Air) (2)").GetComponent<ParticleSystem>();
+        attackParticle = GameObject.Find("attackParticle").GetComponent<ParticleSystem>();
+        defenseParticle = GameObject.Find("defenseParticle").GetComponent<ParticleSystem>();
+        recoveryParticle = GameObject.Find("recoveryParticle").GetComponent<ParticleSystem>();
+        //clickParticle = GameObject.Find("clickParticle").GetComponent<ParticleSystem>();
 
-        particleObject1.Pause();
-        particleObject2.Pause();
-        particleObject3.Pause();
+        attackParticle.Pause();
+        defenseParticle.Pause();
+        recoveryParticle.Pause();
+        //clickParticle.Pause();
     }
 
     public void particleON(string expName) {
 
         if (expName.Equals("attack")) {
-            particleObject1.Play();
+            attackParticle.Play();
         }
         else if (expName.Equals("defense")) {
-            particleObject2.Play();
+            defenseParticle.Play();
         }
         else {
-            particleObject3.Play();
+            recoveryParticle.Play();
         }
     }
+
+    /*public void touchParticleOn(float xpos, float ypos) {
+
+        clickParticle.Play(); 
+    }*/
 }

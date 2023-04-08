@@ -2,29 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
+public class MouseOverController : MonoBehaviour {
 
-public class MouseOverController : MonoBehaviour
-    ,IPointerEnterHandler
-    ,IPointerExitHandler
-{
-    public GameObject itemDescribePopup;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       itemDescribePopup.SetActive(false);
-    }
+    private void Update() {
+        if (Input.touchCount > 0) { 
+            Touch touch = Input.GetTouch(0);
 
-    // Update is called once per frame
-   public void OnPointerEnter(PointerEventData eventData) {
-
-        itemDescribePopup.SetActive(true);
-    }
-
-    public void OnPointerExit(PointerEventData eventData) {
-        itemDescribePopup.SetActive(false);
-
+            if (touch.phase == TouchPhase.Began) {
+                //GameObject.Find("ScriptObject").GetComponent<ParticleController>().touchParticleOn(1, 1);
+                GameObject.Find("ScriptObject").GetComponent<UiController>().itemDescribePopup.SetActive(true);
+            }
+        }   
     }
 }
