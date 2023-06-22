@@ -22,7 +22,15 @@
 ## 프로젝트 설명
 <br>
    
-해당 프로젝트는 Unity를 이용해 2D 게임을 만드는 프로젝트입니다. 
+Unity를 이용해 2D 게임을 개발하는 프로젝트입니다. <br><br>
+
+"어스름"은 다소 어두운 분위기의 한국풍 2D 턴제 로그라이크 게임입니다. <br><br>
+
+플레이어가 선택한 행동과 적의 상호작용이 이루어지는 전투 방식과, <br>
+획득한 재화를 통한 능력치 업그레이드로 보다 전략적으로 플레이할 수 있습니다. <br><br>
+
+한국풍 도트 그래픽과 배경음악으로 게임의 몰입을 향상시키고 심미적 경험을 제공합니다. <br><br>
+
 <br><br>
    
 ## 멤버 구성 
@@ -52,9 +60,14 @@
 ## 사용 언어 & 개발 도구
 <br>  
    
-| **Language**  | <img width="100px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/C--4.svg"/>      | **Tool** |  <img width="170px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/Unity-New-Logo-removebg-preview.png?raw=true"/>       |   [<img width="100px" height="100px" src="https://github.com/chattymin/UnityGameProject/blob/main/imagesForReadme/stack/Notion.svg"/>](https://rightful-yarn-52a.notion.site/Unity-98c4af0304004532908acdb4b9b4b456)           |
-| -------- | ---- | ---- | ---- | ---- |   
+Platforms & Languages <br><br>
+<img src="https://img.shields.io/badge/Unity-FFFFFF?style=flat&logo=unity&logoColor=black" /> 
+<img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" /> <br>
 
+Tools <br><br>
+<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white" />
+<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white" />
+<img src="https://img.shields.io/badge/GitHub-000000?style=flat&logo=github&logoColor=white" /> <br>
 <br>
    
 ## 기능 
@@ -70,5 +83,7 @@
 
 
 ## 호환성
+
+
 
 ## 저작권 & 라이선스 
