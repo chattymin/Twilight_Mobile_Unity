@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 public class ButtonController : MonoBehaviour
 {
     private UiController UIController;
+    private GameManager gameManager = GameManager.instance;
+
 
     private void Start() {
 
@@ -18,6 +20,7 @@ public class ButtonController : MonoBehaviour
     public void BoughtExpBTN() {
         string expName = EventSystem.current.currentSelectedGameObject.name;//클릭한 오브젝트의 이름을 expName 변수에 저장함.
         UIController.BoughtExp(expName);
+        expName ="";
     }
 
     public void exitBTN() {
@@ -36,6 +39,10 @@ public class ButtonController : MonoBehaviour
         UIController.isTruePurchasePopup.SetActive(false);
 
         UIController.isTruePurchase(playerSelect);
+    }
+
+    public void itemDescribeBTN() {
+            UIController.itemDescribePopup.SetActive(true);
     }
 
     public void BoughtItemBTN() {

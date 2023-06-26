@@ -129,8 +129,8 @@ public class UiController : MonoBehaviour
             
             itemImage.sprite = Resources.Load<Sprite>("Images/Icons/SoldOut");
             RectTransform rect = (RectTransform)itemImage.transform;
-            rect.sizeDelta = new Vector2(500, 280);
-            rect.anchoredPosition = new Vector3(0,7);
+            rect.sizeDelta = new Vector2(660, 300);
+            rect.anchoredPosition = new Vector3(9,25);
 
             buyButton.GetComponent<Image>().color = Color.gray; // 구매버튼 클릭 시 동작. 구매를 막기 위해 색을 gray로 변경 
             buyButton.GetComponent<Button>().interactable = false; // 구매할 수 없도록 button 기능 비활성화. 

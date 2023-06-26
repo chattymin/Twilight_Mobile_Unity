@@ -15,8 +15,8 @@ public class CoroutineController : MonoBehaviour
 
         curMoneyText.color = new Color(curMoneyText.color.r, curMoneyText.color.g, curMoneyText.color.b, 1);
         RectTransform rect2 = (RectTransform)curMoneyText.transform;
-        rect2.anchoredPosition = new Vector3(549, 32);
-        Vector3 dir = new Vector3(0, 30f, 0);
+        rect2.anchoredPosition = new Vector3(559, 33);
+        Vector3 dir = new Vector3(0, 40f, 0);
 
         while (curMoneyText.color.a >= 0.0f) {
             float colorA = curMoneyText.color.a - 0.05f;
