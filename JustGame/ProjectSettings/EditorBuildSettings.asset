@@ -12,19 +12,19 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/2_BattleScene/BattleScene.unity
+    path: Assets/2_BattleScene/Scenes/BattleScene.unity
     guid: d77315ad82468af4991c9b9ae75cedf0
   - enabled: 1
-    path: Assets/2_BattleScene/BattleSceneBlueDragon.unity
+    path: Assets/2_BattleScene/Scenes/BattleSceneBlueDragon.unity
     guid: 5b64e9e46ef94468293da6877146488a
   - enabled: 1
     path: Assets/4_EndingScene/EndingScene.unity
     guid: ed42bb48331874773a3c4c27305ff713
   - enabled: 1
-    path: Assets/2_BattleScene/BattleSceneRedBird.unity
+    path: Assets/2_BattleScene/Scenes/BattleSceneRedBird.unity
     guid: 21ad6bb9eb65f4ad3a4d6b1534633d18
   - enabled: 1
-    path: Assets/2_BattleScene/BattleSceneWhiteTiger.unity
+    path: Assets/2_BattleScene/Scenes/BattleSceneWhiteTiger.unity
     guid: 74a5011506012406aa7b2dc328e9a3a5
   - enabled: 1
     path: Assets/1_MainScene/MainScene.unity

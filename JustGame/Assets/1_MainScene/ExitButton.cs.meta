@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:JustGame/Assets/1_MainScene/ExitButton.cs.meta
 guid: a62009cc15c914f6d8061f74caed9a84
+=======
+guid: e43015f6f0639014b8fab1f903b6be3b
+>>>>>>> feature/Issue15:JustGame/Assets/1_MainScene/Scripts/ExitButton.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
