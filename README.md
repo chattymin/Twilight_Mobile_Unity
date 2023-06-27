@@ -1,21 +1,8 @@
 <div align=center>
 
 ![](https://capsule-render.vercel.app/api?type=shark&section=header&color=gradient&text=%202022/2023%20Unity%20Project👋%20%20&height=200&fontSize=50&animation=fadeIn&fontAlignY=38)
- <br><br>
+ <br>
 </div>
-
-   
-  * [프로젝트 설명](#프로젝트-설명)
-  * [멤버 구성](#멤버-구성)
-  * [개발기간](#개발기간)
-  * [사용 언어 & 개발 도구](#사용-언어--개발-도구)
-  * [기능](#기능)
-  * [사용예제](#사용예제)
-  * [설치 방법](#설치-방법)
-  * [호환성](#호환성)
-  * [저작권 & 라이선스](#저작권--라이선스)
-
-
 <div align=center>
 <br><br>
    
@@ -74,14 +61,14 @@ Tools <br><br>
  #### START 🕹️<br>
  게임을 시작하면 Battle Scene이 실행됩니다.
  #### RESTART 🔄️<br>
- 게임 도중 다시하고 싶어지면 처음으로 돌아가 새로운 게임을 실행합니다.
+ 게임 도중 다시 하고 싶어지면 처음으로 돌아가 새로운 게임을 실행합니다.
  #### SETTING ⚙️<br>
 소리의 크기 & 화면 비율을 조정할 수 있습니다.
  #### EXTRA 📃<br>
- 만든사람과 라이선스를 확인할 수 있습니다.
+ 만든 사람과 라이선스를 확인할 수 있습니다.
 <br><br>
 
-## 사용예제
+## 사용 예제
 <br>
  
 ### 각 차례마다 세 가지 행동 중 하나 선택
@@ -89,9 +76,9 @@ Tools <br><br>
 
 |공격|방어|회복|
 |:---:|:---:|:---:|
-|![스크린샷 2023-06-26 232746](https://github.com/chattymin/UnityGameProject/assets/109129732/b1de875a-6234-4a4c-a676-de0249b1fb3d)| ![스크린샷 2023-06-26 232754](https://github.com/chattymin/UnityGameProject/assets/109129732/65e89ddb-1a96-4e2d-bed0-c2e69297434a) | ![스크린샷 2023-06-26 232800](https://github.com/chattymin/UnityGameProject/assets/109129732/2b917d22-2c24-4634-829d-06db30a9e33d) |
+|![스크린샷 2023-06-26 232746](https://github.com/chattymin/UnityGameProject/assets/109129732/b1de875a-6234-4a4c-a676-de0249b1fb3d)|![스크린샷 2023-06-26 232754](https://github.com/chattymin/UnityGameProject/assets/109129732/65e89ddb-1a96-4e2d-bed0-c2e69297434a)|![스크린샷 2023-06-26 232800](https://github.com/chattymin/UnityGameProject/assets/109129732/2b917d22-2c24-4634-829d-06db30a9e33d) |
 
-행동값은 레벨 ~레벨X2 사이에서 무작위로 결정
+행동값은 레벨 ~ 레벨 X 2 사이에서 무작위로 결정
 
 <br>
 
@@ -104,18 +91,13 @@ Tools <br><br>
 
 |![스크린샷 2023-06-27 000228](https://github.com/chattymin/UnityGameProject/assets/109129732/3e3b4eec-22bb-403c-9ca4-b3dfcb9b3cd7)|![스크린샷 2023-06-27 000213](https://github.com/chattymin/UnityGameProject/assets/109129732/08ae3353-e2fc-47c3-b0e9-6a5f9f453f6a)|![스크린샷 2023-06-27 000156](https://github.com/chattymin/UnityGameProject/assets/109129732/3abdb36c-709e-421a-a0e7-a04196ffd6a5)|
 |:---:|:---:|:---:|
-|▶ 공격 행동값이 높을 경우 차이만큼 방어자가 피해 입음<br> ▶ 방어 행동값이 높을 경우 차이만큼 공격자가 피해 입음|공격 행동값만큼 회복자가 피해를 입음.<br>그 후, 회복 행동값만큼 회복자가 체력 회복|회복 행동값만큼 회복자가 체력 회복|
-
+|▶ 공격 행동값이 높을 경우<br> 차이만큼 방어자가 피해 입음<br> ▶ 방어 행동값이 높을 경우<br> 차이만큼 공격자가 피해 입음|공격 행동값만큼 회복자가 피해 입음.<br>그 후, 회복 행동값만큼 회복자가 체력 회복|회복 행동값만큼 회복자가 체력 회복|
 <br>
-
-## 설치 방법
-<br>
-
-<br><br>
 
 ## 호환성
 <br>
-
+<img src="https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white" />
+<img src="https://img.shields.io/badge/iOS-000000?style=flat&logo=ios&logoColor=white" />
 <br><br>
 
 ## 저작권 & 라이선스 
@@ -130,5 +112,4 @@ This license is copied below, and is also available with a FAQ at: http://script
 
 - SIL OPEN FONT LICENSE
 Version 1.1 - 26 February 2007
-
 </div>
