@@ -70,7 +70,13 @@ Tools <br><br>
 
 ## 사용 예제
 <br>
- 
+
+|![image](https://github.com/chattymin/UnityGameProject/assets/109129732/533e8faa-9ae5-42c2-999b-78f54d3aa026)|![image](https://github.com/chattymin/UnityGameProject/assets/109129732/49253310-90e8-4010-936f-e2c3e93e48b4)|![image](https://github.com/chattymin/UnityGameProject/assets/109129732/94694ecf-8251-4922-afdb-34820860a802)|
+|:---:|:---:|:---:|
+|Main Scene|Battle Scene|Store Scene|
+
+<br>
+
 ### 각 차례마다 세 가지 행동 중 하나 선택
 <br>
 
