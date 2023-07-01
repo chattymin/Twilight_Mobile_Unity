@@ -71,7 +71,7 @@ Tools <br><br>
 ## 사용 예제
 <br>
 
-|![image](https://github.com/chattymin/UnityGameProject/assets/109129732/533e8faa-9ae5-42c2-999b-78f54d3aa026)|![image](https://github.com/chattymin/UnityGameProject/assets/109129732/49253310-90e8-4010-936f-e2c3e93e48b4)|![image](https://github.com/chattymin/UnityGameProject/assets/109129732/94694ecf-8251-4922-afdb-34820860a802)|
+|![스크린샷 2023-07-01 101023](https://github.com/chattymin/UnityGameProject/assets/109129732/1a6d67ce-d84b-4942-909a-27e9e6970d65)|![스크린샷 2023-07-01 101040](https://github.com/chattymin/UnityGameProject/assets/109129732/903aa4bf-776c-48af-9508-bd2a481cb9dd)|![스크린샷 2023-07-01 101052](https://github.com/chattymin/UnityGameProject/assets/109129732/2c0af0ab-c6fc-444e-9a9b-9971424e4a13)|
 |:---:|:---:|:---:|
 |Main Scene|Battle Scene|Store Scene|
 
@@ -81,8 +81,8 @@ Tools <br><br>
 <br>
 
 |공격|방어|회복|
-|:---:|:---:|:---:|
-|![스크린샷 2023-06-26 232746](https://github.com/chattymin/UnityGameProject/assets/109129732/b1de875a-6234-4a4c-a676-de0249b1fb3d)|![스크린샷 2023-06-26 232754](https://github.com/chattymin/UnityGameProject/assets/109129732/65e89ddb-1a96-4e2d-bed0-c2e69297434a)|![스크린샷 2023-06-26 232800](https://github.com/chattymin/UnityGameProject/assets/109129732/2b917d22-2c24-4634-829d-06db30a9e33d) |
+|---|---|---|
+|![스크린샷 2023-06-26 232746](https://github.com/chattymin/UnityGameProject/assets/109129732/16017dcf-103a-4801-ad20-cb93308a47e4)|![스크린샷 2023-06-26 232754](https://github.com/chattymin/UnityGameProject/assets/109129732/39f9e89e-463b-4ea9-93c6-635046fa674c)|![스크린샷 2023-06-26 232800](https://github.com/chattymin/UnityGameProject/assets/109129732/4dc44a18-30e9-4746-9f30-ef21d8c2129c)|
 
 행동값은 레벨 ~ 레벨 X 2 사이에서 무작위로 결정
 
@@ -91,11 +91,11 @@ Tools <br><br>
 ### 플레이어와 적의 행동값과 행동 종류를 비교하여 전투 진행
 <br>
 
-|![스크린샷 2023-06-27 000233](https://github.com/chattymin/UnityGameProject/assets/109129732/a15a60d2-b654-4164-98c6-1d1c523d0df1)|![스크린샷 2023-06-27 000221](https://github.com/chattymin/UnityGameProject/assets/109129732/c6996169-aad2-42db-bc35-486c3e368689)|![스크린샷 2023-06-27 000202](https://github.com/chattymin/UnityGameProject/assets/109129732/85557a08-812f-48ee-b0ae-65ccafd096e4)|
+|![스크린샷 2023-06-27 000233](https://github.com/chattymin/UnityGameProject/assets/109129732/2ce81d11-79e6-4142-b326-c3bbba3b1659)|![스크린샷 2023-06-27 000221](https://github.com/chattymin/UnityGameProject/assets/109129732/3ee2ff14-2396-4ff7-bfa6-cefe989c96da)|![스크린샷 2023-06-27 000202](https://github.com/chattymin/UnityGameProject/assets/109129732/e98f5559-fed5-49aa-bc89-f1a478bd8b56)|
 |:---:|:---:|:---:|
 |상대의 공격 행동값만큼 서로 피해 입음|자신의 방어 행동값만큼 서로 피해 입음|자신의 회복 행동값만큼 서로 체력 회복|
 
-|![스크린샷 2023-06-27 000228](https://github.com/chattymin/UnityGameProject/assets/109129732/3e3b4eec-22bb-403c-9ca4-b3dfcb9b3cd7)|![스크린샷 2023-06-27 000213](https://github.com/chattymin/UnityGameProject/assets/109129732/08ae3353-e2fc-47c3-b0e9-6a5f9f453f6a)|![스크린샷 2023-06-27 000156](https://github.com/chattymin/UnityGameProject/assets/109129732/3abdb36c-709e-421a-a0e7-a04196ffd6a5)|
+|![스크린샷 2023-06-27 000228](https://github.com/chattymin/UnityGameProject/assets/109129732/4448e967-4b3f-482b-ad82-c36699d44462)|![스크린샷 2023-06-27 000213](https://github.com/chattymin/UnityGameProject/assets/109129732/71b5aaaf-d7a4-4424-9745-0ebca0034249)|![스크린샷 2023-06-27 000156](https://github.com/chattymin/UnityGameProject/assets/109129732/d51a5dfc-930b-49e5-b90f-a47b22cce32e)|
 |:---:|:---:|:---:|
 |▶ 공격 행동값이 높을 경우<br> 차이만큼 방어자가 피해 입음<br> ▶ 방어 행동값이 높을 경우<br> 차이만큼 공격자가 피해 입음|공격 행동값만큼 회복자가 피해 입음.<br>그 후, 회복 행동값만큼 회복자가 체력 회복|회복 행동값만큼 회복자가 체력 회복|
 <br>
